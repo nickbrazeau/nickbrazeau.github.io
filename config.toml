@@ -42,7 +42,7 @@ profilePicture = "images/NFB_Professional_ChimpPic_crop.jpeg"
 keywords = ""
 favicon = "favicons/"
 # example ["css/custom.css"]
-customCss = ["css/custom.css", "css/styles.css"]
+customCss = []
 # example ["js/custom.js"]
 customJs = []
 # Have a static page as a home page
