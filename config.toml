@@ -164,8 +164,3 @@ url = "projects/"
 name = "Publications & Talks"
 weight = 4
 url = "publications/"
-
-[[languages.en.menu.main]]
-name = "Contact"
-weight = 5
-url = "contact/"
