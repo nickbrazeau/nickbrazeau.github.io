@@ -1,4 +1,47 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Blog on Website of Nicholas F. Brazeau</title><link>https://nickbrazeau.github.io/blog/</link><description>Recent content in Blog on Website of Nicholas F. Brazeau</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 20 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://nickbrazeau.github.io/blog/index.xml" rel="self" type="application/rss+xml"/><item><title>A Further Look at the Bayesian Physician</title><link>https://nickbrazeau.github.io/blog/series-part-2/</link><pubDate>Sat, 20 Nov 2021 00:00:00 +0000</pubDate><guid>https://nickbrazeau.github.io/blog/series-part-2/</guid><description/></item><item><title>Most Physicians are Bayesians, but Few Know It</title><link>https://nickbrazeau.github.io/blog/series-part-1/</link><pubDate>Mon, 15 Nov 2021 00:00:00 +0000</pubDate><guid>https://nickbrazeau.github.io/blog/series-part-1/</guid><description>words&amp;hellip;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on Website of Nicholas F. Brazeau</title>
+    <link>https://nickbrazeau.github.io/blog/</link>
+    <description>Recent content in Blog on Website of Nicholas F. Brazeau</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 20 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://nickbrazeau.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A Further Look at the Bayesian Physician</title>
+      <link>https://nickbrazeau.github.io/blog/series-part-2/</link>
+      <pubDate>Sat, 20 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://nickbrazeau.github.io/blog/series-part-2/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Most Physicians are Bayesians, but Few Know It</title>
+      <link>https://nickbrazeau.github.io/blog/series-part-1/</link>
+      <pubDate>Mon, 15 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://nickbrazeau.github.io/blog/series-part-1/</guid>
+      
+        <description>words&amp;hellip;
 Inline math: \(\varphi = \dfrac{1+\sqrt5}{2}= 1.6180339887…\)
 Block math:
-$$ \varphi = 1+\frac{1} {1+\frac{1} {1+\frac{1} {1+\cdots} } } $$</description></item><item><title>Lorem Ipsum</title><link>https://nickbrazeau.github.io/blog/2015-01-01-lorem-ipsum/</link><pubDate>Thu, 01 Jan 2015 13:09:13 -0600</pubDate><guid>https://nickbrazeau.github.io/blog/2015-01-01-lorem-ipsum/</guid><description>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</description></item></channel></rss>
+$$ \varphi = 1+\frac{1} {1+\frac{1} {1+\frac{1} {1+\cdots} } } $$</description>
+      
+    </item>
+    
+    <item>
+      <title>Lorem Ipsum</title>
+      <link>https://nickbrazeau.github.io/blog/2015-01-01-lorem-ipsum/</link>
+      <pubDate>Thu, 01 Jan 2015 13:09:13 -0600</pubDate>
+      
+      <guid>https://nickbrazeau.github.io/blog/2015-01-01-lorem-ipsum/</guid>
+      
+        <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</description>
+      
+    </item>
+    
+  </channel>
+</rss>
