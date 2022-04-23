@@ -12,14 +12,14 @@ enableEmoji = true
 # disqusShortname = "yourdiscussshortname"
 
 [params]
-author = "Nick Brazeau"
+author = "Nicholas F. Brazeau"
 # license = '<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA-4.0</a>'
 description = "Personal website of Nick Brazeau"
 keywords = "medicine,epidemiology,personal"
-info = ["UNC MD/PhD Candidate", "Infectious Disease Epidemiologist"]
+info = ["UNC MD/PhD Candidate", "Aspiring Physician | Infectious Disease Epidemiologist"]
 avatarURL = "images/NFB_prof.jpeg"
 #gravatar = "john.doe@example.com"
-dateFormat = "January 2, 2006"
+dateFormat = "January 1, 2021"
 since = 2021
 # Right To Left, shift content direction for languagues such as Arabic
 rtl = false
@@ -138,7 +138,7 @@ url = "https://twitter.com/nfbrazeau/"
 [[params.social]]
 icon = "fa fa-solid fa-2x fa-envelope"
 title = "e-mail"
-url = "mailto:mail@example.com"
+url = "nbrazeau1 at the mail of google"
 
 [languages.en]
 languageName = ":uk:"
