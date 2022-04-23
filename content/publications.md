@@ -3,8 +3,10 @@ Here is a quick place to find links to manuscripts and prior talks that I have g
 
 
 ## Manuscripts
-[My PubMed](https://www.ncbi.nlm.nih.gov/myncbi/1Z38GNVdoiEkg/bibliography/public/)     
-ORCID: 0000-0003-3976-7965
+[My PubMed](https://www.ncbi.nlm.nih.gov/myncbi/1Z38GNVdoiEkg/bibliography/public/)        
+[My Google Scholar](https://scholar.google.com/citations?user=ZdLn4sUAAAAJ&hl=en)    
+ORCID: 0000-0003-3976-7965   
+_As a firm believer in open-source research, please feel free to request any manuscripts that may be behind a paywall_.
 
 ## Oral Presentations
 COVID-19 Infection Fatality Ratio: Where we started, Where we were, Where we are. [Oral Presentation](https://uncch.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=9aa51bec-8ff3-4fe6-8ff4-acaa012ab263) with Institute of Global Health and Infectious Disease, December 2020, Chapel Hill, NC.
@@ -12,11 +14,10 @@ COVID-19 Infection Fatality Ratio: Where we started, Where we were, Where we are
 
 
 
-<br>
-<br>
-<br>
-
-
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
 
 
 
