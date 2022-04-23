@@ -1,5 +1,5 @@
 # Publications and Talks
-Here is a quick place to find links to manuscripts and prior talks that I have given. (:warning: _these are all hosted by external sites_)
+Here is a quick place to find links to manuscripts and prior talks that I have given (:warning: _these are all hosted by external sites_).
 
 
 ## Manuscripts
@@ -21,6 +21,6 @@ COVID-19 Infection Fatality Ratio: Where we started, Where we were, Where we are
 
 
 ----
-_For further information on skills, projects, or software please see the `Projects & Interest` tab. My most recent [CV]() and [Biosketch]() are also available for download._
+_For further information on skills, projects, or software please see the `Projects & Interest` tab. My most recent [CV](), [1-Minute Resume](), and [Biosketch]() are also available for download._
 
 ----
