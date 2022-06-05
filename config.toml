@@ -121,7 +121,7 @@ url = "https://scholar.google.com/citations?user=ZdLn4sUAAAAJ&hl"
 icon = "fa fa-solid fa-2x fa-orcid"
 title = "ORCiD"
 weight = 4
-url = "https://orcid.org/my-orcid?orcid=0000-0003-3976-7965"
+url = "https://orcid.org/0000-0003-3976-7965"
 
 [[params.social]]
 icon = "fa fa-solid fa-2x fa-researchgate"

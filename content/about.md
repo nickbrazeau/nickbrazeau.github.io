@@ -5,7 +5,7 @@ At UNC, I completed my PhD in Epidemiology from the Gillings School of Global Pu
 In 2020, I joined Imperial College London as a research associate and soon onboarded onto the Imperial College COVID-19 Response Team. My work focused on re-estimating the infection fatality ratio using statistical modeling with a Bayesian approach under the direction of Robert Verity, Lucy Okell, Azra Ghani, and Neil Ferguson.
 
 
-In addition to being an infectious disease and molecular epidemiologist, I am also a great admirer of statistics (especially Bayesian methods), mathematical modeling, genetics, geography, and bioinformatics and do my best to imitate those experts and their skillsets. Currently, as part of my MD training, I am trying to grow out my white coat (at present: buzz cut level) at UNC-SOM until May 2023. In the long-term, I plan on joining these skills/passions and pursuing a career as a physician-scientist, with a focus on global health and infectious diseases.
+In addition to being an infectious disease and molecular epidemiologist, I am also a great admirer of statistics (especially Bayesian methods), mathematical modeling, genetics, geography, and bioinformatics and do my best to imitate those experts and their skillsets. Currently, as part of my MD training, I am trying to grow out my white coat (at present: buzz cut level) at UNC-SOM until May 2023. In the long-term, I plan on joining these passions and pursuing a career as a physician-scientist, with a focus on global health and infectious diseases.
 
 When I am not sitting in front of my computer trying to make a pretty figure or studying, I can be found hiking, biking or traveling. Once upon a time, I was also a wrestler, which I still love to do from time to time. However, most of my current athletic pursuits involve trying to keep up with my wife, Katelyn Rittenhouse. If you are interested in OB/Gyn and global women's health, particularly HIV and pregnancy, please check out her amazing [work](https://scholar.google.com/citations?user=q6IQT_kAAAAJ&hl=en).
 
@@ -16,6 +16,6 @@ When I am not sitting in front of my computer trying to make a pretty figure or 
 
 
 ----
-_For further information on skills, projects, or software please see the `Projects & Interest` tab. My most recent [CV](https://drive.google.com/file/d/1V6axX_uaZ0KyBvGiK6zReUTYDviMF8tG/view?usp=sharing&) and [Biosketch]() are also available for download._
+_For further information on skills, projects, or software please see the `Projects & Interest` tab. My most recent [CV](https://drive.google.com/file/d/1V6axX_uaZ0KyBvGiK6zReUTYDviMF8tG/view?usp=sharing&) is also available for download._
 
 ----
