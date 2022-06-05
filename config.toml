@@ -19,7 +19,7 @@ keywords = "medicine,epidemiology,personal"
 info = ["UNC MD/PhD Candidate", "Aspiring Physician | Infectious Disease Epidemiologist"]
 avatarURL = "images/NFB_prof.jpeg"
 #gravatar = "john.doe@example.com"
-dateFormat = "January 1, 2021"
+dateFormat = "2-1-2006"
 since = 2021
 # Right To Left, shift content direction for languagues such as Arabic
 rtl = false

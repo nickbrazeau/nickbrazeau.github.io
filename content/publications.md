@@ -39,7 +39,7 @@ Here you will find links to my select favorite manuscripts and prior talks that 
 &nbsp;
 
 ### Methods
-[COVID-19 infection fatality ratio: estimates from seroprevalence allowing for seroreversion using statistical modeling]().   
+[COVID-19 infection fatality ratio: estimates from seroprevalence allowing for seroreversion using statistical modeling](https://www.nature.com/articles/s43856-022-00106-7).   
 **TL;DR**:
 https://go.nature.com/3KByzI4
 &nbsp;
@@ -48,16 +48,7 @@ https://go.nature.com/3KByzI4
 **TL;DR**:
 &nbsp;
 
-#### Coming Soon
-[DISCENT](https://github.com/nickbrazeau/discent)  
-**TL;DR**:
-&nbsp;
 
-[HMMERTIME](https://github.com/nickbrazeau/HMMERTIME)  
-**TL;DR**:
-&nbsp;
-&nbsp;
-&nbsp;
 
 
 ## Oral Presentations

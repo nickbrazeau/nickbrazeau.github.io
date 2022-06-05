@@ -32,15 +32,15 @@ There is always more work to be done: no rest for the wreary! Here, I have liste
 Many thanks to Bob Verity, who has been a mentor and accomplice in all statistical programs/software design projects to date.
 
 [DISCent](https://github.com/nickbrazeau/discent)  
-**Description**:
+**Description**: _To Be Released Shortly_
 &nbsp;
 
 [polysimIBD](https://github.com/nickbrazeau/polysimibd)  
-**Description**:
+**Description**: _To Be Released Shortly_
 &nbsp;
 
 [HMMERTIME](https://github.com/nickbrazeau/HMMERTIME)  
-**Description**:
+**Description**: _To Be Released Shortly_ 
 
 [COVIDCurve](https://github.com/mrc-ide/COVIDCurve/)
 https://go.nature.com/3KByzI4
