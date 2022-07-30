@@ -1,11 +1,10 @@
 # Publications and Talks
 
-Here you will find links to my select favorite manuscripts and prior talks that I have given with a brief summary of the project, as well as takeaway points (TL;DR). \
+Here you will find links to my favorite manuscripts and prior talks that I have given with brief takeaway points (TL;DR). \
 [My PubMed](https://www.ncbi.nlm.nih.gov/myncbi/1Z38GNVdoiEkg/bibliography/public/)    
 [My Google Scholar](https://scholar.google.com/citations?user=ZdLn4sUAAAAJ&hl=en)   
 [ORCID: 0000-0003-3976-7965](https://orcid.org/0000-0003-3976-7965)   
-&nbsp;
-:warning: _these are all links to pubmed or othe external sites. As a firm believer in open-source research, please feel free to request any manuscripts that may be behind a paywall_,
+
 
 &nbsp;
 &nbsp;
