@@ -1,0 +1,982 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>r | Nick Brazeau</title><link>https://nicholasbrazeau.com/categories/r/</link><atom:link href="https://nicholasbrazeau.com/categories/r/index.xml" rel="self" type="application/rss+xml"/><description>r</description><generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2022 Nicholas Brazeau</copyright><lastBuildDate>Tue, 12 Jul 2022 08:38:28 -0700</lastBuildDate><image><url>https://nicholasbrazeau.com/img/headers/tree.jpg</url><title>r</title><link>https://nicholasbrazeau.com/categories/r/</link></image><item><title>rdhs</title><link>https://nicholasbrazeau.com/project/rdhs/</link><pubDate>Tue, 12 Jul 2022 08:38:28 -0700</pubDate><guid>https://nicholasbrazeau.com/project/rdhs/</guid><description>&lt;p>The Demographic and Health Surveys (DHS) Program has collected population survey data from over 90 countries for over 30 years. In many countries, DHS provide the key data that mark progress towards targets such as the Sustainable Development Goals (SDGs) and inform health policy. Though standard health indicators are routinely published in survey final reports, much of the value of DHS is derived from the ability to download and analyse standardized microdata datasets for subgroup analysis, pooled multi-country analysis, and extended research studies.&lt;/p>
+&lt;p>The suite of tools within &lt;code>rdhs&lt;/code> improves the accessibility of these datasets for statistical analysis with R, with aim to support reproducible global health research and simplify common analytical pipelines.&lt;/p></description></item><item><title>Introduction to squire</title><link>https://nicholasbrazeau.com/2021/01/04/introduction-to-squire/</link><pubDate>Mon, 04 Jan 2021 08:38:52 -0800</pubDate><guid>https://nicholasbrazeau.com/2021/01/04/introduction-to-squire/</guid><description>
+&lt;!-- README.md is generated from README.Rmd. Please edit that file -->
+&lt;p>This is an overview of the &lt;code>squire&lt;/code> package, which is a deterministic model of COVID-19 transmission. The &lt;code>squire&lt;/code> model was developed as part of the Imperial College COVID-19 Response Team and has been key in a number of our COVID-19 projects and publications to date, including:&lt;/p>
+&lt;p>This is a brief overview of the model, which is fully described at &lt;a href="https://github.com/mrc-ide/squire">https://github.com/mrc-ide/squire&lt;/a>&lt;/p>
+&lt;div id="overview" class="section level2">
+&lt;h2>Overview&lt;/h2>
+&lt;p>squire is a package enabling users to quickly and easily generate calibrated estimates of SARS-CoV-2 epidemic trajectories under different control scenarios. It consists of the following:&lt;/p>
+&lt;ul>
+&lt;li>An age-structured SEIR model incorporating explicit passage through healthcare settings and explicit progression through disease severity stages.&lt;/li>
+&lt;li>The ability to calibrate the model to different epidemic start-dates based on available death data.&lt;/li>
+&lt;li>Simulate the impacts of different control interventions (including general social distancing, specific shielding of elderly populations, and more stringent suppression strategies).&lt;/li>
+&lt;/ul>
+&lt;p>If you are new to squire, the best place to start is below, where we detail how to install the package, how to set up the model, and how to run it with and without control interventions.&lt;/p>
+&lt;/div>
+&lt;div id="model-structure" class="section level2">
+&lt;h2>Model Structure&lt;/h2>
+&lt;div id="overall-structure" class="section level3">
+&lt;h3>Overall Structure&lt;/h3>
+&lt;p>&lt;img src="https://raw.githubusercontent.com/mrc-ide/squire/master/images/Explicit_Healthcare_Model_Structure.JPG" align="center" style = "border: none; float: center;" width = "600px">&lt;/p>
+&lt;p>squire uses an age-structured SEIR model, with the infectious class divided into different stages reflecting progression through different disease severity pathways. These compartments are:&lt;br />
+* S = Susceptibles&lt;br />
+* E = Exposed (Latent Infection)&lt;br />
+* I&lt;sub>Mild&lt;/sub> = Mild Infections (Not Requiring Hospitalisation)&lt;br />
+* I&lt;sub>Case&lt;/sub> = Infections Requiring Hospitalisation&lt;br />
+* I&lt;sub>Hospital&lt;/sub> = Hospitalised (Requires Hospital Bed)&lt;br />
+* I&lt;sub>ICU&lt;/sub> = ICU (Requires ICU Bed)&lt;br />
+* I&lt;sub>Rec&lt;/sub> = Recovering from ICU Stay (Requires Hospital Bed)&lt;br />
+* R = Recovered&lt;br />
+* D = Dead&lt;/p>
+&lt;/div>
+&lt;div id="decision-trees-for-healthcare-capacity" class="section level3">
+&lt;h3>Decision Trees for Healthcare Capacity&lt;/h3>
+&lt;p>&lt;img src="https://raw.githubusercontent.com/mrc-ide/squire/master/images/Explicit_Healthcare_Oxygen_Decision_Tree.JPG" align="center" style = "border: none; float: center;" width = "400px">&lt;/p>
+&lt;p>Given initial inputs of hospital/ICU bed capacity and the average time cases spend in hospital, the model dynamically tracks available hospital and ICU beds over time.&lt;/p>
+&lt;p>Individuals newly requiring hospitalisation (either a hospital or ICU bed) are then assigned to either receive care (if the relevant bed is available) or not (if maximum capacity would be exceeded otherwise). Whether or not an individual receives the required care modifies their probability of dying.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;div id="installation" class="section level2">
+&lt;h2>Installation&lt;/h2>
+&lt;p>&lt;i>squire&lt;/i> utilises the package &lt;a href="https://github.com/mrc-ide/odin">odin&lt;/a> to generate the model. &lt;a href="https://github.com/mrc-ide/odin">odin&lt;/a> implements a high-level language for implementing mathematical models and can be installed by running the following command:&lt;/p>
+&lt;pre class="r">&lt;code>install.packages(&amp;quot;odin&amp;quot;)&lt;/code>&lt;/pre>
+&lt;p>The model generated using odin is written in C and so you will require a compiler to install dependencies for the package and to build any models with odin. Windows users should install &lt;a href="https://cran.r-project.org/bin/windows/Rtools/">Rtools&lt;/a>. See the relevant section in &lt;a href="https://cran.r-project.org/doc/manuals/r-release/R-admin.html#The-Windows-toolset">R-admin&lt;/a> for advice. Be sure to select the “edit PATH” checkbox during installation or the tools will not be found.&lt;/p>
+&lt;p>The function &lt;code>odin::can_compile()&lt;/code> will check if it is able to compile things, but by the time you install the package that will probably have been satisfied.&lt;/p>
+&lt;p>After installation of odin, ensure you have the devtools package installed by running the following:&lt;/p>
+&lt;pre class="r">&lt;code>install.packages(&amp;quot;devtools&amp;quot;)&lt;/code>&lt;/pre>
+&lt;p>Then install the &lt;i>squire&lt;/i> package directly from GitHub by running:&lt;/p>
+&lt;pre class="r">&lt;code>devtools::install_github(&amp;quot;mrc-ide/squire&amp;quot;)&lt;/code>&lt;/pre>
+&lt;p>If you have any problems installing then please raise an issue on the &lt;i>squire&lt;/i> &lt;a href="https://github.com/mrc-ide/squire/issues">&lt;code>GitHub&lt;/code>&lt;/a>.&lt;/p>
+&lt;p>If everything has installed correctly, we then need to load the package:&lt;/p>
+&lt;pre class="r">&lt;code>library(squire)&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;div id="getting-started" class="section level2">
+&lt;h2>Getting Started&lt;/h2>
+&lt;div id="running-the-model-unmitigated" class="section level3">
+&lt;h3>Running the Model (Unmitigated)&lt;/h3>
+&lt;/div>
+&lt;div id="running-the-model-using-baseline-parameters-and-no-control-interventions" class="section level3">
+&lt;h3>1. Running the model using baseline parameters and no control interventions&lt;/h3>
+&lt;p>The full model is referred to as the &lt;strong>explicit_SEEIR&lt;/strong> model, with hospital
+pathways explicitly exploring whether individuals will require a general
+hospital bed providing oxygen or an ICU bed that provides ventilation.&lt;/p>
+&lt;p>To run the model we need to provide at least one of the following arguments:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>country&lt;/code>&lt;/li>
+&lt;li>&lt;code>population&lt;/code> and &lt;code>contact_matrix_set&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>If the &lt;code>country&lt;/code> is provided, the &lt;code>population&lt;/code> and &lt;code>contact_matrix_set&lt;/code>
+will be generated (if not also specified) using the demographics and matrices
+specified in the &lt;a href="https://www.imperial.ac.uk/mrc-global-infectious-disease-analysis/covid-19/report-12-global-impact-covid-19/">global report&lt;/a>.&lt;/p>
+&lt;p>To run the model by providing the &lt;code>country&lt;/code> we use &lt;code>run_explicit_SEEIR_model()&lt;/code>:&lt;/p>
+&lt;pre class="r">&lt;code>r &amp;lt;- run_explicit_SEEIR_model(country = &amp;quot;Afghanistan&amp;quot;, replicates = 5)&lt;/code>&lt;/pre>
+&lt;p>The returned object is a &lt;code>squire_simulation&lt;/code> object, which is a list of two
+ojects:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>output&lt;/code> - model output&lt;/li>
+&lt;li>&lt;code>parameters&lt;/code> - model parameters&lt;/li>
+&lt;/ul>
+&lt;p>&lt;code>squire_simulation&lt;/code> objects can be plotted as follows:&lt;/p>
+&lt;pre class="r">&lt;code>plot(r)
+#&amp;gt; Warning in plot.squire_simulation(r): Summary statistic estimated from &amp;lt;10
+#&amp;gt; replicates
+#&amp;gt; Warning in plot.squire_simulation(r): Confidence bounds estimated from &amp;lt;10
+#&amp;gt; replicates
+#&amp;gt; Warning: It is deprecated to specify `guide = FALSE` to remove a guide. Please
+#&amp;gt; use `guide = &amp;quot;none&amp;quot;` instead.&lt;/code>&lt;/pre>
+&lt;p>&lt;img src="man/figures/README-base%20plot-1.png" width="100%" />&lt;/p>
+&lt;p>This plot will plot each of the compartments of the model output. We can also plot specific compartments using the &lt;code>var_select&lt;/code> argument that can be passed to &lt;code>plot()&lt;/code>. Arguments passed to &lt;code>var_select&lt;/code> must be one of the variables in the plot above.&lt;/p>
+&lt;pre class="r">&lt;code>plot(r, var_select = c(&amp;quot;E&amp;quot;, &amp;quot;IMild&amp;quot;))
+#&amp;gt; Warning in plot.squire_simulation(r, var_select = c(&amp;quot;E&amp;quot;, &amp;quot;IMild&amp;quot;)): Summary
+#&amp;gt; statistic estimated from &amp;lt;10 replicates
+#&amp;gt; Warning in plot.squire_simulation(r, var_select = c(&amp;quot;E&amp;quot;, &amp;quot;IMild&amp;quot;)): Confidence
+#&amp;gt; bounds estimated from &amp;lt;10 replicates
+#&amp;gt; Warning: It is deprecated to specify `guide = FALSE` to remove a guide. Please
+#&amp;gt; use `guide = &amp;quot;none&amp;quot;` instead.&lt;/code>&lt;/pre>
+&lt;p>&lt;img src="man/figures/README-subset%20variables%20plot-1.png" width="100%" />&lt;/p>
+&lt;p>Or, you can specify one of &lt;code>deaths&lt;/code>, &lt;code>infections&lt;/code>, &lt;code>hospital_occupancy&lt;/code>, &lt;code>ICU_occupancy&lt;/code>, &lt;code>hospital_demand&lt;/code> or &lt;code>ICU_demand&lt;/code>, and plot these summary metrics that represent the combination of a number of different compartment e.g:&lt;/p>
+&lt;pre class="r">&lt;code>plot(r, var_select = &amp;quot;deaths&amp;quot;)
+#&amp;gt; Warning in plot.squire_simulation(r, var_select = &amp;quot;deaths&amp;quot;): Summary statistic
+#&amp;gt; estimated from &amp;lt;10 replicates
+#&amp;gt; Warning in plot.squire_simulation(r, var_select = &amp;quot;deaths&amp;quot;): Confidence bounds
+#&amp;gt; estimated from &amp;lt;10 replicates
+#&amp;gt; Warning: It is deprecated to specify `guide = FALSE` to remove a guide. Please
+#&amp;gt; use `guide = &amp;quot;none&amp;quot;` instead.&lt;/code>&lt;/pre>
+&lt;p>&lt;img src="man/figures/README-subset%20variables%20plot2-1.png" width="100%" />&lt;/p>
+&lt;p>All of the plotting above makes uses of the &lt;code>squire&lt;/code> function &lt;code>format_output&lt;/code> which provides you with a means of manipulating and managing the output from a &lt;code>run_explicit_SEEIR_model&lt;/code> call. Using it you can specify the model outputs (e.g. compartments) you want, as well as whether you want that output aggregated over age or not. Here we extract the latent compartment (E). The data columns correspond to the compartment name (&lt;code>compartment&lt;/code>), timestep (&lt;code>t&lt;/code>), model run number (&lt;code>replicate&lt;/code>) and the model output (&lt;code>y&lt;/code>).&lt;/p>
+&lt;pre class="r">&lt;code>
+output &amp;lt;- format_output(r, var_select = &amp;quot;E&amp;quot;)
+head(output)
+#&amp;gt; # A tibble: 6 × 4
+#&amp;gt; replicate compartment t y
+#&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt;
+#&amp;gt; 1 1 E 0.1 20
+#&amp;gt; 2 1 E 0.2 20
+#&amp;gt; 3 1 E 0.3 20
+#&amp;gt; 4 1 E 0.4 20
+#&amp;gt; 5 1 E 0.5 20
+#&amp;gt; 6 1 E 0.6 20&lt;/code>&lt;/pre>
+&lt;p>If we wanted age-disaggregated data, we could set &lt;code>reduce_age&lt;/code> to &lt;code>FALSE&lt;/code> which will generate the same dataframe as before, but with an additional column indicating the age-group.&lt;/p>
+&lt;pre class="r">&lt;code>
+output &amp;lt;- format_output(r, var_select = &amp;quot;E&amp;quot;, reduce_age = FALSE)
+head(output)
+#&amp;gt; # A tibble: 6 × 5
+#&amp;gt; replicate age_group compartment t y
+#&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;int&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt;
+#&amp;gt; 1 1 1 E 0.1 0
+#&amp;gt; 2 1 1 E 0.2 0
+#&amp;gt; 3 1 1 E 0.3 0
+#&amp;gt; 4 1 1 E 0.4 0
+#&amp;gt; 5 1 1 E 0.5 0
+#&amp;gt; 6 1 1 E 0.6 0&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;div id="changing-parameters-in-the-model." class="section level3">
+&lt;h3>2. Changing parameters in the model.&lt;/h3>
+&lt;p>The model has a number of parameters for setting the R0, demography, contact
+matrices, the durations of each compartment and the health care outcomes and
+healthcare availability. In addition, the initial state of the population can
+be changed as well as simulation parameters, such as the number of replicates,
+length of simulation and the timestep. For a full list of model inputs, please
+see the function &lt;a href="https://mrc-ide.github.io/squire/reference/run_explicit_SEEIR_model.html">documentation&lt;/a>&lt;/p>
+&lt;p>For example, changing the initial R0 (default = 3), number of replicates (
+default = 10), simulation length (default = 365 days) and time step (default =
+0.5 days), as well as setting the population and contact matrix manually:&lt;/p>
+&lt;pre class="r">&lt;code>
+# Get the population
+pop &amp;lt;- get_population(&amp;quot;United Kingdom&amp;quot;)
+population &amp;lt;- pop$n
+# Get the mixing matrix
+contact_matrix &amp;lt;- get_mixing_matrix(&amp;quot;United Kingdom&amp;quot;)
+# run the model
+r &amp;lt;- run_explicit_SEEIR_model(population = population,
+contact_matrix_set = contact_matrix,
+R0 = 2.5,
+time_period = 200,
+dt = 0.1,
+replicates = 5)
+plot(r)
+#&amp;gt; Warning in plot.squire_simulation(r): Summary statistic estimated from &amp;lt;10
+#&amp;gt; replicates
+#&amp;gt; Warning in plot.squire_simulation(r): Confidence bounds estimated from &amp;lt;10
+#&amp;gt; replicates
+#&amp;gt; Warning: It is deprecated to specify `guide = FALSE` to remove a guide. Please
+#&amp;gt; use `guide = &amp;quot;none&amp;quot;` instead.&lt;/code>&lt;/pre>
+&lt;p>&lt;img src="man/figures/README-set%20params-1.png" width="100%" />&lt;/p>
+&lt;p>We can also change the R0 and contact matrix at set time points, to reflect
+changing behaviour resulting from interventions. For example to set an 80%
+reduction in the contact matrix after 100 days :&lt;/p>
+&lt;pre class="r">&lt;code>
+# run the model
+r &amp;lt;- run_explicit_SEEIR_model(population = population,
+tt_contact_matrix = c(0, 100),
+contact_matrix_set = list(contact_matrix,
+contact_matrix*0.2),
+R0 = 2.5,
+time_period = 200,
+dt = 0.1,
+replicates = 5)
+plot(r, var_select = &amp;quot;infections&amp;quot;)
+#&amp;gt; Warning in plot.squire_simulation(r, var_select = &amp;quot;infections&amp;quot;): Summary
+#&amp;gt; statistic estimated from &amp;lt;10 replicates
+#&amp;gt; Warning in plot.squire_simulation(r, var_select = &amp;quot;infections&amp;quot;): Confidence
+#&amp;gt; bounds estimated from &amp;lt;10 replicates
+#&amp;gt; Warning: It is deprecated to specify `guide = FALSE` to remove a guide. Please
+#&amp;gt; use `guide = &amp;quot;none&amp;quot;` instead.&lt;/code>&lt;/pre>
+&lt;p>&lt;img src="man/figures/README-set%20contact%20matrix%20decrease-1.png" width="100%" />&lt;/p>
+&lt;p>where &lt;code>n_E2_I&lt;/code> is the daily number of new infections.&lt;/p>
+&lt;p>To show an 80% reduction after 80 days but only maintained for 40 days :&lt;/p>
+&lt;pre class="r">&lt;code>
+# run the model
+r &amp;lt;- run_explicit_SEEIR_model(population = population,
+tt_contact_matrix = c(0, 80, 120),
+contact_matrix_set = list(contact_matrix,
+contact_matrix*0.2,
+contact_matrix),
+R0 = 2.5,
+time_period = 220,
+dt = 0.1,
+replicates = 5)
+plot(r, var_select = &amp;quot;infections&amp;quot;)
+#&amp;gt; Warning in plot.squire_simulation(r, var_select = &amp;quot;infections&amp;quot;): Summary
+#&amp;gt; statistic estimated from &amp;lt;10 replicates
+#&amp;gt; Warning in plot.squire_simulation(r, var_select = &amp;quot;infections&amp;quot;): Confidence
+#&amp;gt; bounds estimated from &amp;lt;10 replicates
+#&amp;gt; Warning: It is deprecated to specify `guide = FALSE` to remove a guide. Please
+#&amp;gt; use `guide = &amp;quot;none&amp;quot;` instead.&lt;/code>&lt;/pre>
+&lt;p>&lt;img src="man/figures/README-set%20contact%20matrix%20decrease%20and%20relax-1.png" width="100%" />&lt;/p>
+&lt;p>Alternatively, we could set a changing R0, which falls below 1 after 80 days:&lt;/p>
+&lt;pre class="r">&lt;code>
+# run the model
+r &amp;lt;- run_explicit_SEEIR_model(population = population,
+contact_matrix_set = contact_matrix,
+tt_R0 = c(0, 80),
+R0 = c(2.5, 0.9),
+time_period = 200,
+dt = 0.1,
+replicates = 5)
+plot(r, var_select = &amp;quot;infections&amp;quot;)
+#&amp;gt; Warning in plot.squire_simulation(r, var_select = &amp;quot;infections&amp;quot;): Summary
+#&amp;gt; statistic estimated from &amp;lt;10 replicates
+#&amp;gt; Warning in plot.squire_simulation(r, var_select = &amp;quot;infections&amp;quot;): Confidence
+#&amp;gt; bounds estimated from &amp;lt;10 replicates
+#&amp;gt; Warning: It is deprecated to specify `guide = FALSE` to remove a guide. Please
+#&amp;gt; use `guide = &amp;quot;none&amp;quot;` instead.&lt;/code>&lt;/pre>
+&lt;p>&lt;img src="man/figures/README-set%20R0%20decrease-1.png" width="100%" />&lt;/p>
+&lt;p>The model in squire also allows you to alter healthcare capacity. Default values for the arguments &lt;code>hosp_bed_capacity&lt;/code> and &lt;code>ICU_capacity&lt;/code> are taken from the World Bank and a systematic review of the literature. However, you can also specify your own:&lt;/p>
+&lt;pre class="r">&lt;code>
+library(patchwork)
+r &amp;lt;- run_explicit_SEEIR_model(population = population,
+contact_matrix_set = contact_matrix,
+R0 = 2.5,
+time_period = 200,
+dt = 0.1,
+replicates = 15,
+hosp_bed_capacity = 1000,
+ICU_bed_capacity = 100)
+c &amp;lt;- plot(r, var_select = &amp;quot;hospital_occupancy&amp;quot;)
+d &amp;lt;- plot(r, var_select = &amp;quot;ICU_occupancy&amp;quot;)
+c / d
+#&amp;gt; Warning: It is deprecated to specify `guide = FALSE` to remove a guide. Please use `guide = &amp;quot;none&amp;quot;` instead.
+#&amp;gt; It is deprecated to specify `guide = FALSE` to remove a guide. Please use `guide = &amp;quot;none&amp;quot;` instead.&lt;/code>&lt;/pre>
+&lt;p>&lt;img src="man/figures/README-change%20healthcare%20capacity-1.png" width="100%" />&lt;/p>
+&lt;/div>
+&lt;div id="extracting-and-plotting-relevant-outputs" class="section level3">
+&lt;h3>3. Extracting and Plotting Relevant Outputs&lt;/h3>
+&lt;p>Whilst the above provides quick and easy ways to plot relevant outputs, we recognise users might want to play around with the data themselves. This can be done with the &lt;code>format_output&lt;/code> function.&lt;/p>
+&lt;pre class="r">&lt;code>library(ggplot2)
+library(patchwork)
+library(dplyr)
+#&amp;gt;
+#&amp;gt; Attaching package: &amp;#39;dplyr&amp;#39;
+#&amp;gt; The following objects are masked from &amp;#39;package:stats&amp;#39;:
+#&amp;gt;
+#&amp;gt; filter, lag
+#&amp;gt; The following objects are masked from &amp;#39;package:base&amp;#39;:
+#&amp;gt;
+#&amp;gt; intersect, setdiff, setequal, union
+x &amp;lt;- run_explicit_SEEIR_model(country = &amp;quot;Afghanistan&amp;quot;, hosp_bed_capacity = 500, ICU_bed_capacity = 200)
+deaths &amp;lt;- format_output(x = x, var_select = &amp;quot;deaths&amp;quot;) %&amp;gt;%
+mutate(replicate = factor(replicate))
+a &amp;lt;- ggplot(deaths, aes(x = t, y = y, col = replicate)) +
+geom_line() + ylab(&amp;quot;Daily Deaths&amp;quot;)
+infections &amp;lt;- format_output(x = x, var_select = &amp;quot;infections&amp;quot;) %&amp;gt;%
+mutate(replicate = factor(replicate))
+b &amp;lt;- ggplot(infections, aes(x = t, y = y, col = replicate)) +
+geom_line() + ylab(&amp;quot;Daily Infections&amp;quot;)
+hosp_bed &amp;lt;- format_output(x = x, var_select = &amp;quot;hospital_occupancy&amp;quot;) %&amp;gt;%
+mutate(replicate = factor(replicate))
+c &amp;lt;- ggplot(hosp_bed, aes(x = t, y = y, col = replicate)) +
+geom_line() + ylab(&amp;quot;Hospital Bed Occupancy&amp;quot;)
+ICU_bed &amp;lt;- format_output(x = x, var_select = &amp;quot;ICU_occupancy&amp;quot;) %&amp;gt;%
+mutate(replicate = factor(replicate))
+d &amp;lt;- ggplot(ICU_bed, aes(x = t, y = y, col = replicate)) +
+geom_line() + ylab(&amp;quot;ICU Bed Occupancy&amp;quot;)
+z &amp;lt;- a + b + c + d +
+plot_layout(guides = &amp;#39;collect&amp;#39;)
+z&lt;/code>&lt;/pre>
+&lt;p>&lt;img src="man/figures/README-untransformed-1.png" width="100%" />&lt;/p>
+&lt;p>Hospital bed occupancy fluctuates very slightly above the user-specified number of hospital beds available (+1 in the above example). This is due to individuals being discharged from ICU beds into general hospital beds when general hospital bed occupancy is already at maximum capacity.&lt;/p>
+&lt;p>We assume that these individuals newly discharged from the ICU would in reality be prioritised to receive general hospital beds and so give them a general hospital bed. Whilst this is now shown in the above panel of hospital bed occupancy, this means that less-sick individuals in general hospital beds would be discharged slightly early to make space. We assume that for these small number of the healthiest individuals in hospital, there is no excess mortality associated with this early discharge.&lt;/p>
+&lt;p>Future work will explore a range of bed-prioritisation structures to consider how results might be shaped by who gets a bed and when.&lt;/p>
+&lt;/div>
+&lt;div id="calibrating-the-model-to-observed-deaths-data" class="section level3">
+&lt;h3>4. Calibrating the Model to Observed Deaths Data&lt;/h3>
+&lt;p>The model can be simply calibrated to time series of deaths reported in settings. This can be done using the &lt;code>calibrate&lt;/code> function. For example, let’s use the time series of deaths in Algeria up to the 22nd April 2020:&lt;/p>
+&lt;pre class="r">&lt;code>df &amp;lt;- read.csv(squire:::squire_file(&amp;quot;extdata/example_DZA.csv&amp;quot;), stringsAsFactors = FALSE)
+head(df)
+#&amp;gt; X date deaths cases
+#&amp;gt; 1 1 2020-02-26T00:00:00Z 0 1
+#&amp;gt; 2 2 2020-03-01T00:00:00Z 0 2
+#&amp;gt; 3 3 2020-03-04T00:00:00Z 0 2
+#&amp;gt; 4 4 2020-03-05T00:00:00Z 0 7
+#&amp;gt; 5 5 2020-03-06T00:00:00Z 0 5
+#&amp;gt; 6 6 2020-03-09T00:00:00Z 0 3&lt;/code>&lt;/pre>
+&lt;p>We can calibrate the model to this data. This calibration will infer the most likely start date of the epidemic and the R0 at the start of the epidemic. Calibration occurs by scanning across a range of possible R0 values and start dates. Fitting works using a particle filter, which can be parallelised using &lt;code>future::plan(future::multiprocess())&lt;/code> before running &lt;code>calibrate&lt;/code>.&lt;/p>
+&lt;pre class="r">&lt;code># set up for parallelisation
+future::plan(future::multiprocess())
+# Fit model
+out &amp;lt;- calibrate(
+data = df,
+R0_min = 2,
+R0_max = 4,
+R0_step = 0.5,
+first_start_date = &amp;quot;2020-02-10&amp;quot;,
+last_start_date = &amp;quot;2020-02-22&amp;quot;,
+day_step = 4,
+replicates = 10,
+n_particles = 20,
+country = &amp;quot;Algeria&amp;quot;
+)&lt;/code>&lt;/pre>
+&lt;p>&lt;code>calibrate&lt;/code> returns the same output as &lt;code>run_explicit_SEEIR_model&lt;/code>, with the first
+three elements in &lt;code>out&lt;/code> being the simulation outputs, the model and model parameters. Note that simulation replicates are aligned to the maximum date in the data provided, and as a result we can use the same plotting functions as before:&lt;/p>
+&lt;pre class="r">&lt;code>plot(out, &amp;quot;deaths&amp;quot;, date_0 = max(df$date), x_var = &amp;quot;date&amp;quot;)
+#&amp;gt; Warning: It is deprecated to specify `guide = FALSE` to remove a guide. Please
+#&amp;gt; use `guide = &amp;quot;none&amp;quot;` instead.&lt;/code>&lt;/pre>
+&lt;p>&lt;img src="man/figures/README-plot%20particle%20deaths-1.png" width="100%" />&lt;/p>
+&lt;p>With default parameters, &lt;code>calibrate&lt;/code> will simulate up to the maximum date in the data
+provided. The fit to this data can be shown using the plotting function and specifying &lt;code>particle_fit&lt;/code>
+to be &lt;code>TRUE&lt;/code>&lt;/p>
+&lt;pre class="r">&lt;code>plot(out, particle_fit = TRUE)&lt;/code>&lt;/pre>
+&lt;p>&lt;img src="man/figures/README-particle%20fit%20no%20ints-1.png" width="100%" />&lt;/p>
+&lt;p>We can see that this is not the best fit, capturing only the beginning of the data points. We can also diagnose
+the fitting further by looking at the &lt;code>scan_results&lt;/code> of the grid search.&lt;/p>
+&lt;pre class="r">&lt;code>plot(out$scan_results)&lt;/code>&lt;/pre>
+&lt;p>&lt;img src="man/figures/README-show%20grid%20fits-1.png" width="100%" />&lt;/p>
+&lt;p>This grid shows the negative log likeihood for each parameter pair. We can also plot the
+related probability for each pair as follows:&lt;/p>
+&lt;pre class="r">&lt;code>plot(out$scan_results, what = &amp;quot;probability&amp;quot;)&lt;/code>&lt;/pre>
+&lt;p>&lt;img src="man/figures/README-show%20grid%20fits%20probs-1.png" width="100%" />&lt;/p>
+&lt;p>The reason for the poor fits to the data shown earlier is because Algeria has implemented
+interventions prior to today. These can also be incorporated into &lt;code>calibrate&lt;/code>.
+For example, we can grab the assumed changes to transmission based on government intervention
+for Algeria.&lt;/p>
+&lt;pre class="r">&lt;code>interventions &amp;lt;- read.csv(squire:::squire_file(&amp;quot;extdata/example_DZA_intervention.csv&amp;quot;))
+int_unique &amp;lt;- squire:::interventions_unique(interventions)
+int_unique
+#&amp;gt; $dates_change
+#&amp;gt; [1] &amp;quot;2020-03-12&amp;quot; &amp;quot;2020-03-18&amp;quot; &amp;quot;2020-03-22&amp;quot; &amp;quot;2020-03-23&amp;quot;
+#&amp;gt;
+#&amp;gt; $change
+#&amp;gt; [1] 0.900 0.850 0.550 0.225&lt;/code>&lt;/pre>
+&lt;p>We can then provide these to &lt;code>calibrate&lt;/code> as the dates (&lt;code>date_R0_change&lt;/code>) and relative reductions
+to R0 (&lt;code>R0_change&lt;/code>). We will also specify for model fits to be continued for 14 days into the future with
+&lt;code>forceast = 14&lt;/code>:&lt;/p>
+&lt;pre class="r">&lt;code>out &amp;lt;- calibrate(
+data = df,
+R0_min = 2,
+R0_max = 4,
+R0_step = 0.5,
+first_start_date = &amp;quot;2020-02-10&amp;quot;,
+last_start_date = &amp;quot;2020-02-22&amp;quot;,
+day_step = 4,
+replicates = 10,
+n_particles = 20,
+forecast = 14,
+R0_change = int_unique$change,
+date_R0_change = int_unique$dates_change,
+country = &amp;quot;Algeria&amp;quot;
+)&lt;/code>&lt;/pre>
+&lt;p>Let’s see if that is any better.&lt;/p>
+&lt;pre class="r">&lt;code>plot(out, particle_fit = TRUE)&lt;/code>&lt;/pre>
+&lt;p>&lt;img src="man/figures/README-particle%20fit%20ints-1.png" width="100%" />&lt;/p>
+&lt;p>That is a much better fit.&lt;/p>
+&lt;p>Any parameter that you could provide to &lt;code>run_explicit_SEEIR_model&lt;/code> can be passed to &lt;code>calibrate&lt;/code>. This
+includes time varying arguments such as &lt;code>contact_matrix_set&lt;/code>, &lt;code>ICU_bed_capacity&lt;/code> and &lt;code>hosp_bed_capacity&lt;/code>. To incorporate these into model fitting correctly, the date at which these change must be provided (similarly to how &lt;code>date_R0_change&lt;/code> was provided above) using &lt;code>date_ICU_bed_capacity_change&lt;/code>, &lt;code>date_ICU_bed_capacity_change&lt;/code> and &lt;code>date_hosp_bed_capacity_change&lt;/code> respectively. In addition, the user must provide a baseline value for these, i.e. the contact matrix and bed capacity at the beginning of the epidemic:&lt;/p>
+&lt;pre class="r">&lt;code>out &amp;lt;- calibrate(
+data = df,
+R0_min = 2,
+R0_max = 4,
+R0_step = 0.5,
+first_start_date = &amp;quot;2020-02-10&amp;quot;,
+last_start_date = &amp;quot;2020-02-22&amp;quot;,
+day_step = 4,
+replicates = 10,
+n_particles = 20,
+forecast = 14,
+R0_change = int_unique$change,
+date_R0_change = int_unique$dates_change,
+baseline_contact_matrix = get_mixing_matrix(&amp;quot;Algeria&amp;quot;),
+contact_matrix_set = list(get_mixing_matrix(&amp;quot;Algeria&amp;quot;)*0.9),
+date_contact_matrix_set_change = &amp;quot;2020-03-16&amp;quot;,
+baseline_hosp_bed_capacity = squire:::get_hosp_bed_capacity(&amp;quot;Algeria&amp;quot;),
+hosp_bed_capacity = squire:::get_hosp_bed_capacity(&amp;quot;Algeria&amp;quot;)*c(1.1,1.2),
+date_hosp_bed_capacity_change = c(&amp;quot;2020-04-02&amp;quot;, &amp;quot;2020-04-08&amp;quot;),
+baseline_ICU_bed_capacity = squire:::get_ICU_bed_capacity(&amp;quot;Algeria&amp;quot;),
+ICU_bed_capacity = squire:::get_ICU_bed_capacity(&amp;quot;Algeria&amp;quot;)*c(1.05),
+date_ICU_bed_capacity_change = c(&amp;quot;2020-04-10&amp;quot;),
+country = &amp;quot;Algeria&amp;quot;
+)&lt;/code>&lt;/pre>
+&lt;p>(N.B. Given the potentially long running time for the grid search, the model state is returned at the end of every day rather than every time step (provided by &lt;code>dt&lt;/code>). As a result model outputs such as &lt;code>n_E2_I&lt;/code> (number of infections in a time step) and &lt;code>delta_D&lt;/code> (number of deaths in a time step) reflect the outputs in the last time step rather than in all the time steps in the last day. The plotting functions and &lt;code>format_output&lt;/code> provided in &lt;code>squire&lt;/code> handle this correctly and work out the correct number for these in the last day.)&lt;/p>
+&lt;/div>
+&lt;div id="conducting-scenario-projections-to-fitted-data" class="section level3">
+&lt;h3>5. Conducting scenario projections to fitted data&lt;/h3>
+&lt;p>Once you have calibrated the model to death data, it is possible to then implement mitigation strategies forwards in time from the point of calibration. This is achieved using the &lt;code>projections&lt;/code> function. For example, let’s consider a country that as of 28th April 2020 is yet to experience an epidemic take off but may be about to. Guinea reported its first COVID-19 death on 16th April 2020 and has reported 7 deaths by the 28th April 2020 according to data from the &lt;a href="https://www.ecdc.europa.eu/en/publications-data/download-todays-data-geographic-distribution-covid-19-cases-worldwide">European CDC&lt;/a>.&lt;/p>
+&lt;p>First let’s calibrate to this data with no interventions in place (there are likely some interventions in place but nothing major, such as a lockdown, has been implemented by 2020-04-28) and simulate forward for 180 days:&lt;/p>
+&lt;pre class="r">&lt;code>df &amp;lt;- read.csv(squire:::squire_file(&amp;quot;extdata/example_GIN.csv&amp;quot;), stringsAsFactors = FALSE)
+out &amp;lt;- calibrate(
+data = df,
+R0_min = 2.5,
+R0_max = 4,
+R0_step = 0.5,
+first_start_date = &amp;quot;2020-03-10&amp;quot;,
+last_start_date = &amp;quot;2020-03-25&amp;quot;,
+day_step = 5,
+replicates = 10,
+n_particles = 20,
+forecast = 180,
+country = &amp;quot;Guinea&amp;quot;
+)&lt;/code>&lt;/pre>
+&lt;p>Firstly, let’s plot the fit up to the current day&lt;/p>
+&lt;pre class="r">&lt;code>plot(out, particle_fit = TRUE) +
+ggplot2::xlim(as.Date(c(&amp;quot;2020-04-10&amp;quot;,&amp;quot;2020-04-28&amp;quot;))) +
+ggplot2::ylim(c(0,10))&lt;/code>&lt;/pre>
+&lt;p>&lt;img src="man/figures/README-particle%20gin%20plots-1.png" width="100%" />&lt;/p>
+&lt;p>The fit is good and captures the stuttering chains at the beginning of the epidemic. However, if we plot the forecasted deaths we can see the epidemic is likely to take off:&lt;/p>
+&lt;pre class="r">&lt;code>plot(out, &amp;quot;deaths&amp;quot;)
+#&amp;gt; Warning: It is deprecated to specify `guide = FALSE` to remove a guide. Please
+#&amp;gt; use `guide = &amp;quot;none&amp;quot;` instead.&lt;/code>&lt;/pre>
+&lt;p>&lt;img src="man/figures/README-particle%20gin%20forecast-1.png" width="100%" />&lt;/p>
+&lt;p>We can now use the output of &lt;code>calibrate&lt;/code> to explore different scenario projections using &lt;code>projections&lt;/code>. For example, to contast this unmitigated epidemic against a mitigation scenario with a 50% reduction in R0 today and a further 30% in 2 weeks time:&lt;/p>
+&lt;pre class="r">&lt;code># create our projections
+p &amp;lt;- projections(r = out, R0_change = c(0.5, 0.2), tt_R0 = c(0, 14))&lt;/code>&lt;/pre>
+&lt;p>The output generated from &lt;code>projections&lt;/code> is the same class and structure as from &lt;code>calibrate&lt;/code> and can be plotted against the unmitigated scenario using &lt;code>projection_plotting&lt;/code>:&lt;/p>
+&lt;pre class="r">&lt;code>ggproj &amp;lt;- projection_plotting(r_list = list(out,p),
+scenarios = c(&amp;quot;Unmitigated&amp;quot;,&amp;quot;Mitigation&amp;quot;),
+var_select = c(&amp;quot;ICU_occupancy&amp;quot;, &amp;quot;ICU_demand&amp;quot;),
+add_parms_to_scenarios = TRUE,ci = FALSE,summarise = TRUE)
+# and lets add in the ICU capacity
+ggproj + ggplot2::geom_hline(yintercept = out$parameters$ICU_bed_capacity)
+#&amp;gt; Warning: It is deprecated to specify `guide = FALSE` to remove a guide. Please
+#&amp;gt; use `guide = &amp;quot;none&amp;quot;` instead.&lt;/code>&lt;/pre>
+&lt;p>&lt;img src="man/figures/README-projection%20plotting-1.png" width="100%" />&lt;/p>
+&lt;p>We can see above that the intervention introduced is nearly sufficient to prevent ICU demand (solid line red) from exceeding the supply, whereas in the unmitigated strategy this did occur.&lt;/p>
+&lt;p>We can also model changing interventions by changing the contact matrix over time as well as the availability of ICU and hospital beds. E.g. decreasing contacts by 75% in a week before relaxing it to 80% in 30 days time, while increasing hospital and ICU beds by 200% in 30 days time. (N.B. We can turn off the automatic scenario parameter labelling with &lt;code>add_parms_to_scenarios = FALSE&lt;/code>):&lt;/p>
+&lt;pre class="r">&lt;code># create our projections
+p &amp;lt;- projections(r = out,
+contact_matrix_set_change = c(1, 0.25, 0.8),
+tt_contact_matrix = c(0, 7, 30),
+hosp_bed_capacity_change = c(1, 3),
+tt_hosp_beds = c(0, 30),
+ICU_bed_capacity_change = c(1, 3),
+tt_ICU_beds = c(0,30))
+projection_plotting(r_list = list(out, p),
+scenarios = c(&amp;quot;Unmitigated&amp;quot;,&amp;quot;Mitigation&amp;quot;),
+var_select = c(&amp;quot;ICU_occupancy&amp;quot;, &amp;quot;ICU_demand&amp;quot;,&amp;quot;deaths&amp;quot;),
+add_parms_to_scenarios = FALSE,
+ci = FALSE,summarise = TRUE) +
+ggplot2::geom_hline(yintercept = out$parameters$ICU_bed_capacity)
+#&amp;gt; Warning: It is deprecated to specify `guide = FALSE` to remove a guide. Please
+#&amp;gt; use `guide = &amp;quot;none&amp;quot;` instead.&lt;/code>&lt;/pre>
+&lt;p>&lt;img src="man/figures/README-projection%20relative%20beds-1.png" width="100%" />&lt;/p>
+&lt;p>Above we can see that the increase in bed causes the mitigation strategy to plateau at a higher bed occupancy, however, not high enough to meet the demand. However, the impacts to the contact matrix and beds have caused both a shift and a decrease in the daily deaths, which in turn causes a noticable decrease in total deaths:&lt;/p>
+&lt;pre class="r">&lt;code>projection_plotting(r_list = list(out,p),
+scenarios = c(&amp;quot;Unmitigated&amp;quot;,&amp;quot;Mitigation&amp;quot;),
+var_select = c(&amp;quot;D&amp;quot;),
+add_parms_to_scenarios = FALSE,
+ci = FALSE,summarise = TRUE)
+#&amp;gt; Warning: It is deprecated to specify `guide = FALSE` to remove a guide. Please
+#&amp;gt; use `guide = &amp;quot;none&amp;quot;` instead.&lt;/code>&lt;/pre>
+&lt;p>&lt;img src="man/figures/README-total%20deaths%20projection-1.png" width="100%" />&lt;/p>
+&lt;p>Rather than using relative changes to the interventions, we can provide absolute measures. For example, to change the R0 to 2 today and add 500 ICU beds in 40 days time:&lt;/p>
+&lt;pre class="r">&lt;code># what is the current capacity
+icu &amp;lt;- tail(out$parameters$ICU_bed_capacity,1)
+# create our projections
+p &amp;lt;- projections(r = out,
+R0 = 2,
+tt_R0 = 0,
+ICU_bed_capacity = c(icu, icu + 500),
+tt_ICU_beds = c(0,40))
+projection_plotting(r_list = list(out,p),
+scenarios = c(&amp;quot;Unmitigated&amp;quot;,&amp;quot;Mitigation&amp;quot;),
+var_select = c(&amp;quot;ICU_occupancy&amp;quot;, &amp;quot;ICU_demand&amp;quot;,&amp;quot;deaths&amp;quot;),
+add_parms_to_scenarios = FALSE,
+ci = FALSE,summarise = TRUE)
+#&amp;gt; Warning: It is deprecated to specify `guide = FALSE` to remove a guide. Please
+#&amp;gt; use `guide = &amp;quot;none&amp;quot;` instead.&lt;/code>&lt;/pre>
+&lt;p>&lt;img src="man/figures/README-projection%20plotting%20absolute-1.png" width="100%" />&lt;/p>
+&lt;p>Lastly, in order to run simulations for longer than the number set in &lt;code>calibrate(forecast = x)&lt;/code>, we can use the argument &lt;code>time_period&lt;/code> to set the numbers of days that &lt;code>projections&lt;/code> should simulate for. For example, we could redo our calibration and have it only run up the current day:&lt;/p>
+&lt;pre class="r">&lt;code>df &amp;lt;- read.csv(squire:::squire_file(&amp;quot;extdata/example_GIN.csv&amp;quot;), stringsAsFactors = FALSE)
+out &amp;lt;- calibrate(
+data = df,
+R0_min = 2.5,
+R0_max = 4,
+R0_step = 0.5,
+first_start_date = &amp;quot;2020-03-10&amp;quot;,
+last_start_date = &amp;quot;2020-03-25&amp;quot;,
+day_step = 5,
+replicates = 10,
+n_particles = 20,
+forecast = 0,
+country = &amp;quot;Guinea&amp;quot;
+)
+plot(out, particle_fit = TRUE)&lt;/code>&lt;/pre>
+&lt;p>&lt;img src="man/figures/README-particle%20gin%20alt-1.png" width="100%" />&lt;/p>
+&lt;p>We can now use this to project 90 days forwards with the current level of interventions, as well as a projection of 90 days with a 50% reduction in R0:&lt;/p>
+&lt;pre class="r">&lt;code>p_no_change &amp;lt;- projections(out, time_period = 90)
+p_change &amp;lt;- projections(out, R0_change = 0.5, tt_R0 = 0, time_period = 90)
+projection_plotting(list(p_no_change, p_change),
+scenarios = c(&amp;quot;No Change&amp;quot;, &amp;quot;50% R0&amp;quot;),
+add_parms_to_scenarios = FALSE,
+var_select = &amp;quot;deaths&amp;quot;,
+date_0 = max(df$date),
+x_var = &amp;quot;date&amp;quot;)&lt;/code>&lt;/pre>
+&lt;p>&lt;img src="man/figures/README-particle%20gin%20alt%20proj-1.png" width="100%" />&lt;/p>
+&lt;/div>
+&lt;/div></description></item><item><title>magenta</title><link>https://nicholasbrazeau.com/project/magenta/</link><pubDate>Wed, 09 Oct 2019 08:00:20 -0700</pubDate><guid>https://nicholasbrazeau.com/project/magenta/</guid><description>&lt;p>&lt;code>magenta&lt;/code> is an individual-based simulation model of malaria epidemiology and parasite genetics, which was designed to extends the Imperial malaria model by tracking the infection history of individuals. With this addition, genetic characteristics of the parasite can be assessed for looking at both neutral genetic variation as well as loci under selection.&lt;/p>
+&lt;p>The first and main research paper based on this project was published in MBE&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>, which showed the extenet to which parasite genetic traits could be used to infer malaria transmission intensity.&lt;/p>
+&lt;div class="footnotes" role="doc-endnotes">
+&lt;hr>
+&lt;ol>
+&lt;li id="fn:1">
+&lt;p>Oliver J Watson, Lucy C Okell, Joel Hellewell, Hannah C Slater, H Juliette T Unwin, Irene Omedo, Philip Bejon, Robert W Snow, Abdisalan M Noor, Kirk Rockett, Christina Hubbart, Joaniter I Nankabirwa, Bryan Greenhouse, Hsiao-Han Chang, Azra C Ghani, Robert Verity, Evaluating the Performance of Malaria Genetics for Inferring Changes in Transmission Intensity Using Transmission Modeling, Molecular Biology and Evolution, Volume 38, Issue 1, January 2021, Pages 274–289, &lt;a href="https://doi.org/10.1093/molbev/msaa225">https://doi.org/10.1093/molbev/msaa225&lt;/a>&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div></description></item><item><title>Interacting with The Demographic and Health Surveys (DHS) Program data</title><link>https://nicholasbrazeau.com/2019/01/29/rdhs/</link><pubDate>Tue, 29 Jan 2019 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/2019/01/29/rdhs/</guid><description>
+&lt;p>This is a copy of &lt;a href="https://ropensci.org/blog/2019/01/29/rdhs/">my article for ROpenSci&lt;/a>
+detailing the &lt;code>rdhs&lt;/code> package:&lt;/p>
+&lt;p>There seem to be a lot of ways to write about your R package, and rather than have
+to decide on what to focus on I thought I’d write a little bit about everything.
+To begin with I thought it best to describe what problem &lt;code>rdhs&lt;/code> tries to solve,
+why it was developed and how I came to be involved in this project. I then give a
+brief overview of what the package can do, before continuing to
+describe how writing my first proper package and the rOpenSci
+review process was. Lastly I wanted to share a couple of things that I learnt along
+the way. These are not very clever or difficult things,
+but rather things that were difficult to Google, which now I think about it should probably
+be the best metric for a difficult problem.&lt;/p>
+&lt;div id="motivation" class="section level3">
+&lt;h3>Motivation&lt;/h3>
+&lt;div id="what-is-the-dhs-program" class="section level4">
+&lt;h4>What is the DHS Program&lt;/h4>
+&lt;p>The &lt;a href="https://www.dhsprogram.com">Demographic and Health Survey (DHS) Program&lt;/a>
+has collected and disseminated population survey data from
+over 90 countries for over 30 years. This amounts to over 400
+surveys that give representative data on health indicators, which in
+many countries provides the key data that mark progress towards targets such as
+the &lt;a href="https://sustainabledevelopment.un.org/sdgs">Sustainable Development Goals (SDGs)&lt;/a>. In addition,
+DHS survey data has been used to inform health policy such as detailing trends in child mortality&lt;a href="#fn1" class="footnote-ref" id="fnref1">&lt;sup>1&lt;/sup>&lt;/a>
+and characterising the distribution of malaria control interventions in Africa in order to map the
+burden of malaria&lt;a href="#fn2" class="footnote-ref" id="fnref2">&lt;sup>2&lt;/sup>&lt;/a>.&lt;/p>
+&lt;p>This is all to the say that the DHS provides really useful data. However, although
+standard health indicators are routinely published in the survey final reports
+that are published by the DHS program, much of the value of the
+DHS data is derived from the ability to download and analyse the raw
+datasets for subgroup analysis, pooled multi-country analysis, and extended
+research studies.&lt;/p>
+&lt;p>This where I got involved, in trying to create a tool that helped enable
+researchers to quickly gain access to the raw data sets.&lt;/p>
+&lt;/div>
+&lt;div id="how-i-got-involved" class="section level4">
+&lt;h4>How I got involved&lt;/h4>
+&lt;p>I am fortunate enough to be a PhD student in a really large department at
+Imperial College London, which means that I get the opportunity to be
+involved in many projects that are outside the scope of my actual PhD.
+The “downside” of that is sometimes you get given “code monkey” jobs as the
+bottom rung of the monkey ladder. And so, a few months into my PhD (Nov 2016),
+I was given the job of downloading data on malaria test results from
+the DHS program that was going to be used by some collaborators.
+At the time I was very happy to be involved, however, I was
+apprehensive to spend too long on the job as I didn’t know how much time to be
+spending on side projects vs my PhD (something I still don’t know with 6 months
+to go). This combined with only having a year or so’s experience writing R meant
+that the code I wrote to do the job was a bunch of scrappy scripts that required
+manually downloading the datasets before parsing them with these R scripts. Dirty
+but it got the job done.&lt;/p>
+&lt;p>Some time passed, and another collaborator wanted some different data collated
+from the DHS program. At this point, I had 6 more months familiarity with
+R and knew a bit more so I started writing it as an R package. However, it was
+still messy and it required manually downloading the datasets first, but I was
+happy with it and again it wasn’t a major project of mine. This would have been
+probably where the project ended if I hadn’t had a conversation (Sept 2017)
+in the tea room (prompted solely by the presence of free biscuits) with the
+other main author of &lt;code>rdhs&lt;/code>, &lt;a href="https://twitter.com/eatonjw">Jeff Eaton&lt;/a>.&lt;/p>
+&lt;p>We got chatting, and realised we both had a bunch of scripts for doing bits of
+the analysis pipeline. We also realised that we had both had numerous requests
+for data sets from the DHS program at which point we thought it would be best
+to do something properly. I had also at this point been keen to start using &lt;code>testhat&lt;/code>
+within my work as I had been told it would save me time in the future, and up till
+that point I hadn’t found a good case to get to grips with it (mainly writing code
+on my own, that was never very big and was only used by myself). And so we started
+writing &lt;code>rdhs&lt;/code>, which was accepted by &lt;code>rOpenSci&lt;/code> and &lt;code>CRAN&lt;/code> in December 2018.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;div id="package-overview" class="section level3">
+&lt;h3>Package overview&lt;/h3>
+&lt;blockquote>
+&lt;p>Disclaimer: The following section (the &lt;strong>API&lt;/strong> and &lt;strong>Dataset Downloads&lt;/strong>
+headings) is an overiew of the &lt;a href="https://docs.ropensci.org/rdhs/articles/introduction.html">Introduction Vignette&lt;/a>.
+If you want a longer introduction to the package then head there, otherwise carry on and
+eventually you will get to my ramblings about the package development process.&lt;/p>
+&lt;/blockquote>
+&lt;p>Most of the functionality of &lt;code>rdhs&lt;/code> can be roughly summarised in the 5 main steps
+that are involved from wanting to get data on &lt;em>x&lt;/em> to having
+a curated data set created from survey data from multiple surveys. These steps
+involve:&lt;/p>
+&lt;ol style="list-style-type: decimal">
+&lt;li>Accessing standard survey indicators through the &lt;a href="https://api.dhsprogram.com/">DHS API&lt;/a>.&lt;/li>
+&lt;li>Using the API to identifying the surveys and datasets relevant to your particular analysis, i.e.
+the ones that ask questions related to your topic of interest.&lt;/li>
+&lt;li>Downloading survey datasets from the &lt;a href="https://dhsprogram.com/data/available-datasets.cfm">DHS website&lt;/a>.&lt;/li>
+&lt;li>Loading the datasets and associated metadata into R.&lt;/li>
+&lt;li>Extracting variables and combining datasets for pooled multi-survey analyses.&lt;/li>
+&lt;/ol>
+&lt;p>We will quickly cover these 5 main steps, with the first 2 showing how &lt;code>rdhs&lt;/code> functions
+as an API client and the last 3 points showing how &lt;code>rdhs&lt;/code> can be used to download
+raw data sets from the DHS website. Before we have a look at these, let’s first load &lt;code>rdhs&lt;/code>:&lt;/p>
+&lt;pre class="r">&lt;code>library(rdhs)&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;div id="api" class="section level3">
+&lt;h3>API&lt;/h3>
+&lt;div id="access-standard-indicator-data-via-the-api" class="section level4">
+&lt;h4>1. Access standard indicator data via the API&lt;/h4>
+&lt;p>The DHS program has published an API that gives access to 12
+different data sets. Each API endpoint represents one of the 12 data sets
+(e.g. &lt;a href="https://api.dhsprogram.com/rest/dhs/tags" class="uri">https://api.dhsprogram.com/rest/dhs/tags&lt;/a>), and can be accessed using the &lt;code>dhs_&amp;lt;&amp;gt;()&lt;/code> functions. For
+more information about this see the &lt;a href="https://api.dhsprogram.com/#/index.html">DHS API website&lt;/a>.&lt;/p>
+&lt;p>One of those functions, &lt;code>dhs_data()&lt;/code>, interacts with the the published
+set of standard health indicator data calculated by the DHS. For example, to find out the
+trends in antimalarial use in Africa, and see if perhaps antimalarial prescription has
+decreased after rapid diagnostic tests were introduced (assumed 2010).&lt;/p>
+&lt;pre class="r">&lt;code># Make an api request
+resp &amp;lt;- dhs_data(indicatorIds = &amp;quot;ML_FEVT_C_AML&amp;quot;, surveyYearStart = 2010,breakdown = &amp;quot;subnational&amp;quot;)
+# filter it to 12 countries for space
+countries &amp;lt;- c(&amp;quot;Angola&amp;quot;,&amp;quot;Ghana&amp;quot;,&amp;quot;Kenya&amp;quot;,&amp;quot;Liberia&amp;quot;,
+&amp;quot;Madagascar&amp;quot;,&amp;quot;Mali&amp;quot;,&amp;quot;Malawi&amp;quot;,&amp;quot;Nigeria&amp;quot;,
+&amp;quot;Rwanda&amp;quot;,&amp;quot;Sierra Leone&amp;quot;,&amp;quot;Senegal&amp;quot;,&amp;quot;Tanzania&amp;quot;)
+# and plot the results
+library(ggplot2)
+ggplot(resp[resp$CountryName %in% countries,],
+aes(x=SurveyYear,y=Value,colour=CountryName)) +
+geom_point() +
+geom_smooth(method = &amp;quot;glm&amp;quot;) +
+theme(axis.text.x = element_text(angle = 90, vjust = .5)) +
+ylab(resp$Indicator[1]) +
+facet_wrap(~CountryName,ncol = 6) &lt;/code>&lt;/pre>
+&lt;p>&lt;img src="featured.jpg" />&lt;/p>
+&lt;/div>
+&lt;div id="identify-surveys-relevant-for-further-analysis" class="section level4">
+&lt;h4>2. Identify surveys relevant for further analysis&lt;/h4>
+&lt;p>You may, however, wish to do more nuanced analysis than the API allows.
+The following 4 sections detail a very basic example of how to quickly
+identify, download and extract datasets you are interested in.&lt;/p>
+&lt;p>Let’s say we want to get all DHS survey data from the Democratic Republic of
+Congo and Tanzania in the last 5 years (since 2013), which covers the use of
+rapid diagnostic tests for malaria (“RDT” below). To begin we’ll interact with the
+DHS API to identify our datasets.&lt;/p>
+&lt;pre class="r">&lt;code>## make a call with no arguments
+sc &amp;lt;- dhs_survey_characteristics()
+sc[grepl(&amp;quot;Malaria&amp;quot;, sc$SurveyCharacteristicName), ]&lt;/code>&lt;/pre>
+&lt;pre>&lt;code>## SurveyCharacteristicID SurveyCharacteristicName
+## 57 96 Malaria - DBS
+## 58 90 Malaria - Microscopy
+## 59 89 Malaria - RDT
+## 60 57 Malaria module
+## 61 8 Malaria/bednet questions&lt;/code>&lt;/pre>
+&lt;p>There are 87 different survey characteristics, with one specific survey
+characteristic for malaria rapid diagnostic tests (RDT). In this example we will use this to find the surveys
+that include this characteristic. (There are other ways to find the
+datasets with the API and other options to control how to filter the API, which are
+explored &lt;a href="https://docs.ropensci.org/rdhs/articles/introduction.html#identify-surveys-relevant-for-further-analysis">here&lt;/a>)&lt;/p>
+&lt;pre class="r">&lt;code># lets find all the surveys that fit our search criteria
+survs &amp;lt;- dhs_surveys(surveyCharacteristicIds = 89,
+countryIds = c(&amp;quot;CD&amp;quot;,&amp;quot;TZ&amp;quot;),
+surveyType = &amp;quot;DHS&amp;quot;,
+surveyYearStart = 2013)
+# and lastly use this to find the datasets we will want to download
+# and let&amp;#39;s download the flat files (.dat) datasets
+datasets &amp;lt;- dhs_datasets(surveyIds = survs$SurveyId,
+fileFormat = &amp;quot;flat&amp;quot;,
+fileType = &amp;quot;PR&amp;quot;)
+str(datasets)&lt;/code>&lt;/pre>
+&lt;pre>&lt;code>## &amp;#39;data.frame&amp;#39;: 2 obs. of 13 variables:
+## $ FileFormat : chr &amp;quot;Flat ASCII data (.dat)&amp;quot; &amp;quot;Flat ASCII data (.dat)&amp;quot;
+## $ FileSize : int 6595349 6622102
+## $ DatasetType : chr &amp;quot;Survey Datasets&amp;quot; &amp;quot;Survey Datasets&amp;quot;
+## $ SurveyNum : int 421 485
+## $ SurveyId : chr &amp;quot;CD2013DHS&amp;quot; &amp;quot;TZ2015DHS&amp;quot;
+## $ FileType : chr &amp;quot;Household Member Recode&amp;quot; &amp;quot;Household Member Recode&amp;quot;
+## $ FileDateLastModified: chr &amp;quot;September, 19 2016 09:58:23&amp;quot; &amp;quot;August, 07 2018 17:36:25&amp;quot;
+## $ SurveyYearLabel : chr &amp;quot;2013-14&amp;quot; &amp;quot;2015-16&amp;quot;
+## $ SurveyType : chr &amp;quot;DHS&amp;quot; &amp;quot;DHS&amp;quot;
+## $ SurveyYear : int 2013 2015
+## $ DHS_CountryCode : chr &amp;quot;CD&amp;quot; &amp;quot;TZ&amp;quot;
+## $ FileName : chr &amp;quot;CDPR61FL.ZIP&amp;quot; &amp;quot;TZPR7AFL.ZIP&amp;quot;
+## $ CountryName : chr &amp;quot;Congo Democratic Republic&amp;quot; &amp;quot;Tanzania&amp;quot;&lt;/code>&lt;/pre>
+&lt;p>We can now use this to download our datasets for further analysis.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;div id="dataset-downloads" class="section level3">
+&lt;h3>Dataset Downloads&lt;/h3>
+&lt;div id="download-survey-datasets" class="section level4">
+&lt;h4>3. Download survey datasets&lt;/h4>
+&lt;p>To be able to download survey datasets from the DHS website,
+we need to set up an account through the DHS website to
+enable you to request access to the datasets. Instructions on how to do this can
+be found &lt;a href="https://dhsprogram.com/data/Access-Instructions.cfm">here&lt;/a>.&lt;/p>
+&lt;p>Once we have created an account, we set up our credentials using the
+function &lt;code>set_rdhs_config()&lt;/code>. See the
+&lt;a href="https://docs.ropensci.org/rdhs/articles/introduction.html#download-survey-datasets">Introduction Vignette&lt;/a>
+for more clarity about the various options for setting up your config.&lt;/p>
+&lt;pre class="r">&lt;code>## set up your credentials
+set_rdhs_config(email = &amp;quot;rdhs.tester@gmail.com&amp;quot;,
+project = &amp;quot;Testing Malaria Investigations&amp;quot;,
+cache_path = &amp;quot;project_one&amp;quot;,
+config_path = &amp;quot;~/.rdhs.json&amp;quot;,
+data_frame = &amp;quot;data.table::as.data.table&amp;quot;,
+global = TRUE)&lt;/code>&lt;/pre>
+&lt;p>We can now download the data sets we identified earlier from the API, using &lt;code>get_datasets&lt;/code>:&lt;/p>
+&lt;pre class="r">&lt;code># download datasets
+downloads &amp;lt;- get_datasets(datasets$FileName)&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;div id="load-datasets-and-associated-metadata-into-r" class="section level4">
+&lt;h4>4. Load datasets and associated metadata into R&lt;/h4>
+&lt;p>We can now examine what it is we have actually downloaded, by reading in one of these datasets:&lt;/p>
+&lt;pre class="r">&lt;code># read in our dataset
+cdpr &amp;lt;- readRDS(downloads$CDPR61FL)&lt;/code>&lt;/pre>
+&lt;p>The dataset returned here contains all the survey questions within the dataset.&lt;br />
+The dataset is by default stored as a &lt;em>labelled&lt;/em> class from the &lt;a href="https://github.com/tidyverse/haven">haven package&lt;/a>.&lt;/p>
+&lt;p>If we want to get the data dictionary for this dataset, we can use the function
+&lt;code>get_variable_labels&lt;/code>:&lt;/p>
+&lt;pre class="r">&lt;code># let&amp;#39;s look at the variable_names
+head(get_variable_labels(cdpr))&lt;/code>&lt;/pre>
+&lt;pre>&lt;code>## variable description
+## 1 hhid Case Identification
+## 2 hvidx Line number
+## 3 hv000 Country code and phase
+## 4 hv001 Cluster number
+## 5 hv002 Household number
+## 6 hv003 Respondent&amp;#39;s line number (answering Household questionnaire)&lt;/code>&lt;/pre>
+&lt;p>The default behaviour for the function &lt;code>get_datasets&lt;/code> was
+to download the datasets, read them in, and save the resultant &lt;code>data.frame&lt;/code> as a
+&lt;code>.rds&lt;/code> object within the cache directory. It also creates the data dictionary and
+caches this for you, which allows us to
+quickly query for particular &lt;code>variables&lt;/code> or &lt;code>variable_labels&lt;/code>:&lt;/p>
+&lt;pre class="r">&lt;code># rapid diagnostic test search
+questions &amp;lt;- search_variable_labels(datasets$FileName, search_terms = &amp;quot;malaria rapid test&amp;quot;)&lt;/code>&lt;/pre>
+&lt;p>Or if we know what variables we want, we can identify which surveys include these:&lt;/p>
+&lt;pre class="r">&lt;code># and grab the questions from this now utilising the survey variables
+questions &amp;lt;- search_variables(datasets$FileName, variables = c(&amp;quot;hv024&amp;quot;,&amp;quot;hml35&amp;quot;))
+head(questions)&lt;/code>&lt;/pre>
+&lt;pre>&lt;code>## variable description dataset_filename
+## 1 hv024 Province CDPR61FL
+## 2 hml35 Result of malaria rapid test CDPR61FL
+## 3 hv024 Region TZPR7AFL
+## 4 hml35 Result of malaria rapid test TZPR7AFL
+## dataset_path
+## 1 /home/oj/GoogleDrive/AcademicWork/Imperial/git/rdhs/paper/project_one/datasets/CDPR61FL.rds
+## 2 /home/oj/GoogleDrive/AcademicWork/Imperial/git/rdhs/paper/project_one/datasets/CDPR61FL.rds
+## 3 /home/oj/GoogleDrive/AcademicWork/Imperial/git/rdhs/paper/project_one/datasets/TZPR7AFL.rds
+## 4 /home/oj/GoogleDrive/AcademicWork/Imperial/git/rdhs/paper/project_one/datasets/TZPR7AFL.rds
+## survey_id
+## 1 CD2013DHS
+## 2 CD2013DHS
+## 3 TZ2015DHS
+## 4 TZ2015DHS&lt;/code>&lt;/pre>
+&lt;p>More information about download options and querying the survey questions can be found
+&lt;a href="https://docs.ropensci.org/rdhs/articles/introduction.html#load-datasets-and-associated-metadata-into-r-">here&lt;/a>&lt;/p>
+&lt;/div>
+&lt;div id="extract-variables-and-combine-datasets" class="section level4">
+&lt;h4>5. Extract variables and combine datasets&lt;/h4>
+&lt;p>To extract our data we pass our questions object to the function &lt;code>extract_dhs&lt;/code>,
+which will create a list with each dataset and its extracted data as a &lt;code>data.frame&lt;/code>.&lt;/p>
+&lt;pre class="r">&lt;code># extract the data and add geographic information too
+extract &amp;lt;- extract_dhs(questions, add_geo = FALSE)&lt;/code>&lt;/pre>
+&lt;p>The resultant extract is a list, with a new element for each different dataset
+that you have extracted. We can now combine our two data frames for further analysis using the &lt;code>rdhs&lt;/code> package
+function &lt;code>rbind_labelled()&lt;/code>:&lt;/p>
+&lt;pre class="r">&lt;code># first let&amp;#39;s bind our first extraction, without the hv024
+extract_bound &amp;lt;- rbind_labelled(extract)&lt;/code>&lt;/pre>
+&lt;pre>&lt;code>## Warning in rbind_labelled(extract): Some variables have non-matching value labels: hv024.
+## Inheriting labels from first data frame with labels.&lt;/code>&lt;/pre>
+&lt;p>The thrown warning has shown us that &lt;em>hv024&lt;/em> did not have matching labels between
+the two lists, and the labels from the first list have been used.
+&lt;em>hv024&lt;/em> stores the regions for these 2 countries, and we probably want to keep all
+the labels, which we can do by using the &lt;code>labels&lt;/code> argument:&lt;/p>
+&lt;pre class="r">&lt;code># lets try concatenating the hv024
+better_bound &amp;lt;- rbind_labelled(extract, labels = list(&amp;quot;hv024&amp;quot;=&amp;quot;concatenate&amp;quot;))&lt;/code>&lt;/pre>
+&lt;p>We could also specify new labels for a variable. For example, imagine the two
+datasets encoded their rapid diagnostic test responses differently, with the first one as
+&lt;code>c("No","Yes")&lt;/code> and the other as &lt;code>c("Negative","Positive")&lt;/code>. We can choose to
+relabel these, e.g. as &lt;code>c("NegativeTest","PositiveTest")&lt;/code>:&lt;/p>
+&lt;pre class="r">&lt;code># lets try concatenating the hv024 and providing new labels
+better_bound &amp;lt;- rbind_labelled(
+extract,
+labels = list(&amp;quot;hv024&amp;quot;=&amp;quot;concatenate&amp;quot;,
+&amp;quot;hml35&amp;quot;=c(&amp;quot;NegativeTest&amp;quot;=0, &amp;quot;PositiveTest&amp;quot;=1))
+)
+# and our new label
+head(attr(better_bound$hml35,&amp;quot;labels&amp;quot;))&lt;/code>&lt;/pre>
+&lt;pre>&lt;code>## NegativeTest PositiveTest
+## 0 1&lt;/code>&lt;/pre>
+&lt;p>For more information about controlling how to extract data from your downloaded
+sections, see the &lt;a href="https://docs.ropensci.org/rdhs/articles/introduction.html#extract-variables-and-combining-datasets-for-pooled-multi-survey-analyses-">last section in the introduction vignette&lt;/a>.&lt;/p>
+&lt;hr />
+&lt;p>We now have managed to go from our initial request for data about the use of
+rapid diagnostic tests for malaria to a finalised data set that
+we can use going forwards for any downstream analysis (and hopefully it didn’t
+take that long to do it!). This data set includes survey responses from multiple surveys within one data frame, which in this case includes data from Tanzania and the Democratic Republic of Congo. However, it would be easy to extend our earlier API query to include more countries. For example if we had not limited our search to these 2 countries, the same code as above would have returned data from over 200,000 individuals across 21 countries. Similarly if we wanted to include more survey responses, we could have provided different search terms to &lt;code>search_variables&lt;/code> or &lt;code>search_variable_labels&lt;/code>. By widening our search terms, and including more datasets within the search we can easily create data sets that can be used to answer important global health questions such as:&lt;/p>
+&lt;ol style="list-style-type: decimal">
+&lt;li>Which malaria RDTs are performing worse in low malaria prevalence regoions?&lt;/li>
+&lt;li>What is the link between HIV prevalence and wealth?&lt;/li>
+&lt;li>How far apart should births occur to minmise childhood mortality?&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;div id="ramblings-after-my-first-completed-package" class="section level3">
+&lt;h3>Ramblings after my first completed package&lt;/h3>
+&lt;p>Clichéd but the process of actually writing a package, and all that entailed,
+was a real highlight. I had made R packages before, but I had never done everything that a
+good R package should have (tests, effective continuous integration, full documentation,
+a &lt;code>pkgdown&lt;/code> website, contribution and code of conduct guides, and so on). One particular
+highlight for me was actually having the opportunity to work
+on a code base with someone else in a collaborative way. I work in a large collaborative
+group, however, this has not translated as much to working on the same set of code
+with someone. As a result I’ve never had to properly learn how to use git outside of
+&lt;code>clone&lt;/code>, &lt;code>commit&lt;/code> and &lt;code>push&lt;/code>, nor had I made use of much of the useful aspects of GitHub. So learning
+how to correctly use branches in git and realising that helpful comments are actually
+helpful (eventually) was really great. With this in mind I wanted to thank &lt;a href="https://twitter.com/eatonjw">Jeff Eaton&lt;/a>
+again for taking on this project. He definitely helped drive it over the finish line,
+and it was nice to have a glimpse at what working as a developer would look like if
+I decide to leave pure academia.&lt;/p>
+&lt;p>There were also a few things that before I started writing &lt;code>rdhs&lt;/code>
+I knew I would have to figure out but I didn’t have a clue where to start, and for
+which repeated googling didn’t eventually help with. Fortunately, I work in the
+same department as &lt;a href="https://twitter.com/rgfitzjohn">Rich FitzJohn&lt;/a>,
+so it was great having someone to point me in the right direction. The following
+are three of the things that I genuinely had no idea how to do before, so I thought I’d
+share them here (and so I can remind myself in the future):&lt;/p>
+&lt;div id="logging-into-a-website-from-r" class="section level4">
+&lt;h4>1. Logging into a website from R&lt;/h4>
+&lt;p>The DHS website has a download manager that you can use to select surveys you want to
+download, and it will auto generate a list of URLs in a text file. When I saw this, I thought
+this would be great for creating a database of what data sets and the URLs a user’s login details
+can give them, which can then be cached so that &lt;code>rdhs&lt;/code> knows whether you can download a data set
+or not. The only problem is, that to download those data sets you need to be logged in, and you
+also need to be logged in to get to the download manager. For me, I didn’t know how to translate
+being “logged in” into R code, or even what that looked like. But turns out it wasn’t too bad
+after being shown by Rich where to start looking.&lt;/p>
+&lt;p>To know where to look I opened up Chrome and went to developer tools. From there I
+opened up the &lt;strong>Network Tab&lt;/strong>, which then records the information being sent to the
+URL. So to know what information is required to login I simply logged in as normal,
+and then inspected what appeared in the network tab’s &lt;strong>Headers Tab&lt;/strong>. This then
+showed me what the needed &lt;strong>Request URL&lt;/strong> was, and what information was being
+submitted in the &lt;strong>Form Data&lt;/strong> at the bottom of this tab.&lt;/p>
+&lt;p>&lt;img src="login_form_data.png" />&lt;/p>
+&lt;p>I could then use this information to &lt;em>log in&lt;/em> from with R using an &lt;code>httr::POST&lt;/code>
+request:&lt;/p>
+&lt;pre class="r">&lt;code># authentication page
+terms &amp;lt;- &amp;quot;https://dhsprogram.com/data/dataset_admin/login_main.cfm&amp;quot;
+# create a temporary file
+tf &amp;lt;- tempfile(fileext = &amp;quot;.txt&amp;quot;)
+# set the username and password
+values &amp;lt;- list(
+UserName = your_email,
+UserPass = your_password,
+Submitted = 1,
+UserType = 2
+)
+# log in.
+message(&amp;quot;Logging into DHS website...&amp;quot;)
+z &amp;lt;- httr::POST(terms, body = values) %&amp;gt;% handle_api_response(to_json = FALSE)&lt;/code>&lt;/pre>
+&lt;p>To me, this seemed really cool, and then meant I could do the same style of
+steps to get to the Download Manager webpage and then tick all the check boxes
+in the page to generate the URL with all the download links in.&lt;/p>
+&lt;/div>
+&lt;div id="caching-api-results-from-a-changing-api" class="section level4">
+&lt;h4>2. Caching API results from a changing API&lt;/h4>
+&lt;p>We wanted to be able to cache a user’s API request for them locally when designing
+&lt;code>rdhs&lt;/code>. We felt this was important as it would reduce the burden on the API itself,
+as well as enable researchers who were without internet (e.g. currently working in
+the field), the ability to still access previous API requests. However, designing
+something neat that would be easy to respond to changes in the API version would
+I thought be outside my skill set.&lt;/p>
+&lt;p>Again, enter Rich and this time with his package &lt;a href="https://cran.r-project.org/web/packages/storr/index.html">&lt;code>storr&lt;/code>&lt;/a>.
+This was a lifesaver, and created an easy infrastructure for storing API responses
+in a key-value store. I could then use the specific API URL as the key and the
+response as the value. Initially I thought I would have to keep saving the response
+with explicit names (e.g. the URL), but &lt;code>storr&lt;/code> handles all this for you, and also
+then helps get around having too long file names if your API request is very long for example.&lt;/p>
+&lt;p>To respond to changes in the API, my solution was perhaps not the neatest, but I
+simply kept a record of the date you last made an API request and compared it to
+the API’s &lt;a href="https://api.dhsprogram.com/#/api-dataupdates.cfm">data updates endpoint&lt;/a>.
+If I could see any recent changes, I then could clear all the API requests cached.
+This would made a lot simpler using the &lt;code>namespaces&lt;/code> options in &lt;code>storr&lt;/code>, which meant
+that I was able to keep all API cached data in one place, which could then be
+easily deleted on mass.&lt;/p>
+&lt;/div>
+&lt;div id="tests-travis-authentication" class="section level4">
+&lt;h4>3. Tests, Travis &amp;amp; Authentication&lt;/h4>
+&lt;p>The last thing caused me the most amount of headaches. How do I write tests that
+require authentication and can use &lt;code>travis&lt;/code> for continuous integration. Initially,
+I made a dummy account with the DHS website for this, but realised that sharing
+the credentials of an account with access to just dummy data sets would not enable
+me to test the weird edge cases that started popping up related to certain data
+sets. The first solution that I used for a few months was to set up environment
+variables within &lt;code>travis&lt;/code> itself, which could then be used to create a valid
+set of credentials.&lt;/p>
+&lt;p>&lt;img src="travis_env_vars.png" />&lt;/p>
+&lt;p>This worked, however, it meant that I would have to write a lot of the &lt;code>rdhs&lt;/code>
+functionality to use environment variables that were the user’s email and password,
+which felt wrong and quite clunky. All I wanted was to pass to Travis a valid
+set of login credentials that would then be used within the tests, much in the same
+way that a user would. To do this I had to learn a bit more about what the &lt;code>.travis.yml&lt;/code>
+document could actually be used for, because to begin with I had only been using it
+to specify the software language.&lt;/p>
+&lt;p>Again, Rich pointed me to using &lt;code>sodium&lt;/code> to create an encrypted version of a valid
+login credentials:&lt;/p>
+&lt;pre class="r">&lt;code># read in a key from a local file
+key &amp;lt;- sodium::hash(charToRaw(readLines(&amp;quot;scripts/key.txt&amp;quot;)))
+# create a tat with all the necessary login credentials
+zip(&amp;quot;rdhs.json.tar&amp;quot;,files=c(&amp;quot;rdhs.json&amp;quot;, &amp;quot;tests/testthat/rdhs.json&amp;quot;))
+# read this tar in as binary data
+dat &amp;lt;- readBin(&amp;quot;rdhs.json.tar&amp;quot;,raw(),file.size(&amp;quot;rdhs.json.tar&amp;quot;))
+# encrypt the data using sodium and our key before saving it
+enc &amp;lt;- sodium::data_encrypt(msg = dat,key = key)
+saveRDS(enc,&amp;quot;rdhs.json.tar.enc&amp;quot;)&lt;/code>&lt;/pre>
+&lt;p>This encrypted copy could be included in the GitHub repository, and I could
+set up the key as a Travis environment variable to decrypt it. This decryption
+step could then be written within my &lt;code>.travis.yml&lt;/code> file, and would mean that all
+my tests had access to my login credentials in a secure way.&lt;/p>
+&lt;hr />
+&lt;/div>
+&lt;/div>
+&lt;div id="options-to-contribute" class="section level3">
+&lt;h3>Options to Contribute&lt;/h3>
+&lt;p>There are a few things that would be great to add in the future.&lt;/p>
+&lt;ol style="list-style-type: decimal">
+&lt;li>&lt;p>Adding a suite of tools for doing spatial mapping. A lot of the
+time, people want to know what the prevalence of x is either at a fine spatial scale,
+or grouped at administrative/county/state levels. &lt;code>rdhs&lt;/code> helps provide the tools to
+get geolocated measures of x, and I think it would be a great next step to add
+a suite of mapping tools. It would be great if they could be used to either create a mesh
+through these points (probably using &lt;code>INLA&lt;/code>), or calculate survey weighted means at requested
+spatial scales or match them to a provided &lt;code>SpatialPolygons&lt;/code> object. Related to this is
+it would be good to also link in the &lt;a href="https://spatialdata.dhsprogram.com/home/">Spatial Data Repository&lt;/a>
+from the DHS, so that users can easily download shape files for their analyses (&lt;a href="https://github.com/ropensci/rdhs/issues/71">issue #71&lt;/a>).&lt;/p>&lt;/li>
+&lt;li>&lt;p>Not related to any specific issues, but it would be good to have a clearer set of
+downstream analysis pipelines. One example is a package in development by Jeff Eaton
+called &lt;a href="https://github.com/mrc-ide/demogsurv">&lt;code>demogsurv&lt;/code>&lt;/a>, which is used to calculate
+common demographic indicators from household survey data, including child mortality,
+adult mortality, and fertility. This is just one example, but over time there will
+be a number of bespoke analysis tools down the line, and so it would be nice to begin
+a collection/grouping of these tools (possibly as a wiki or similar).&lt;/p>&lt;/li>
+&lt;li>&lt;p>It would be nice to have a way to manually add sources of survey data. At the
+moment the pipeline for downloading raw data sets used the DHS API a lot, however, what
+if you had some survey data (either locally or shared at a URL) that you wanted to bring
+into your analysis pipeline. Something similar to this is done for the &lt;code>model_datasets&lt;/code>
+within &lt;code>rdhs&lt;/code>, which is a set of dummy data sets that the DHS hosts online but
+are not included in their API.&lt;/p>&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;div id="acknowledgements-and-final-thoughts" class="section level3">
+&lt;h3>Acknowledgements and Final Thoughts&lt;/h3>
+&lt;p>Firstly, I want to thank &lt;a href="https://github.com/annakrystalli">Anna Krystalli&lt;/a> for handling
+the review, and for being incredibly patient throughout, especially at the end as we
+were fixing the last authentication bug. Also many thanks to &lt;a href="https://github.com/LucyMcGowan">Lucy McGowan&lt;/a>
+and &lt;a href="https://github.com/dosgillespie">Duncan Gillespie&lt;/a> for taking the time to
+review the package and for their input, which led to lots of improvements (and also
+linking the &lt;code>add_line&lt;/code> function from &lt;code>httr&lt;/code> was seriously helpful, and I’ve used
+that function in lots of other my other work now). I also wanted to more broadly thank
+the review process as a whole. Having the option to discuss the package and needed
+solutions with the reviewers within a &lt;a href="https://github.com/ropensci/software-review/issues/238">GitHub issues system&lt;/a> is fantastic. It made the process
+personal and was substantially improved over review processes I have had at academic journals.
+Lastly, another big thank you &lt;a href="https://github.com/jeffeaton">Jeff Eaton&lt;/a> and
+&lt;a href="https://github.com/richfitz">Rich FitzJohn&lt;/a>, and also to the infectious
+disease epidemiology department at Imperial for providing a lot of really helpful
+ginuea pig testing of the numerous iterations of &lt;code>rdhs&lt;/code>.&lt;/p>
+&lt;/div>
+&lt;div class="footnotes footnotes-end-of-document">
+&lt;hr />
+&lt;ol>
+&lt;li id="fn1">&lt;p>Silva, Romesh. 2012. “Child Mortality Estimation: Consistency of Under-Five Mortality Rate Estimates Using Full Birth Histories and Summary Birth Histories.” PLoS Medicine 9: e1001296. &lt;a href="doi:%5B10.1371/journal.pmed.1001296" class="uri">doi:[10.1371/journal.pmed.1001296&lt;/a>](&lt;a href="https://doi.org/10.1371/journal.pmed.1001296" class="uri">https://doi.org/10.1371/journal.pmed.1001296&lt;/a>).&lt;a href="#fnref1" class="footnote-back">↩︎&lt;/a>&lt;/p>&lt;/li>
+&lt;li id="fn2">&lt;p>Bhatt, S, D J Weiss, E Cameron, D Bisanzio, B Mappin, U Dalrymple, K E Battle, et al. 2015. “The effect of malaria control on Plasmodium falciparum in Africa between 2000 and 2015.”Nature 526: 207–11. &lt;a href="doi:%5B10.1038/nature15535" class="uri">doi:[10.1038/nature15535&lt;/a>](&lt;a href="https://doi.org/10.1038/nature15535" class="uri">https://doi.org/10.1038/nature15535&lt;/a>).&lt;a href="#fnref2" class="footnote-back">↩︎&lt;/a>&lt;/p>&lt;/li>
+&lt;/ol>
+&lt;/div></description></item><item><title>ASTMH 2016 pfhrp2/3 modelling</title><link>https://nicholasbrazeau.com/talk/asthm-2016-pfhrp2-3/</link><pubDate>Wed, 07 Dec 2016 18:00:00 -0800</pubDate><guid>https://nicholasbrazeau.com/talk/asthm-2016-pfhrp2-3/</guid><description>
+&lt;p>Talk at ASTMH 2016 on pfhrp2/3 deletions. The talk was early discussion of findings now published at
+eLife&lt;a href="#fn1" class="footnote-ref" id="fnref1">&lt;sup>1&lt;/sup>&lt;/a>.&lt;/p>
+&lt;div class="footnotes footnotes-end-of-document">
+&lt;hr />
+&lt;ol>
+&lt;li id="fn1">&lt;p>&lt;a href="https://elifesciences.org/articles/25008" class="uri">https://elifesciences.org/articles/25008&lt;/a>&lt;a href="#fnref1" class="footnote-back">↩︎&lt;/a>&lt;/p>&lt;/li>
+&lt;/ol>
+&lt;/div></description></item></channel></rss>
