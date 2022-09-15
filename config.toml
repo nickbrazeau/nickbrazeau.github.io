@@ -1,165 +1,77 @@
-baseurl = "https://nickbrazeau.github.io/"
+# Configuration of Academic
+# Documentation: https://sourcethemes.com/academic/
+#
+# This file is formatted using TOML syntax - learn more at https://learnxinyminutes.com/docs/toml/
+# Each configuration section is defined by a name in square brackets (e.g. `[outputs]`).
+
+# Title of your site
 title = "Nick Brazeau"
-theme = "hugo-coder"
-languageCode = "en"
+# The URL of your site.
+# End your URL with a `/` trailing slash, e.g. `https://example.com/`.
+# baseurl = "https://hardcore-tesla-a43d43.netlify.com/"
+baseurl = "https://nicholasbrazeau.com/"
+
+# Enter a copyright notice to display in the site footer.
+# To display a copyright symbol, type `&copy;`. For current year, type `{year}`.
+copyright = "&copy; {year} Nicholas Brazeau"
+
+############################
+## Advanced options below ##
+############################
+
+# Name of Academic theme folder in `themes/`.
+theme = "hugo-academic"
+
+# Get last modified date for content from Git?
+enableGitInfo = false
+
+# Default language to use (if you setup multilingual support)
 defaultContentLanguage = "en"
-paginate = 20
-pygmentsStyle = "bw"
-pygmentsCodeFences = true
-pygmentsCodeFencesGuessSyntax = true
+hasCJKLanguage = false  # Set `true` for Chinese/Japanese/Korean languages.
+defaultContentLanguageInSubdir = false
+removePathAccents = true  # Workaround for https://github.com/gohugoio/hugo/issues/5687
+
+paginate = 10  # Number of items per page in paginated lists.
 enableEmoji = true
-# Enable Disqus comments
-# disqusShortname = "yourdiscussshortname"
+footnotereturnlinkcontents = "<sup>^</sup>"
+ignoreFiles = ["\\.ipynb$", ".ipynb_checkpoints$", "\\.Rmd$", "\\.Rmarkdown$", "_cache$", "\\.knit\\.md$", "\\.utf8\\.md$"]
 
-[params]
-author = "Nicholas F. Brazeau"
-# license = '<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA-4.0</a>'
-description = "Personal website of Nick Brazeau"
-keywords = "medicine,epidemiology,personal"
-info = ["UNC MD/PhD Candidate", "Aspiring Physician | Infectious Disease Epidemiologist"]
-avatarURL = "images/NFB_prof.jpeg"
-#gravatar = "john.doe@example.com"
-dateFormat = ":date_long"
-since = 2021
-# Right To Left, shift content direction for languagues such as Arabic
-rtl = false
-# Specify light/dark colorscheme
-# Supported values:
-# "auto" (use preference set by browser)
-# "dark" (dark background, light foreground)
-# "light" (light background, dark foreground) (default)
-colorScheme = "auto"
-# Hide the toggle button, along with the associated vertical divider
-hideColorSchemeToggle = false
-# Series see also post count
-maxSeeAlsoItems = 5
-# Custom CSS
-# customCSS = ["static/css/whitespace.css"]
-customCSS = []
-# Custom SCSS, file path is relative to Hugo's asset folder (default: {your project root}/assets)
-customSCSS = []
-# Custom JS
-customJS = []
+[outputs]
+  home = [ "HTML", "RSS", "JSON", "WebAppManifest" ]
+  section = [ "HTML", "RSS" ]
 
-# If you want to use fathom(https://usefathom.com) for analytics, add this section
-# [params.fathomAnalytics]
-# siteID = "ABCDE"
-# serverURL = "analytics.example.com" # Default value is cdn.usefathom.com, overwrite this if you are self-hosting
+[mediaTypes."application/manifest+json"]
+  suffixes = ["webmanifest"]
 
-# If you want to use plausible(https://plausible.io) for analytics, add this section
-# [params.plausibleAnalytics]
-# domain = "example.com"
-# serverURL = "analytics.example.com" # Default value is plausible.io, overwrite this if you are self-hosting or using a custom domain
+[outputFormats.WebAppManifest]
+  mediaType = "application/manifest+json"
+  rel = "manifest"
 
-# If you want to use goatcounter(https://goatcounter.com) for analytics, add this section
-# [params.goatCounter]
-# code = "code"
+# Configure BlackFriday Markdown rendering.
+#   See: https://gohugo.io/getting-started/configuration/#configure-blackfriday
+[blackfriday]
+  hrefTargetBlank = true  # `true` opens external links in a new tab. See https://github.com/gohugoio/hugo/issues/2424
+	angledQuotes = false
+	latexDashes = true
+  extensions = ["backslashLineBreak"]
 
-# If you want to use Cloudflare Web Analytics(https://cloudflare.com) for analytics, add this section
-# [params.cloudflare]
-# token = "token"
+[imaging]
+  resampleFilter = "lanczos"
+  quality = 100
+  anchor = "smart"  # Anchor for cropping. Options include Smart and Center.
 
-# If you want to use Matomo(https://matomo.org) for analytics, add this section
-# [params.matomo]
-# siteID = "ABCDE" # Default value is "1", overwrite this if you are cloud-hosting
-# serverURL = "analytics.example.com" # For cloud-hosting, use provided URL, e.g. example.matomo.cloud
-
-# If you want to use Google Tag Manager(https://analytics.google.com/) for analytics, add this section
-# [params.googleTagManager]
-# id = "gid"
-
-# If you want to implement a Content-Security-Policy, add this section
-[params.csp]
-childsrc = ["'self'"]
-fontsrc = ["'self'", "https://fonts.gstatic.com", "https://cdn.jsdelivr.net/"]
-formaction = ["'self'"]
-framesrc = ["'self'"]
-imgsrc = ["'self'"]
-objectsrc = ["'none'"]
-stylesrc = [
-  "'self'",
-  "'unsafe-inline'",
-  "https://fonts.googleapis.com/",
-  "https://cdn.jsdelivr.net/"
-]
-scriptsrc = [
-  "'self'",
-  "'unsafe-inline'",
-  "https://www.google-analytics.com",
-  "https://cdn.jsdelivr.net/"
-]
-prefetchsrc = ["'self'"]
-# connect-src directive – defines valid targets for to XMLHttpRequest (AJAX), WebSockets or EventSource
-connectsrc = ["'self'", "https://www.google-analytics.com"]
-
-## Social links
-# use 'fab' when brand icons, use 'fas' when standard solid icons.
+# Taxonomies.
 [taxonomies]
-category = "categories"
-series = "series"
-tag = "tags"
-author = "authors"
+  tag = "tags"
+  category = "categories"
+  publication_type = "publication_types"
+  author = "authors"
 
-[[params.social]]
-name = "Github"
-icon = "fa fa-2x fa-github"
-weight = 1
-url = "https://github.com/nickbrazeau/"
+[permalinks]
+  post = "/:year/:month/:day/:slug"
 
-[[params.social]]
-icon = "fa fa-solid fa-2x fa-pencil"
-title = "Pubmed"
-weight = 2
-url = "https://www.ncbi.nlm.nih.gov/myncbi/1Z38GNVdoiEkg/bibliography/public/"
 
-[[params.social]]
-icon = "fa fa-solid fa-2x fa-graduation-cap"
-title = "Google Scholar"
-weight = 3
-url = "https://scholar.google.com/citations?user=ZdLn4sUAAAAJ&hl"
-
-[[params.social]]
-icon = "fa fa-solid fa-2x fa-orcid"
-title = "ORCiD"
-weight = 4
-url = "https://orcid.org/0000-0003-3976-7965"
-
-[[params.social]]
-icon = "fa fa-solid fa-2x fa-researchgate"
-title = "Research Gate"
-weight = 5
-url = "https://www.researchgate.net/profile/Nicholas-Brazeau-2"
-
-[[params.social]]
-icon = "fa fa-2x fa-twitter"
-title = "Twitter"
-weight = 6
-url = "https://twitter.com/nfbrazeau/"
-
-[[params.social]]
-icon = "fa fa-solid fa-2x fa-envelope"
-title = "e-mail"
-url = "nbrazeau1 at the mail of google"
-
-[languages.en]
-languageName = ":us:"
-
-[[languages.en.menu.main]]
-name = "About"
-weight = 1
-url = "about/"
-
-[[languages.en.menu.main]]
-name = "Blog"
-weight = 2
-url = "posts/"
-
-[[languages.en.menu.main]]
-name = "Projects & Interests"
-weight = 3
-url = "projects/"
-
-[[languages.en.menu.main]]
-name = "Publications & Talks"
-weight = 4
-url = "publications/"
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

@@ -1,0 +1,18 @@
+---
+title: "Primer on Population Genetics"
+output: html_document
+date: "2022-08-02"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Caveat
+
+## 
+statisticians invited population genetics, so that is where we will start 
+https://www.storyofmathematics.com/geometric-probability/
+https://www.tutorialspoint.com/statistics/geometric_probability_distribution.htm
+https://en.wikipedia.org/wiki/Geometric_probability
+https://en.wikipedia.org/wiki/Geometric_process
