@@ -19,11 +19,11 @@ title = "Data and Consulting Services"
 
   # Background color.
   # color = "navy"
-  
+
   # Background gradient.
   # gradient_start = "DeepSkyBlue"
   # gradient_end = "SkyBlue"
-  
+
   # Background image.
   #  image = "headers/tree.jpg"  # Name of image in `static/img/`.
   #  image_darken = 0  # Darken the image? Range 0-1 where 0 is transparent and 1 is opaque.
@@ -32,8 +32,8 @@ title = "Data and Consulting Services"
   text_color_light = false
 
 [advanced]
- # Custom CSS. 
+ # Custom CSS.
  css_style = ""
 +++
 
-As an experienced data scientist and epidemiologist, I can help you with everything from coding to research design. I went into epidemiology because I saw how many talented clinicians there were in community health that needed help with analysis. When the people we serve donate their time and data, quality study design and analysis is the best way to make good on our promises.
+As a physician in training as well as an experienced data scientist and infectious disease epidemiologist, I can help you with a wide variety of projects. I am committed to helping you produce rigorous and representative research. 

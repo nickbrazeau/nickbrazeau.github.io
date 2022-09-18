@@ -28,10 +28,10 @@
   url = "service"
   weight = 5
 
-[[main]]
-  name = "Consulting"
-  url = "consulting"
-  weight = 6
+# [[main]]
+#   name = "Consulting"
+#   url = "consulting"
+#   weight = 6
 
 # Link to a PDF of your resume/CV from the menu.
 # need to generate w/ RMD

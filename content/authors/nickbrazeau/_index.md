@@ -49,4 +49,4 @@ user_groups:
 - Researchers
 - Visitors
 ---
-I am a [MD/PhD Candidate](https://www.med.unc.edu/mdphd/) and [NIH F30 Fellow](https://reporter.nih.gov/project-details/9679726) at the University of North Carolina. As an aspiring physician-scientist and infectious disease epidemiologist, I seek to intersect molecular epidemiology, genomics, statistical modeling, and spatial statistics to improve health among the historically underserved. I am currently applying to Internal Medicine residency (Match 2023) with the intent of becoming a physician-scientist with fellowship training in Infectious Diseases.
+I am a [MD/PhD Candidate](https://www.med.unc.edu/mdphd/) and [NIH F30 Fellow](https://reporter.nih.gov/project-details/9679726) at the University of North Carolina. As an aspiring physician-scientist and infectious disease epidemiologist, I seek to intersect molecular epidemiology, genomics, statistical modeling, and spatial statistics to improve health among the historically underserved. I am currently applying to Internal Medicine residency (Match 2023) with the intent of pursuing an ABIM/PSTP track fellowship training in Infectious Diseases.
