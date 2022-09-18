@@ -1,517 +1,77 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Nick Brazeau</title><link>https://nicholasbrazeau.com/</link><atom:link href="https://nicholasbrazeau.com/index.xml" rel="self" type="application/rss+xml"/><description>Nick Brazeau</description><generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2022 Nicholas Brazeau</copyright><lastBuildDate>Sat, 30 Jul 2022 19:35:38 +0000</lastBuildDate><image><url>https://nicholasbrazeau.com/img/headers/tree.jpg</url><title>Nick Brazeau</title><link>https://nicholasbrazeau.com/</link></image><item><title>Selective sweep suggests transcriptional regulation may underlie Plasmodium vivax resilience to malaria control measures in Cambodia - PubMed</title><link>https://nicholasbrazeau.com/publication/noauthor-selective-nodate/</link><pubDate>Sat, 30 Jul 2022 19:35:38 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/noauthor-selective-nodate/</guid><description/></item><item><title>rdhs</title><link>https://nicholasbrazeau.com/project/rdhs/</link><pubDate>Tue, 12 Jul 2022 08:38:28 -0700</pubDate><guid>https://nicholasbrazeau.com/project/rdhs/</guid><description>&lt;p>The Demographic and Health Surveys (DHS) Program has collected population survey data from over 90 countries for over 30 years. In many countries, DHS provide the key data that mark progress towards targets such as the Sustainable Development Goals (SDGs) and inform health policy. Though standard health indicators are routinely published in survey final reports, much of the value of DHS is derived from the ability to download and analyse standardized microdata datasets for subgroup analysis, pooled multi-country analysis, and extended research studies.&lt;/p>
-&lt;p>The suite of tools within &lt;code>rdhs&lt;/code> improves the accessibility of these datasets for statistical analysis with R, with aim to support reproducible global health research and simplify common analytical pipelines.&lt;/p></description></item><item><title>Reassessing Reported Deaths and Estimated Infection Attack Rate during the First 6 Months of the COVID-19 Epidemic, Delhi, India</title><link>https://nicholasbrazeau.com/publication/pons-salort-reassessing-2022/</link><pubDate>Fri, 01 Apr 2022 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/pons-salort-reassessing-2022/</guid><description/></item><item><title>Estimating the COVID-19 infection fatality ratio accounting for seroreversion using statistical modelling</title><link>https://nicholasbrazeau.com/publication/brazeau-estimating-2022/</link><pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/brazeau-estimating-2022/</guid><description/></item><item><title>Household Prevalence of Plasmodium falciparum, Plasmodium vivax, and Plasmodium ovale in the Democratic Republic of the Congo, 2013-2014</title><link>https://nicholasbrazeau.com/publication/mitchell-household-2021/</link><pubDate>Wed, 01 Dec 2021 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/mitchell-household-2021/</guid><description/></item><item><title>Modelling intensive care unit capacity under different epidemiological scenarios of the COVID-19 pandemic in three Western European countries</title><link>https://nicholasbrazeau.com/publication/mccabe-modelling-2021/</link><pubDate>Thu, 01 Jul 2021 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/mccabe-modelling-2021/</guid><description/></item><item><title>The epidemiology of Plasmodium vivax among adults in the Democratic Republic of the Congo</title><link>https://nicholasbrazeau.com/publication/brazeau-epidemiology-2021/</link><pubDate>Thu, 01 Jul 2021 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/brazeau-epidemiology-2021/</guid><description/></item><item><title>The Burden of Malaria in the Democratic Republic of the Congo</title><link>https://nicholasbrazeau.com/publication/deutsch-feldman-burden-2021/</link><pubDate>Tue, 01 Jun 2021 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/deutsch-feldman-burden-2021/</guid><description/></item><item><title>Using syndromic measures of mortality to capture the dynamics of COVID-19 in Java, Indonesia, in the context of vaccination rollout</title><link>https://nicholasbrazeau.com/publication/djaafara-using-2021/</link><pubDate>Tue, 01 Jun 2021 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/djaafara-using-2021/</guid><description/></item><item><title>Within-country age-based prioritisation, global allocation, and public health impact of a vaccine against SARS-CoV-2: A mathematical modelling analysis</title><link>https://nicholasbrazeau.com/publication/hogan-within-country-2021/</link><pubDate>Sat, 01 May 2021 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/hogan-within-country-2021/</guid><description/></item><item><title>Leveraging community mortality indicators to infer COVID-19 mortality and transmission dynamics in Damascus, Syria</title><link>https://nicholasbrazeau.com/publication/watson-leveraging-2021/</link><pubDate>Thu, 01 Apr 2021 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/watson-leveraging-2021/</guid><description/></item><item><title>Under the Radar: Epidemiology of Plasmodium ovale in the Democratic Republic of the Congo</title><link>https://nicholasbrazeau.com/publication/mitchell-under-2021/</link><pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/mitchell-under-2021/</guid><description/></item><item><title>Reduction in mobility and COVID-19 transmission</title><link>https://nicholasbrazeau.com/publication/nouvellet-reduction-2021/</link><pubDate>Mon, 01 Feb 2021 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/nouvellet-reduction-2021/</guid><description/></item><item><title>Selection of Cytochrome b Mutants Is Rare among Plasmodium falciparum Patients Failing Treatment with Atovaquone-Proguanil in Cambodia</title><link>https://nicholasbrazeau.com/publication/lin-selection-2021/</link><pubDate>Mon, 01 Feb 2021 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/lin-selection-2021/</guid><description/></item><item><title>Introduction to squire</title><link>https://nicholasbrazeau.com/2021/01/04/introduction-to-squire/</link><pubDate>Mon, 04 Jan 2021 08:38:52 -0800</pubDate><guid>https://nicholasbrazeau.com/2021/01/04/introduction-to-squire/</guid><description>
-&lt;!-- README.md is generated from README.Rmd. Please edit that file -->
-&lt;p>This is an overview of the &lt;code>squire&lt;/code> package, which is a deterministic model of COVID-19 transmission. The &lt;code>squire&lt;/code> model was developed as part of the Imperial College COVID-19 Response Team and has been key in a number of our COVID-19 projects and publications to date, including:&lt;/p>
-&lt;p>This is a brief overview of the model, which is fully described at &lt;a href="https://github.com/mrc-ide/squire">https://github.com/mrc-ide/squire&lt;/a>&lt;/p>
-&lt;div id="overview" class="section level2">
-&lt;h2>Overview&lt;/h2>
-&lt;p>squire is a package enabling users to quickly and easily generate calibrated estimates of SARS-CoV-2 epidemic trajectories under different control scenarios. It consists of the following:&lt;/p>
-&lt;ul>
-&lt;li>An age-structured SEIR model incorporating explicit passage through healthcare settings and explicit progression through disease severity stages.&lt;/li>
-&lt;li>The ability to calibrate the model to different epidemic start-dates based on available death data.&lt;/li>
-&lt;li>Simulate the impacts of different control interventions (including general social distancing, specific shielding of elderly populations, and more stringent suppression strategies).&lt;/li>
-&lt;/ul>
-&lt;p>If you are new to squire, the best place to start is below, where we detail how to install the package, how to set up the model, and how to run it with and without control interventions.&lt;/p>
-&lt;/div>
-&lt;div id="model-structure" class="section level2">
-&lt;h2>Model Structure&lt;/h2>
-&lt;div id="overall-structure" class="section level3">
-&lt;h3>Overall Structure&lt;/h3>
-&lt;p>&lt;img src="https://raw.githubusercontent.com/mrc-ide/squire/master/images/Explicit_Healthcare_Model_Structure.JPG" align="center" style = "border: none; float: center;" width = "600px">&lt;/p>
-&lt;p>squire uses an age-structured SEIR model, with the infectious class divided into different stages reflecting progression through different disease severity pathways. These compartments are:&lt;br />
-* S = Susceptibles&lt;br />
-* E = Exposed (Latent Infection)&lt;br />
-* I&lt;sub>Mild&lt;/sub> = Mild Infections (Not Requiring Hospitalisation)&lt;br />
-* I&lt;sub>Case&lt;/sub> = Infections Requiring Hospitalisation&lt;br />
-* I&lt;sub>Hospital&lt;/sub> = Hospitalised (Requires Hospital Bed)&lt;br />
-* I&lt;sub>ICU&lt;/sub> = ICU (Requires ICU Bed)&lt;br />
-* I&lt;sub>Rec&lt;/sub> = Recovering from ICU Stay (Requires Hospital Bed)&lt;br />
-* R = Recovered&lt;br />
-* D = Dead&lt;/p>
-&lt;/div>
-&lt;div id="decision-trees-for-healthcare-capacity" class="section level3">
-&lt;h3>Decision Trees for Healthcare Capacity&lt;/h3>
-&lt;p>&lt;img src="https://raw.githubusercontent.com/mrc-ide/squire/master/images/Explicit_Healthcare_Oxygen_Decision_Tree.JPG" align="center" style = "border: none; float: center;" width = "400px">&lt;/p>
-&lt;p>Given initial inputs of hospital/ICU bed capacity and the average time cases spend in hospital, the model dynamically tracks available hospital and ICU beds over time.&lt;/p>
-&lt;p>Individuals newly requiring hospitalisation (either a hospital or ICU bed) are then assigned to either receive care (if the relevant bed is available) or not (if maximum capacity would be exceeded otherwise). Whether or not an individual receives the required care modifies their probability of dying.&lt;/p>
-&lt;/div>
-&lt;/div>
-&lt;div id="installation" class="section level2">
-&lt;h2>Installation&lt;/h2>
-&lt;p>&lt;i>squire&lt;/i> utilises the package &lt;a href="https://github.com/mrc-ide/odin">odin&lt;/a> to generate the model. &lt;a href="https://github.com/mrc-ide/odin">odin&lt;/a> implements a high-level language for implementing mathematical models and can be installed by running the following command:&lt;/p>
-&lt;pre class="r">&lt;code>install.packages(&amp;quot;odin&amp;quot;)&lt;/code>&lt;/pre>
-&lt;p>The model generated using odin is written in C and so you will require a compiler to install dependencies for the package and to build any models with odin. Windows users should install &lt;a href="https://cran.r-project.org/bin/windows/Rtools/">Rtools&lt;/a>. See the relevant section in &lt;a href="https://cran.r-project.org/doc/manuals/r-release/R-admin.html#The-Windows-toolset">R-admin&lt;/a> for advice. Be sure to select the “edit PATH” checkbox during installation or the tools will not be found.&lt;/p>
-&lt;p>The function &lt;code>odin::can_compile()&lt;/code> will check if it is able to compile things, but by the time you install the package that will probably have been satisfied.&lt;/p>
-&lt;p>After installation of odin, ensure you have the devtools package installed by running the following:&lt;/p>
-&lt;pre class="r">&lt;code>install.packages(&amp;quot;devtools&amp;quot;)&lt;/code>&lt;/pre>
-&lt;p>Then install the &lt;i>squire&lt;/i> package directly from GitHub by running:&lt;/p>
-&lt;pre class="r">&lt;code>devtools::install_github(&amp;quot;mrc-ide/squire&amp;quot;)&lt;/code>&lt;/pre>
-&lt;p>If you have any problems installing then please raise an issue on the &lt;i>squire&lt;/i> &lt;a href="https://github.com/mrc-ide/squire/issues">&lt;code>GitHub&lt;/code>&lt;/a>.&lt;/p>
-&lt;p>If everything has installed correctly, we then need to load the package:&lt;/p>
-&lt;pre class="r">&lt;code>library(squire)&lt;/code>&lt;/pre>
-&lt;/div>
-&lt;div id="getting-started" class="section level2">
-&lt;h2>Getting Started&lt;/h2>
-&lt;div id="running-the-model-unmitigated" class="section level3">
-&lt;h3>Running the Model (Unmitigated)&lt;/h3>
-&lt;/div>
-&lt;div id="running-the-model-using-baseline-parameters-and-no-control-interventions" class="section level3">
-&lt;h3>1. Running the model using baseline parameters and no control interventions&lt;/h3>
-&lt;p>The full model is referred to as the &lt;strong>explicit_SEEIR&lt;/strong> model, with hospital
-pathways explicitly exploring whether individuals will require a general
-hospital bed providing oxygen or an ICU bed that provides ventilation.&lt;/p>
-&lt;p>To run the model we need to provide at least one of the following arguments:&lt;/p>
-&lt;ul>
-&lt;li>&lt;code>country&lt;/code>&lt;/li>
-&lt;li>&lt;code>population&lt;/code> and &lt;code>contact_matrix_set&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;p>If the &lt;code>country&lt;/code> is provided, the &lt;code>population&lt;/code> and &lt;code>contact_matrix_set&lt;/code>
-will be generated (if not also specified) using the demographics and matrices
-specified in the &lt;a href="https://www.imperial.ac.uk/mrc-global-infectious-disease-analysis/covid-19/report-12-global-impact-covid-19/">global report&lt;/a>.&lt;/p>
-&lt;p>To run the model by providing the &lt;code>country&lt;/code> we use &lt;code>run_explicit_SEEIR_model()&lt;/code>:&lt;/p>
-&lt;pre class="r">&lt;code>r &amp;lt;- run_explicit_SEEIR_model(country = &amp;quot;Afghanistan&amp;quot;, replicates = 5)&lt;/code>&lt;/pre>
-&lt;p>The returned object is a &lt;code>squire_simulation&lt;/code> object, which is a list of two
-ojects:&lt;/p>
-&lt;ul>
-&lt;li>&lt;code>output&lt;/code> - model output&lt;/li>
-&lt;li>&lt;code>parameters&lt;/code> - model parameters&lt;/li>
-&lt;/ul>
-&lt;p>&lt;code>squire_simulation&lt;/code> objects can be plotted as follows:&lt;/p>
-&lt;pre class="r">&lt;code>plot(r)
-#&amp;gt; Warning in plot.squire_simulation(r): Summary statistic estimated from &amp;lt;10
-#&amp;gt; replicates
-#&amp;gt; Warning in plot.squire_simulation(r): Confidence bounds estimated from &amp;lt;10
-#&amp;gt; replicates
-#&amp;gt; Warning: It is deprecated to specify `guide = FALSE` to remove a guide. Please
-#&amp;gt; use `guide = &amp;quot;none&amp;quot;` instead.&lt;/code>&lt;/pre>
-&lt;p>&lt;img src="man/figures/README-base%20plot-1.png" width="100%" />&lt;/p>
-&lt;p>This plot will plot each of the compartments of the model output. We can also plot specific compartments using the &lt;code>var_select&lt;/code> argument that can be passed to &lt;code>plot()&lt;/code>. Arguments passed to &lt;code>var_select&lt;/code> must be one of the variables in the plot above.&lt;/p>
-&lt;pre class="r">&lt;code>plot(r, var_select = c(&amp;quot;E&amp;quot;, &amp;quot;IMild&amp;quot;))
-#&amp;gt; Warning in plot.squire_simulation(r, var_select = c(&amp;quot;E&amp;quot;, &amp;quot;IMild&amp;quot;)): Summary
-#&amp;gt; statistic estimated from &amp;lt;10 replicates
-#&amp;gt; Warning in plot.squire_simulation(r, var_select = c(&amp;quot;E&amp;quot;, &amp;quot;IMild&amp;quot;)): Confidence
-#&amp;gt; bounds estimated from &amp;lt;10 replicates
-#&amp;gt; Warning: It is deprecated to specify `guide = FALSE` to remove a guide. Please
-#&amp;gt; use `guide = &amp;quot;none&amp;quot;` instead.&lt;/code>&lt;/pre>
-&lt;p>&lt;img src="man/figures/README-subset%20variables%20plot-1.png" width="100%" />&lt;/p>
-&lt;p>Or, you can specify one of &lt;code>deaths&lt;/code>, &lt;code>infections&lt;/code>, &lt;code>hospital_occupancy&lt;/code>, &lt;code>ICU_occupancy&lt;/code>, &lt;code>hospital_demand&lt;/code> or &lt;code>ICU_demand&lt;/code>, and plot these summary metrics that represent the combination of a number of different compartment e.g:&lt;/p>
-&lt;pre class="r">&lt;code>plot(r, var_select = &amp;quot;deaths&amp;quot;)
-#&amp;gt; Warning in plot.squire_simulation(r, var_select = &amp;quot;deaths&amp;quot;): Summary statistic
-#&amp;gt; estimated from &amp;lt;10 replicates
-#&amp;gt; Warning in plot.squire_simulation(r, var_select = &amp;quot;deaths&amp;quot;): Confidence bounds
-#&amp;gt; estimated from &amp;lt;10 replicates
-#&amp;gt; Warning: It is deprecated to specify `guide = FALSE` to remove a guide. Please
-#&amp;gt; use `guide = &amp;quot;none&amp;quot;` instead.&lt;/code>&lt;/pre>
-&lt;p>&lt;img src="man/figures/README-subset%20variables%20plot2-1.png" width="100%" />&lt;/p>
-&lt;p>All of the plotting above makes uses of the &lt;code>squire&lt;/code> function &lt;code>format_output&lt;/code> which provides you with a means of manipulating and managing the output from a &lt;code>run_explicit_SEEIR_model&lt;/code> call. Using it you can specify the model outputs (e.g. compartments) you want, as well as whether you want that output aggregated over age or not. Here we extract the latent compartment (E). The data columns correspond to the compartment name (&lt;code>compartment&lt;/code>), timestep (&lt;code>t&lt;/code>), model run number (&lt;code>replicate&lt;/code>) and the model output (&lt;code>y&lt;/code>).&lt;/p>
-&lt;pre class="r">&lt;code>
-output &amp;lt;- format_output(r, var_select = &amp;quot;E&amp;quot;)
-head(output)
-#&amp;gt; # A tibble: 6 × 4
-#&amp;gt; replicate compartment t y
-#&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt;
-#&amp;gt; 1 1 E 0.1 20
-#&amp;gt; 2 1 E 0.2 20
-#&amp;gt; 3 1 E 0.3 20
-#&amp;gt; 4 1 E 0.4 20
-#&amp;gt; 5 1 E 0.5 20
-#&amp;gt; 6 1 E 0.6 20&lt;/code>&lt;/pre>
-&lt;p>If we wanted age-disaggregated data, we could set &lt;code>reduce_age&lt;/code> to &lt;code>FALSE&lt;/code> which will generate the same dataframe as before, but with an additional column indicating the age-group.&lt;/p>
-&lt;pre class="r">&lt;code>
-output &amp;lt;- format_output(r, var_select = &amp;quot;E&amp;quot;, reduce_age = FALSE)
-head(output)
-#&amp;gt; # A tibble: 6 × 5
-#&amp;gt; replicate age_group compartment t y
-#&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;int&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt;
-#&amp;gt; 1 1 1 E 0.1 0
-#&amp;gt; 2 1 1 E 0.2 0
-#&amp;gt; 3 1 1 E 0.3 0
-#&amp;gt; 4 1 1 E 0.4 0
-#&amp;gt; 5 1 1 E 0.5 0
-#&amp;gt; 6 1 1 E 0.6 0&lt;/code>&lt;/pre>
-&lt;/div>
-&lt;div id="changing-parameters-in-the-model." class="section level3">
-&lt;h3>2. Changing parameters in the model.&lt;/h3>
-&lt;p>The model has a number of parameters for setting the R0, demography, contact
-matrices, the durations of each compartment and the health care outcomes and
-healthcare availability. In addition, the initial state of the population can
-be changed as well as simulation parameters, such as the number of replicates,
-length of simulation and the timestep. For a full list of model inputs, please
-see the function &lt;a href="https://mrc-ide.github.io/squire/reference/run_explicit_SEEIR_model.html">documentation&lt;/a>&lt;/p>
-&lt;p>For example, changing the initial R0 (default = 3), number of replicates (
-default = 10), simulation length (default = 365 days) and time step (default =
-0.5 days), as well as setting the population and contact matrix manually:&lt;/p>
-&lt;pre class="r">&lt;code>
-# Get the population
-pop &amp;lt;- get_population(&amp;quot;United Kingdom&amp;quot;)
-population &amp;lt;- pop$n
-# Get the mixing matrix
-contact_matrix &amp;lt;- get_mixing_matrix(&amp;quot;United Kingdom&amp;quot;)
-# run the model
-r &amp;lt;- run_explicit_SEEIR_model(population = population,
-contact_matrix_set = contact_matrix,
-R0 = 2.5,
-time_period = 200,
-dt = 0.1,
-replicates = 5)
-plot(r)
-#&amp;gt; Warning in plot.squire_simulation(r): Summary statistic estimated from &amp;lt;10
-#&amp;gt; replicates
-#&amp;gt; Warning in plot.squire_simulation(r): Confidence bounds estimated from &amp;lt;10
-#&amp;gt; replicates
-#&amp;gt; Warning: It is deprecated to specify `guide = FALSE` to remove a guide. Please
-#&amp;gt; use `guide = &amp;quot;none&amp;quot;` instead.&lt;/code>&lt;/pre>
-&lt;p>&lt;img src="man/figures/README-set%20params-1.png" width="100%" />&lt;/p>
-&lt;p>We can also change the R0 and contact matrix at set time points, to reflect
-changing behaviour resulting from interventions. For example to set an 80%
-reduction in the contact matrix after 100 days :&lt;/p>
-&lt;pre class="r">&lt;code>
-# run the model
-r &amp;lt;- run_explicit_SEEIR_model(population = population,
-tt_contact_matrix = c(0, 100),
-contact_matrix_set = list(contact_matrix,
-contact_matrix*0.2),
-R0 = 2.5,
-time_period = 200,
-dt = 0.1,
-replicates = 5)
-plot(r, var_select = &amp;quot;infections&amp;quot;)
-#&amp;gt; Warning in plot.squire_simulation(r, var_select = &amp;quot;infections&amp;quot;): Summary
-#&amp;gt; statistic estimated from &amp;lt;10 replicates
-#&amp;gt; Warning in plot.squire_simulation(r, var_select = &amp;quot;infections&amp;quot;): Confidence
-#&amp;gt; bounds estimated from &amp;lt;10 replicates
-#&amp;gt; Warning: It is deprecated to specify `guide = FALSE` to remove a guide. Please
-#&amp;gt; use `guide = &amp;quot;none&amp;quot;` instead.&lt;/code>&lt;/pre>
-&lt;p>&lt;img src="man/figures/README-set%20contact%20matrix%20decrease-1.png" width="100%" />&lt;/p>
-&lt;p>where &lt;code>n_E2_I&lt;/code> is the daily number of new infections.&lt;/p>
-&lt;p>To show an 80% reduction after 80 days but only maintained for 40 days :&lt;/p>
-&lt;pre class="r">&lt;code>
-# run the model
-r &amp;lt;- run_explicit_SEEIR_model(population = population,
-tt_contact_matrix = c(0, 80, 120),
-contact_matrix_set = list(contact_matrix,
-contact_matrix*0.2,
-contact_matrix),
-R0 = 2.5,
-time_period = 220,
-dt = 0.1,
-replicates = 5)
-plot(r, var_select = &amp;quot;infections&amp;quot;)
-#&amp;gt; Warning in plot.squire_simulation(r, var_select = &amp;quot;infections&amp;quot;): Summary
-#&amp;gt; statistic estimated from &amp;lt;10 replicates
-#&amp;gt; Warning in plot.squire_simulation(r, var_select = &amp;quot;infections&amp;quot;): Confidence
-#&amp;gt; bounds estimated from &amp;lt;10 replicates
-#&amp;gt; Warning: It is deprecated to specify `guide = FALSE` to remove a guide. Please
-#&amp;gt; use `guide = &amp;quot;none&amp;quot;` instead.&lt;/code>&lt;/pre>
-&lt;p>&lt;img src="man/figures/README-set%20contact%20matrix%20decrease%20and%20relax-1.png" width="100%" />&lt;/p>
-&lt;p>Alternatively, we could set a changing R0, which falls below 1 after 80 days:&lt;/p>
-&lt;pre class="r">&lt;code>
-# run the model
-r &amp;lt;- run_explicit_SEEIR_model(population = population,
-contact_matrix_set = contact_matrix,
-tt_R0 = c(0, 80),
-R0 = c(2.5, 0.9),
-time_period = 200,
-dt = 0.1,
-replicates = 5)
-plot(r, var_select = &amp;quot;infections&amp;quot;)
-#&amp;gt; Warning in plot.squire_simulation(r, var_select = &amp;quot;infections&amp;quot;): Summary
-#&amp;gt; statistic estimated from &amp;lt;10 replicates
-#&amp;gt; Warning in plot.squire_simulation(r, var_select = &amp;quot;infections&amp;quot;): Confidence
-#&amp;gt; bounds estimated from &amp;lt;10 replicates
-#&amp;gt; Warning: It is deprecated to specify `guide = FALSE` to remove a guide. Please
-#&amp;gt; use `guide = &amp;quot;none&amp;quot;` instead.&lt;/code>&lt;/pre>
-&lt;p>&lt;img src="man/figures/README-set%20R0%20decrease-1.png" width="100%" />&lt;/p>
-&lt;p>The model in squire also allows you to alter healthcare capacity. Default values for the arguments &lt;code>hosp_bed_capacity&lt;/code> and &lt;code>ICU_capacity&lt;/code> are taken from the World Bank and a systematic review of the literature. However, you can also specify your own:&lt;/p>
-&lt;pre class="r">&lt;code>
-library(patchwork)
-r &amp;lt;- run_explicit_SEEIR_model(population = population,
-contact_matrix_set = contact_matrix,
-R0 = 2.5,
-time_period = 200,
-dt = 0.1,
-replicates = 15,
-hosp_bed_capacity = 1000,
-ICU_bed_capacity = 100)
-c &amp;lt;- plot(r, var_select = &amp;quot;hospital_occupancy&amp;quot;)
-d &amp;lt;- plot(r, var_select = &amp;quot;ICU_occupancy&amp;quot;)
-c / d
-#&amp;gt; Warning: It is deprecated to specify `guide = FALSE` to remove a guide. Please use `guide = &amp;quot;none&amp;quot;` instead.
-#&amp;gt; It is deprecated to specify `guide = FALSE` to remove a guide. Please use `guide = &amp;quot;none&amp;quot;` instead.&lt;/code>&lt;/pre>
-&lt;p>&lt;img src="man/figures/README-change%20healthcare%20capacity-1.png" width="100%" />&lt;/p>
-&lt;/div>
-&lt;div id="extracting-and-plotting-relevant-outputs" class="section level3">
-&lt;h3>3. Extracting and Plotting Relevant Outputs&lt;/h3>
-&lt;p>Whilst the above provides quick and easy ways to plot relevant outputs, we recognise users might want to play around with the data themselves. This can be done with the &lt;code>format_output&lt;/code> function.&lt;/p>
-&lt;pre class="r">&lt;code>library(ggplot2)
-library(patchwork)
-library(dplyr)
-#&amp;gt;
-#&amp;gt; Attaching package: &amp;#39;dplyr&amp;#39;
-#&amp;gt; The following objects are masked from &amp;#39;package:stats&amp;#39;:
-#&amp;gt;
-#&amp;gt; filter, lag
-#&amp;gt; The following objects are masked from &amp;#39;package:base&amp;#39;:
-#&amp;gt;
-#&amp;gt; intersect, setdiff, setequal, union
-x &amp;lt;- run_explicit_SEEIR_model(country = &amp;quot;Afghanistan&amp;quot;, hosp_bed_capacity = 500, ICU_bed_capacity = 200)
-deaths &amp;lt;- format_output(x = x, var_select = &amp;quot;deaths&amp;quot;) %&amp;gt;%
-mutate(replicate = factor(replicate))
-a &amp;lt;- ggplot(deaths, aes(x = t, y = y, col = replicate)) +
-geom_line() + ylab(&amp;quot;Daily Deaths&amp;quot;)
-infections &amp;lt;- format_output(x = x, var_select = &amp;quot;infections&amp;quot;) %&amp;gt;%
-mutate(replicate = factor(replicate))
-b &amp;lt;- ggplot(infections, aes(x = t, y = y, col = replicate)) +
-geom_line() + ylab(&amp;quot;Daily Infections&amp;quot;)
-hosp_bed &amp;lt;- format_output(x = x, var_select = &amp;quot;hospital_occupancy&amp;quot;) %&amp;gt;%
-mutate(replicate = factor(replicate))
-c &amp;lt;- ggplot(hosp_bed, aes(x = t, y = y, col = replicate)) +
-geom_line() + ylab(&amp;quot;Hospital Bed Occupancy&amp;quot;)
-ICU_bed &amp;lt;- format_output(x = x, var_select = &amp;quot;ICU_occupancy&amp;quot;) %&amp;gt;%
-mutate(replicate = factor(replicate))
-d &amp;lt;- ggplot(ICU_bed, aes(x = t, y = y, col = replicate)) +
-geom_line() + ylab(&amp;quot;ICU Bed Occupancy&amp;quot;)
-z &amp;lt;- a + b + c + d +
-plot_layout(guides = &amp;#39;collect&amp;#39;)
-z&lt;/code>&lt;/pre>
-&lt;p>&lt;img src="man/figures/README-untransformed-1.png" width="100%" />&lt;/p>
-&lt;p>Hospital bed occupancy fluctuates very slightly above the user-specified number of hospital beds available (+1 in the above example). This is due to individuals being discharged from ICU beds into general hospital beds when general hospital bed occupancy is already at maximum capacity.&lt;/p>
-&lt;p>We assume that these individuals newly discharged from the ICU would in reality be prioritised to receive general hospital beds and so give them a general hospital bed. Whilst this is now shown in the above panel of hospital bed occupancy, this means that less-sick individuals in general hospital beds would be discharged slightly early to make space. We assume that for these small number of the healthiest individuals in hospital, there is no excess mortality associated with this early discharge.&lt;/p>
-&lt;p>Future work will explore a range of bed-prioritisation structures to consider how results might be shaped by who gets a bed and when.&lt;/p>
-&lt;/div>
-&lt;div id="calibrating-the-model-to-observed-deaths-data" class="section level3">
-&lt;h3>4. Calibrating the Model to Observed Deaths Data&lt;/h3>
-&lt;p>The model can be simply calibrated to time series of deaths reported in settings. This can be done using the &lt;code>calibrate&lt;/code> function. For example, let’s use the time series of deaths in Algeria up to the 22nd April 2020:&lt;/p>
-&lt;pre class="r">&lt;code>df &amp;lt;- read.csv(squire:::squire_file(&amp;quot;extdata/example_DZA.csv&amp;quot;), stringsAsFactors = FALSE)
-head(df)
-#&amp;gt; X date deaths cases
-#&amp;gt; 1 1 2020-02-26T00:00:00Z 0 1
-#&amp;gt; 2 2 2020-03-01T00:00:00Z 0 2
-#&amp;gt; 3 3 2020-03-04T00:00:00Z 0 2
-#&amp;gt; 4 4 2020-03-05T00:00:00Z 0 7
-#&amp;gt; 5 5 2020-03-06T00:00:00Z 0 5
-#&amp;gt; 6 6 2020-03-09T00:00:00Z 0 3&lt;/code>&lt;/pre>
-&lt;p>We can calibrate the model to this data. This calibration will infer the most likely start date of the epidemic and the R0 at the start of the epidemic. Calibration occurs by scanning across a range of possible R0 values and start dates. Fitting works using a particle filter, which can be parallelised using &lt;code>future::plan(future::multiprocess())&lt;/code> before running &lt;code>calibrate&lt;/code>.&lt;/p>
-&lt;pre class="r">&lt;code># set up for parallelisation
-future::plan(future::multiprocess())
-# Fit model
-out &amp;lt;- calibrate(
-data = df,
-R0_min = 2,
-R0_max = 4,
-R0_step = 0.5,
-first_start_date = &amp;quot;2020-02-10&amp;quot;,
-last_start_date = &amp;quot;2020-02-22&amp;quot;,
-day_step = 4,
-replicates = 10,
-n_particles = 20,
-country = &amp;quot;Algeria&amp;quot;
-)&lt;/code>&lt;/pre>
-&lt;p>&lt;code>calibrate&lt;/code> returns the same output as &lt;code>run_explicit_SEEIR_model&lt;/code>, with the first
-three elements in &lt;code>out&lt;/code> being the simulation outputs, the model and model parameters. Note that simulation replicates are aligned to the maximum date in the data provided, and as a result we can use the same plotting functions as before:&lt;/p>
-&lt;pre class="r">&lt;code>plot(out, &amp;quot;deaths&amp;quot;, date_0 = max(df$date), x_var = &amp;quot;date&amp;quot;)
-#&amp;gt; Warning: It is deprecated to specify `guide = FALSE` to remove a guide. Please
-#&amp;gt; use `guide = &amp;quot;none&amp;quot;` instead.&lt;/code>&lt;/pre>
-&lt;p>&lt;img src="man/figures/README-plot%20particle%20deaths-1.png" width="100%" />&lt;/p>
-&lt;p>With default parameters, &lt;code>calibrate&lt;/code> will simulate up to the maximum date in the data
-provided. The fit to this data can be shown using the plotting function and specifying &lt;code>particle_fit&lt;/code>
-to be &lt;code>TRUE&lt;/code>&lt;/p>
-&lt;pre class="r">&lt;code>plot(out, particle_fit = TRUE)&lt;/code>&lt;/pre>
-&lt;p>&lt;img src="man/figures/README-particle%20fit%20no%20ints-1.png" width="100%" />&lt;/p>
-&lt;p>We can see that this is not the best fit, capturing only the beginning of the data points. We can also diagnose
-the fitting further by looking at the &lt;code>scan_results&lt;/code> of the grid search.&lt;/p>
-&lt;pre class="r">&lt;code>plot(out$scan_results)&lt;/code>&lt;/pre>
-&lt;p>&lt;img src="man/figures/README-show%20grid%20fits-1.png" width="100%" />&lt;/p>
-&lt;p>This grid shows the negative log likeihood for each parameter pair. We can also plot the
-related probability for each pair as follows:&lt;/p>
-&lt;pre class="r">&lt;code>plot(out$scan_results, what = &amp;quot;probability&amp;quot;)&lt;/code>&lt;/pre>
-&lt;p>&lt;img src="man/figures/README-show%20grid%20fits%20probs-1.png" width="100%" />&lt;/p>
-&lt;p>The reason for the poor fits to the data shown earlier is because Algeria has implemented
-interventions prior to today. These can also be incorporated into &lt;code>calibrate&lt;/code>.
-For example, we can grab the assumed changes to transmission based on government intervention
-for Algeria.&lt;/p>
-&lt;pre class="r">&lt;code>interventions &amp;lt;- read.csv(squire:::squire_file(&amp;quot;extdata/example_DZA_intervention.csv&amp;quot;))
-int_unique &amp;lt;- squire:::interventions_unique(interventions)
-int_unique
-#&amp;gt; $dates_change
-#&amp;gt; [1] &amp;quot;2020-03-12&amp;quot; &amp;quot;2020-03-18&amp;quot; &amp;quot;2020-03-22&amp;quot; &amp;quot;2020-03-23&amp;quot;
-#&amp;gt;
-#&amp;gt; $change
-#&amp;gt; [1] 0.900 0.850 0.550 0.225&lt;/code>&lt;/pre>
-&lt;p>We can then provide these to &lt;code>calibrate&lt;/code> as the dates (&lt;code>date_R0_change&lt;/code>) and relative reductions
-to R0 (&lt;code>R0_change&lt;/code>). We will also specify for model fits to be continued for 14 days into the future with
-&lt;code>forceast = 14&lt;/code>:&lt;/p>
-&lt;pre class="r">&lt;code>out &amp;lt;- calibrate(
-data = df,
-R0_min = 2,
-R0_max = 4,
-R0_step = 0.5,
-first_start_date = &amp;quot;2020-02-10&amp;quot;,
-last_start_date = &amp;quot;2020-02-22&amp;quot;,
-day_step = 4,
-replicates = 10,
-n_particles = 20,
-forecast = 14,
-R0_change = int_unique$change,
-date_R0_change = int_unique$dates_change,
-country = &amp;quot;Algeria&amp;quot;
-)&lt;/code>&lt;/pre>
-&lt;p>Let’s see if that is any better.&lt;/p>
-&lt;pre class="r">&lt;code>plot(out, particle_fit = TRUE)&lt;/code>&lt;/pre>
-&lt;p>&lt;img src="man/figures/README-particle%20fit%20ints-1.png" width="100%" />&lt;/p>
-&lt;p>That is a much better fit.&lt;/p>
-&lt;p>Any parameter that you could provide to &lt;code>run_explicit_SEEIR_model&lt;/code> can be passed to &lt;code>calibrate&lt;/code>. This
-includes time varying arguments such as &lt;code>contact_matrix_set&lt;/code>, &lt;code>ICU_bed_capacity&lt;/code> and &lt;code>hosp_bed_capacity&lt;/code>. To incorporate these into model fitting correctly, the date at which these change must be provided (similarly to how &lt;code>date_R0_change&lt;/code> was provided above) using &lt;code>date_ICU_bed_capacity_change&lt;/code>, &lt;code>date_ICU_bed_capacity_change&lt;/code> and &lt;code>date_hosp_bed_capacity_change&lt;/code> respectively. In addition, the user must provide a baseline value for these, i.e. the contact matrix and bed capacity at the beginning of the epidemic:&lt;/p>
-&lt;pre class="r">&lt;code>out &amp;lt;- calibrate(
-data = df,
-R0_min = 2,
-R0_max = 4,
-R0_step = 0.5,
-first_start_date = &amp;quot;2020-02-10&amp;quot;,
-last_start_date = &amp;quot;2020-02-22&amp;quot;,
-day_step = 4,
-replicates = 10,
-n_particles = 20,
-forecast = 14,
-R0_change = int_unique$change,
-date_R0_change = int_unique$dates_change,
-baseline_contact_matrix = get_mixing_matrix(&amp;quot;Algeria&amp;quot;),
-contact_matrix_set = list(get_mixing_matrix(&amp;quot;Algeria&amp;quot;)*0.9),
-date_contact_matrix_set_change = &amp;quot;2020-03-16&amp;quot;,
-baseline_hosp_bed_capacity = squire:::get_hosp_bed_capacity(&amp;quot;Algeria&amp;quot;),
-hosp_bed_capacity = squire:::get_hosp_bed_capacity(&amp;quot;Algeria&amp;quot;)*c(1.1,1.2),
-date_hosp_bed_capacity_change = c(&amp;quot;2020-04-02&amp;quot;, &amp;quot;2020-04-08&amp;quot;),
-baseline_ICU_bed_capacity = squire:::get_ICU_bed_capacity(&amp;quot;Algeria&amp;quot;),
-ICU_bed_capacity = squire:::get_ICU_bed_capacity(&amp;quot;Algeria&amp;quot;)*c(1.05),
-date_ICU_bed_capacity_change = c(&amp;quot;2020-04-10&amp;quot;),
-country = &amp;quot;Algeria&amp;quot;
-)&lt;/code>&lt;/pre>
-&lt;p>(N.B. Given the potentially long running time for the grid search, the model state is returned at the end of every day rather than every time step (provided by &lt;code>dt&lt;/code>). As a result model outputs such as &lt;code>n_E2_I&lt;/code> (number of infections in a time step) and &lt;code>delta_D&lt;/code> (number of deaths in a time step) reflect the outputs in the last time step rather than in all the time steps in the last day. The plotting functions and &lt;code>format_output&lt;/code> provided in &lt;code>squire&lt;/code> handle this correctly and work out the correct number for these in the last day.)&lt;/p>
-&lt;/div>
-&lt;div id="conducting-scenario-projections-to-fitted-data" class="section level3">
-&lt;h3>5. Conducting scenario projections to fitted data&lt;/h3>
-&lt;p>Once you have calibrated the model to death data, it is possible to then implement mitigation strategies forwards in time from the point of calibration. This is achieved using the &lt;code>projections&lt;/code> function. For example, let’s consider a country that as of 28th April 2020 is yet to experience an epidemic take off but may be about to. Guinea reported its first COVID-19 death on 16th April 2020 and has reported 7 deaths by the 28th April 2020 according to data from the &lt;a href="https://www.ecdc.europa.eu/en/publications-data/download-todays-data-geographic-distribution-covid-19-cases-worldwide">European CDC&lt;/a>.&lt;/p>
-&lt;p>First let’s calibrate to this data with no interventions in place (there are likely some interventions in place but nothing major, such as a lockdown, has been implemented by 2020-04-28) and simulate forward for 180 days:&lt;/p>
-&lt;pre class="r">&lt;code>df &amp;lt;- read.csv(squire:::squire_file(&amp;quot;extdata/example_GIN.csv&amp;quot;), stringsAsFactors = FALSE)
-out &amp;lt;- calibrate(
-data = df,
-R0_min = 2.5,
-R0_max = 4,
-R0_step = 0.5,
-first_start_date = &amp;quot;2020-03-10&amp;quot;,
-last_start_date = &amp;quot;2020-03-25&amp;quot;,
-day_step = 5,
-replicates = 10,
-n_particles = 20,
-forecast = 180,
-country = &amp;quot;Guinea&amp;quot;
-)&lt;/code>&lt;/pre>
-&lt;p>Firstly, let’s plot the fit up to the current day&lt;/p>
-&lt;pre class="r">&lt;code>plot(out, particle_fit = TRUE) +
-ggplot2::xlim(as.Date(c(&amp;quot;2020-04-10&amp;quot;,&amp;quot;2020-04-28&amp;quot;))) +
-ggplot2::ylim(c(0,10))&lt;/code>&lt;/pre>
-&lt;p>&lt;img src="man/figures/README-particle%20gin%20plots-1.png" width="100%" />&lt;/p>
-&lt;p>The fit is good and captures the stuttering chains at the beginning of the epidemic. However, if we plot the forecasted deaths we can see the epidemic is likely to take off:&lt;/p>
-&lt;pre class="r">&lt;code>plot(out, &amp;quot;deaths&amp;quot;)
-#&amp;gt; Warning: It is deprecated to specify `guide = FALSE` to remove a guide. Please
-#&amp;gt; use `guide = &amp;quot;none&amp;quot;` instead.&lt;/code>&lt;/pre>
-&lt;p>&lt;img src="man/figures/README-particle%20gin%20forecast-1.png" width="100%" />&lt;/p>
-&lt;p>We can now use the output of &lt;code>calibrate&lt;/code> to explore different scenario projections using &lt;code>projections&lt;/code>. For example, to contast this unmitigated epidemic against a mitigation scenario with a 50% reduction in R0 today and a further 30% in 2 weeks time:&lt;/p>
-&lt;pre class="r">&lt;code># create our projections
-p &amp;lt;- projections(r = out, R0_change = c(0.5, 0.2), tt_R0 = c(0, 14))&lt;/code>&lt;/pre>
-&lt;p>The output generated from &lt;code>projections&lt;/code> is the same class and structure as from &lt;code>calibrate&lt;/code> and can be plotted against the unmitigated scenario using &lt;code>projection_plotting&lt;/code>:&lt;/p>
-&lt;pre class="r">&lt;code>ggproj &amp;lt;- projection_plotting(r_list = list(out,p),
-scenarios = c(&amp;quot;Unmitigated&amp;quot;,&amp;quot;Mitigation&amp;quot;),
-var_select = c(&amp;quot;ICU_occupancy&amp;quot;, &amp;quot;ICU_demand&amp;quot;),
-add_parms_to_scenarios = TRUE,ci = FALSE,summarise = TRUE)
-# and lets add in the ICU capacity
-ggproj + ggplot2::geom_hline(yintercept = out$parameters$ICU_bed_capacity)
-#&amp;gt; Warning: It is deprecated to specify `guide = FALSE` to remove a guide. Please
-#&amp;gt; use `guide = &amp;quot;none&amp;quot;` instead.&lt;/code>&lt;/pre>
-&lt;p>&lt;img src="man/figures/README-projection%20plotting-1.png" width="100%" />&lt;/p>
-&lt;p>We can see above that the intervention introduced is nearly sufficient to prevent ICU demand (solid line red) from exceeding the supply, whereas in the unmitigated strategy this did occur.&lt;/p>
-&lt;p>We can also model changing interventions by changing the contact matrix over time as well as the availability of ICU and hospital beds. E.g. decreasing contacts by 75% in a week before relaxing it to 80% in 30 days time, while increasing hospital and ICU beds by 200% in 30 days time. (N.B. We can turn off the automatic scenario parameter labelling with &lt;code>add_parms_to_scenarios = FALSE&lt;/code>):&lt;/p>
-&lt;pre class="r">&lt;code># create our projections
-p &amp;lt;- projections(r = out,
-contact_matrix_set_change = c(1, 0.25, 0.8),
-tt_contact_matrix = c(0, 7, 30),
-hosp_bed_capacity_change = c(1, 3),
-tt_hosp_beds = c(0, 30),
-ICU_bed_capacity_change = c(1, 3),
-tt_ICU_beds = c(0,30))
-projection_plotting(r_list = list(out, p),
-scenarios = c(&amp;quot;Unmitigated&amp;quot;,&amp;quot;Mitigation&amp;quot;),
-var_select = c(&amp;quot;ICU_occupancy&amp;quot;, &amp;quot;ICU_demand&amp;quot;,&amp;quot;deaths&amp;quot;),
-add_parms_to_scenarios = FALSE,
-ci = FALSE,summarise = TRUE) +
-ggplot2::geom_hline(yintercept = out$parameters$ICU_bed_capacity)
-#&amp;gt; Warning: It is deprecated to specify `guide = FALSE` to remove a guide. Please
-#&amp;gt; use `guide = &amp;quot;none&amp;quot;` instead.&lt;/code>&lt;/pre>
-&lt;p>&lt;img src="man/figures/README-projection%20relative%20beds-1.png" width="100%" />&lt;/p>
-&lt;p>Above we can see that the increase in bed causes the mitigation strategy to plateau at a higher bed occupancy, however, not high enough to meet the demand. However, the impacts to the contact matrix and beds have caused both a shift and a decrease in the daily deaths, which in turn causes a noticable decrease in total deaths:&lt;/p>
-&lt;pre class="r">&lt;code>projection_plotting(r_list = list(out,p),
-scenarios = c(&amp;quot;Unmitigated&amp;quot;,&amp;quot;Mitigation&amp;quot;),
-var_select = c(&amp;quot;D&amp;quot;),
-add_parms_to_scenarios = FALSE,
-ci = FALSE,summarise = TRUE)
-#&amp;gt; Warning: It is deprecated to specify `guide = FALSE` to remove a guide. Please
-#&amp;gt; use `guide = &amp;quot;none&amp;quot;` instead.&lt;/code>&lt;/pre>
-&lt;p>&lt;img src="man/figures/README-total%20deaths%20projection-1.png" width="100%" />&lt;/p>
-&lt;p>Rather than using relative changes to the interventions, we can provide absolute measures. For example, to change the R0 to 2 today and add 500 ICU beds in 40 days time:&lt;/p>
-&lt;pre class="r">&lt;code># what is the current capacity
-icu &amp;lt;- tail(out$parameters$ICU_bed_capacity,1)
-# create our projections
-p &amp;lt;- projections(r = out,
-R0 = 2,
-tt_R0 = 0,
-ICU_bed_capacity = c(icu, icu + 500),
-tt_ICU_beds = c(0,40))
-projection_plotting(r_list = list(out,p),
-scenarios = c(&amp;quot;Unmitigated&amp;quot;,&amp;quot;Mitigation&amp;quot;),
-var_select = c(&amp;quot;ICU_occupancy&amp;quot;, &amp;quot;ICU_demand&amp;quot;,&amp;quot;deaths&amp;quot;),
-add_parms_to_scenarios = FALSE,
-ci = FALSE,summarise = TRUE)
-#&amp;gt; Warning: It is deprecated to specify `guide = FALSE` to remove a guide. Please
-#&amp;gt; use `guide = &amp;quot;none&amp;quot;` instead.&lt;/code>&lt;/pre>
-&lt;p>&lt;img src="man/figures/README-projection%20plotting%20absolute-1.png" width="100%" />&lt;/p>
-&lt;p>Lastly, in order to run simulations for longer than the number set in &lt;code>calibrate(forecast = x)&lt;/code>, we can use the argument &lt;code>time_period&lt;/code> to set the numbers of days that &lt;code>projections&lt;/code> should simulate for. For example, we could redo our calibration and have it only run up the current day:&lt;/p>
-&lt;pre class="r">&lt;code>df &amp;lt;- read.csv(squire:::squire_file(&amp;quot;extdata/example_GIN.csv&amp;quot;), stringsAsFactors = FALSE)
-out &amp;lt;- calibrate(
-data = df,
-R0_min = 2.5,
-R0_max = 4,
-R0_step = 0.5,
-first_start_date = &amp;quot;2020-03-10&amp;quot;,
-last_start_date = &amp;quot;2020-03-25&amp;quot;,
-day_step = 5,
-replicates = 10,
-n_particles = 20,
-forecast = 0,
-country = &amp;quot;Guinea&amp;quot;
-)
-plot(out, particle_fit = TRUE)&lt;/code>&lt;/pre>
-&lt;p>&lt;img src="man/figures/README-particle%20gin%20alt-1.png" width="100%" />&lt;/p>
-&lt;p>We can now use this to project 90 days forwards with the current level of interventions, as well as a projection of 90 days with a 50% reduction in R0:&lt;/p>
-&lt;pre class="r">&lt;code>p_no_change &amp;lt;- projections(out, time_period = 90)
-p_change &amp;lt;- projections(out, R0_change = 0.5, tt_R0 = 0, time_period = 90)
-projection_plotting(list(p_no_change, p_change),
-scenarios = c(&amp;quot;No Change&amp;quot;, &amp;quot;50% R0&amp;quot;),
-add_parms_to_scenarios = FALSE,
-var_select = &amp;quot;deaths&amp;quot;,
-date_0 = max(df$date),
-x_var = &amp;quot;date&amp;quot;)&lt;/code>&lt;/pre>
-&lt;p>&lt;img src="man/figures/README-particle%20gin%20alt%20proj-1.png" width="100%" />&lt;/p>
-&lt;/div>
-&lt;/div></description></item><item><title>Database of epidemic trends and control measures during the first wave of COVID-19 in mainland China</title><link>https://nicholasbrazeau.com/publication/fu-database-2021/</link><pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/fu-database-2021/</guid><description/></item><item><title>Comparison of molecular testing strategies for COVID-19 control: a mathematical modelling study</title><link>https://nicholasbrazeau.com/publication/grassly-comparison-2020/</link><pubDate>Tue, 01 Dec 2020 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/grassly-comparison-2020/</guid><description/></item><item><title>SARS-CoV-2 infection prevalence on repatriation flights from Wuhan City, China</title><link>https://nicholasbrazeau.com/publication/thompson-sars-cov-2-2020/</link><pubDate>Tue, 01 Dec 2020 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/thompson-sars-cov-2-2020/</guid><description/></item><item><title>State-level tracking of COVID-19 in the United States</title><link>https://nicholasbrazeau.com/publication/unwin-state-level-2020/</link><pubDate>Tue, 01 Dec 2020 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/unwin-state-level-2020/</guid><description/></item><item><title>Response to COVID-19 in South Korea and implications for lifting stringent interventions</title><link>https://nicholasbrazeau.com/publication/dighe-response-2020/</link><pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/dighe-response-2020/</guid><description/></item><item><title>Potential impact of the COVID-19 pandemic on HIV, tuberculosis, and malaria in low-income and middle-income countries: a modelling study</title><link>https://nicholasbrazeau.com/publication/hogan-potential-2020/</link><pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/hogan-potential-2020/</guid><description/></item><item><title>The impact of COVID-19 and strategies for mitigation and suppression in low- and middle-income countries</title><link>https://nicholasbrazeau.com/publication/walker-impact-2020/</link><pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/walker-impact-2020/</guid><description/></item><item><title>Spatial and epidemiological drivers of Plasmodium falciparum malaria among adults in the Democratic Republic of the Congo</title><link>https://nicholasbrazeau.com/publication/deutsch-feldman-spatial-2020/</link><pubDate>Mon, 01 Jun 2020 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/deutsch-feldman-spatial-2020/</guid><description/></item><item><title>The impact of antimalarial resistance on the genetic structure of Plasmodium falciparum in the DRC</title><link>https://nicholasbrazeau.com/publication/verity-impact-2020/</link><pubDate>Wed, 01 Apr 2020 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/verity-impact-2020/</guid><description/></item><item><title>Anonymised and aggregated crowd level mobility data from mobile phones suggests that initial compliance with COVID-19 social distancing interventions was high and geographically consistent across the UK</title><link>https://nicholasbrazeau.com/publication/jeffrey-anonymised-2020/</link><pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/jeffrey-anonymised-2020/</guid><description/></item><item><title>Falciparum malaria from coastal Tanzania and Zanzibar remains highly connected despite effective control efforts on the archipelago</title><link>https://nicholasbrazeau.com/publication/morgan-falciparum-2020/</link><pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/morgan-falciparum-2020/</guid><description/></item><item><title>Loss of daptomycin susceptibility in clinical Staphylococcus epidermidis infection coincided with variants in WalK</title><link>https://nicholasbrazeau.com/publication/brazeau-loss-2020/</link><pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/brazeau-loss-2020/</guid><description/></item><item><title>Pooled Deep Sequencing of Drug Resistance Loci from Plasmodium falciparum Parasites across Ethiopia</title><link>https://nicholasbrazeau.com/publication/brazeau-pooled-2019/</link><pubDate>Fri, 01 Nov 2019 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/brazeau-pooled-2019/</guid><description/></item><item><title>magenta</title><link>https://nicholasbrazeau.com/project/magenta/</link><pubDate>Wed, 09 Oct 2019 08:00:20 -0700</pubDate><guid>https://nicholasbrazeau.com/project/magenta/</guid><description>&lt;p>&lt;code>magenta&lt;/code> is an individual-based simulation model of malaria epidemiology and parasite genetics, which was designed to extends the Imperial malaria model by tracking the infection history of individuals. With this addition, genetic characteristics of the parasite can be assessed for looking at both neutral genetic variation as well as loci under selection.&lt;/p>
-&lt;p>The first and main research paper based on this project was published in MBE&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>, which showed the extenet to which parasite genetic traits could be used to infer malaria transmission intensity.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Nick Brazeau</title><link>https://nicholasbrazeau.com/</link><atom:link href="https://nicholasbrazeau.com/index.xml" rel="self" type="application/rss+xml"/><description>Nick Brazeau</description><generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2022 Nicholas Brazeau</copyright><lastBuildDate>Sat, 30 Jul 2022 19:35:38 +0000</lastBuildDate><image><url>https://nicholasbrazeau.com/img/headers/tree.jpg</url><title>Nick Brazeau</title><link>https://nicholasbrazeau.com/</link></image><item><title>Selective sweep suggests transcriptional regulation may underlie Plasmodium vivax resilience to malaria control measures in Cambodia - PubMed</title><link>https://nicholasbrazeau.com/publication/noauthor-selective-nodate/</link><pubDate>Sat, 30 Jul 2022 19:35:38 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/noauthor-selective-nodate/</guid><description/></item><item><title>AMR in the Hospital</title><link>https://nicholasbrazeau.com/project/sepidapto/</link><pubDate>Thu, 19 May 2022 08:00:20 -0700</pubDate><guid>https://nicholasbrazeau.com/project/sepidapto/</guid><description>&lt;p>In this case study of a patient with &lt;em>Staphylococcus epidermidis&lt;/em> bacteremia receiving prolonged antibiotics that developed Daptomycin resistance, we used whole genome sequencing and bioinformatic analyses to identify a novel mutation. This project demonstrated the utility in using genomic analysis for the identification and survelliance of putative antimicrobial resistant mutations. This project was published as Brazeau &amp;amp; Levinson &lt;em>et al.&lt;/em> 2020 in Evolution, Medicine, and Public Health&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>.&lt;/p>
 &lt;div class="footnotes" role="doc-endnotes">
 &lt;hr>
 &lt;ol>
 &lt;li id="fn:1">
-&lt;p>Oliver J Watson, Lucy C Okell, Joel Hellewell, Hannah C Slater, H Juliette T Unwin, Irene Omedo, Philip Bejon, Robert W Snow, Abdisalan M Noor, Kirk Rockett, Christina Hubbart, Joaniter I Nankabirwa, Bryan Greenhouse, Hsiao-Han Chang, Azra C Ghani, Robert Verity, Evaluating the Performance of Malaria Genetics for Inferring Changes in Transmission Intensity Using Transmission Modeling, Molecular Biology and Evolution, Volume 38, Issue 1, January 2021, Pages 274–289, &lt;a href="https://doi.org/10.1093/molbev/msaa225">https://doi.org/10.1093/molbev/msaa225&lt;/a>&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;p>Brazeau NF, Levinson KJ, Schranz A, Moser KA, Hollis I, Iyer P, Chien C, Bowen A, van Duin D, Lachiewicz A, Andermann T, Jones M, Miller M, Juliano JJ, Bartelt LA. Loss of daptomycin susceptibility in clinical Staphylococcus epidermidis infection coincided with variants in WalK. Evol Med Public Health. 2020 Sep 7;2020(1):219-224. doi: 10.1093/emph/eoaa031. PMID: 33214904; PMCID: PMC7658547.&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;/div></description></item><item><title>Prevalence of Molecular Markers of Antimalarial Drug Resistance across Altitudinal Transmission Zones in Highland Western Uganda</title><link>https://nicholasbrazeau.com/publication/boyce-prevalence-2019/</link><pubDate>Tue, 01 Oct 2019 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/boyce-prevalence-2019/</guid><description/></item><item><title>The changing landscape of Plasmodium falciparum drug resistance in the Democratic Republic of Congo</title><link>https://nicholasbrazeau.com/publication/deutsch-feldman-changing-2019/</link><pubDate>Tue, 01 Oct 2019 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/deutsch-feldman-changing-2019/</guid><description/></item><item><title>Plasmodium vivax chloroquine resistance links to pvcrt transcription in a genetic cross</title><link>https://nicholasbrazeau.com/publication/sa-plasmodium-2019/</link><pubDate>Sun, 01 Sep 2019 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/sa-plasmodium-2019/</guid><description/></item><item><title>Interacting with The Demographic and Health Surveys (DHS) Program data</title><link>https://nicholasbrazeau.com/2019/01/29/rdhs/</link><pubDate>Tue, 29 Jan 2019 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/2019/01/29/rdhs/</guid><description>
+&lt;/div></description></item><item><title>Ethiopia Antimalarial Resistance</title><link>https://nicholasbrazeau.com/project/ephiamr/</link><pubDate>Thu, 19 May 2022 08:00:20 -0700</pubDate><guid>https://nicholasbrazeau.com/project/ephiamr/</guid><description>&lt;p>Using samples collected as part of antimalarial drug efficacy studies across Ethiopia over multiple years, we demonstrated that &lt;em>P. falciparum&lt;/em> parasites have evidence of persistence through space and time, despite differing profiles of antimalarial resistance. A main focus of this project was capacity building and increased molecular surveillance capacity at the Ethiopian Public Health Institute and was the first project of a lasting collaboration between the EPHI and UNC. This project was published in the American Journal of Tropical Medicine &amp;amp; Hygeine&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>.&lt;/p>
+&lt;div class="footnotes" role="doc-endnotes">
+&lt;hr>
+&lt;ol>
+&lt;li id="fn:1">
+&lt;p>Brazeau NF, Assefa A, Mohammed H, Seme H, Tsadik AG, Parr JB, Keeler C, Hathaway NJ, Meshnick SR, Bailey JA, Kassa M, Juliano JJ, Woyessa A. Pooled Deep Sequencing of Drug Resistance Loci from Plasmodium falciparum Parasites across Ethiopia. Am J Trop Med Hyg. 2019 Nov;101(5):1139-1143. doi: 10.4269/ajtmh.19-0142. PMID: 31516103; PMCID: PMC6838589.&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div></description></item><item><title>IFR Re-estimation</title><link>https://nicholasbrazeau.com/project/reestimateifr/</link><pubDate>Thu, 19 May 2022 08:00:20 -0700</pubDate><guid>https://nicholasbrazeau.com/project/reestimateifr/</guid><description>&lt;p>For a summary of these early re-estimates of the COVID-19 first wave infection fatality ratio estimates accounting for seroreversion, please see the associated &lt;a href="https://www.imperial.ac.uk/news/207273/covid19-deaths-infection-fatality-ratio-says/">press release&lt;/a> that accompanied Report 34&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>.&lt;/p>
+&lt;div class="footnotes" role="doc-endnotes">
+&lt;hr>
+&lt;ol>
+&lt;li id="fn:1">
+&lt;p>Brazeau NF, Verity R, Jenks S, Fu H, Whittaker C, Winskill P, Dorigatti I, Walker PGT, Riley S, Schnekenberg RP, Hoeltgebaum H, Mellan TA, Mishra S, Unwin HJT, Watson OJ, Cucunubá ZM, Baguelin M, Whittles L, Bhatt S, Ghani AC, Ferguson NM, Okell LC.. Report 34 - COVID-19 Infection Fatality Ratio Estimates from Seroprevalence. October 2020. &lt;a href="https://www.imperial.ac.uk/mrc-global-infectious-disease-analysis/covid-19/report-34-ifr">https://www.imperial.ac.uk/mrc-global-infectious-disease-analysis/covid-19/report-34-ifr&lt;/a>.&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div></description></item><item><title>Reassessing Reported Deaths and Estimated Infection Attack Rate during the First 6 Months of the COVID-19 Epidemic, Delhi, India</title><link>https://nicholasbrazeau.com/publication/pons-salort-reassessing-2022/</link><pubDate>Fri, 01 Apr 2022 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/pons-salort-reassessing-2022/</guid><description/></item><item><title>Discent</title><link>https://nicholasbrazeau.com/project/discent/</link><pubDate>Wed, 09 Mar 2022 08:00:20 -0700</pubDate><guid>https://nicholasbrazeau.com/project/discent/</guid><description>&lt;p>This is a simple package with a single function that runs a simple isolation by distance and identity by descent model for producing deme inbreeding spatial coefficients (DISCs). By theory, genetic relatnedness is strictly limited to measure of identity by descent. For a full mathematical overview of the simple model, please see the supplements from Brazeau et al. 2022 in in preperation&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>.&lt;/p>
+&lt;p>Briefly, in the early 1970s, Malécot described a relationship between genetic relatedness and physical distance under the premise that pairs that are far apart are less likely to mate: isolation by distance. Capitalizing on this framework by using measures of identity by descent (IBD), we produce a deme inbreeding spatial coefficient (DISC) for point process data in continuous space. Essentially, this measure estimates the amount of &amp;ldquo;inbreeding&amp;rdquo; or within deme relatedness under the assumption that relatedness between two locations in space can be measured from the average pairwise IBD between those two locations conditional on the physical distance that separates them. Further, we assume that geographic distance is scaled by a migration rate, which is a global parameter among all spatial locations (i.e. the migration rate is assumed to be constant through space). As a result, the model produces a DISC for each spatial location considered (user defined) and an overall migration rate parameter (m). Parameter optimization is achieved with a &amp;ldquo;vanilla&amp;rdquo; gradient descent algorithm. Given that &amp;ldquo;vanilla&amp;rdquo; gradient descent is used, we recommend running numerous models from a wide of array of start parameters to ensure that your final results are the global maximum and not a local maximum (i.e. a false peak).&lt;/p>
+&lt;div class="footnotes" role="doc-endnotes">
+&lt;hr>
+&lt;ol>
+&lt;li id="fn:1">
+&lt;p>Nicholas F Brazeau, &lt;em>in preparation&lt;/em>.&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div></description></item><item><title>Estimating the COVID-19 infection fatality ratio accounting for seroreversion using statistical modelling</title><link>https://nicholasbrazeau.com/publication/brazeau-estimating-2022/</link><pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/brazeau-estimating-2022/</guid><description/></item><item><title>Household Prevalence of Plasmodium falciparum, Plasmodium vivax, and Plasmodium ovale in the Democratic Republic of the Congo, 2013-2014</title><link>https://nicholasbrazeau.com/publication/mitchell-household-2021/</link><pubDate>Wed, 01 Dec 2021 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/mitchell-household-2021/</guid><description/></item><item><title>Vivax in the DRC</title><link>https://nicholasbrazeau.com/project/drcpv/</link><pubDate>Wed, 07 Jul 2021 08:00:20 -0700</pubDate><guid>https://nicholasbrazeau.com/project/drcpv/</guid><description>&lt;p>&lt;em>P. vivax&lt;/em> has long been assumed to be essentially extinct in Sub-Saharan Africa. In this manuscript, we combine techniques from causal inference epidemiolgy, spatial epidemiology, and bioinformatics to describes who is being infected by &lt;em>P. vivax&lt;/em> in the DRC, where infections are occurring, and where the infections potentially originated. Overall, we suggest that &lt;em>P. vivax&lt;/em> is persisting in the DRC rather than expanding or thriving. This project was published as Brazeau &lt;em>et al.&lt;/em> 2021 in Nature Communications&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>.&lt;/p>
+&lt;div class="footnotes" role="doc-endnotes">
+&lt;hr>
+&lt;ol>
+&lt;li id="fn:1">
+&lt;p>Brazeau NF, Mitchell CL, Morgan AP, Deutsch-Feldman M, Watson OJ, Thwai KL, Gelabert P, van Dorp L, Keeler CY, Waltmann A, Emch M, Gartner V, Redelings B, Wray GA, Mwandagalirwa MK, Tshefu AK, Likwela JL, Edwards JK, Verity R, Parr JB, Meshnick SR, Juliano JJ. The epidemiology of Plasmodium vivax among adults in the Democratic Republic of the Congo. Nat Commun. 2021 Jul 7;12(1):4169. doi: 10.1038/s41467-021-24216-3. PMID: 34234124; PMCID: PMC8263614.&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div></description></item><item><title>Modelling intensive care unit capacity under different epidemiological scenarios of the COVID-19 pandemic in three Western European countries</title><link>https://nicholasbrazeau.com/publication/mccabe-modelling-2021/</link><pubDate>Thu, 01 Jul 2021 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/mccabe-modelling-2021/</guid><description/></item><item><title>The epidemiology of Plasmodium vivax among adults in the Democratic Republic of the Congo</title><link>https://nicholasbrazeau.com/publication/brazeau-epidemiology-2021/</link><pubDate>Thu, 01 Jul 2021 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/brazeau-epidemiology-2021/</guid><description/></item><item><title>The Burden of Malaria in the Democratic Republic of the Congo</title><link>https://nicholasbrazeau.com/publication/deutsch-feldman-burden-2021/</link><pubDate>Tue, 01 Jun 2021 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/deutsch-feldman-burden-2021/</guid><description/></item><item><title>Using syndromic measures of mortality to capture the dynamics of COVID-19 in Java, Indonesia, in the context of vaccination rollout</title><link>https://nicholasbrazeau.com/publication/djaafara-using-2021/</link><pubDate>Tue, 01 Jun 2021 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/djaafara-using-2021/</guid><description/></item><item><title>Within-country age-based prioritisation, global allocation, and public health impact of a vaccine against SARS-CoV-2: A mathematical modelling analysis</title><link>https://nicholasbrazeau.com/publication/hogan-within-country-2021/</link><pubDate>Sat, 01 May 2021 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/hogan-within-country-2021/</guid><description/></item><item><title>Leveraging community mortality indicators to infer COVID-19 mortality and transmission dynamics in Damascus, Syria</title><link>https://nicholasbrazeau.com/publication/watson-leveraging-2021/</link><pubDate>Thu, 01 Apr 2021 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/watson-leveraging-2021/</guid><description/></item><item><title>Under the Radar: Epidemiology of Plasmodium ovale in the Democratic Republic of the Congo</title><link>https://nicholasbrazeau.com/publication/mitchell-under-2021/</link><pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/mitchell-under-2021/</guid><description/></item><item><title>Reduction in mobility and COVID-19 transmission</title><link>https://nicholasbrazeau.com/publication/nouvellet-reduction-2021/</link><pubDate>Mon, 01 Feb 2021 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/nouvellet-reduction-2021/</guid><description/></item><item><title>Selection of Cytochrome b Mutants Is Rare among Plasmodium falciparum Patients Failing Treatment with Atovaquone-Proguanil in Cambodia</title><link>https://nicholasbrazeau.com/publication/lin-selection-2021/</link><pubDate>Mon, 01 Feb 2021 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/lin-selection-2021/</guid><description/></item><item><title>Database of epidemic trends and control measures during the first wave of COVID-19 in mainland China</title><link>https://nicholasbrazeau.com/publication/fu-database-2021/</link><pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/fu-database-2021/</guid><description/></item><item><title>Comparison of molecular testing strategies for COVID-19 control: a mathematical modelling study</title><link>https://nicholasbrazeau.com/publication/grassly-comparison-2020/</link><pubDate>Tue, 01 Dec 2020 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/grassly-comparison-2020/</guid><description/></item><item><title>SARS-CoV-2 infection prevalence on repatriation flights from Wuhan City, China</title><link>https://nicholasbrazeau.com/publication/thompson-sars-cov-2-2020/</link><pubDate>Tue, 01 Dec 2020 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/thompson-sars-cov-2-2020/</guid><description/></item><item><title>State-level tracking of COVID-19 in the United States</title><link>https://nicholasbrazeau.com/publication/unwin-state-level-2020/</link><pubDate>Tue, 01 Dec 2020 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/unwin-state-level-2020/</guid><description/></item><item><title>COVIDCurve</title><link>https://nicholasbrazeau.com/project/covidcurve/</link><pubDate>Thu, 29 Oct 2020 08:00:20 -0700</pubDate><guid>https://nicholasbrazeau.com/project/covidcurve/</guid><description>&lt;p>The purpose of this package is to provide a framework to fit age-specific infection fatality ratios (IFRs) in an epidemic that is using serologic data to estimate prevalence. The model was originally designed in response to the COVID-19 pandemic (hence the name) but is broadly applicable.
+Accurate inference of the IFR based on serological data is challenging due to a number of factors that can bias estimates away from the true value, including: (1) the delay between infection and death, (2) the dynamical process of seroconversion and seroreversion, (3) potential differences in age-specific attack rates, and (4) serological test characteristics. These delay-distributions and serologic test characteristics are expected to cause both shifts in when deaths are observed as well as when and how many true infections are observed, which will then affect the IFR.
+The model used in &lt;code>COVIDCurve&lt;/code> can be briefly summarized as having two pieces: (1) an infection curve shape that is informed by the shape the of the observed death curve but &amp;ldquo;thrown&amp;rdquo;&amp;quot; backwards in time; (2) a pin or a point on the y-axis that the shape must go through (i.e. a pin to inform the area under the curve, or cumulative infections). This pin is informed by the observed serologic data, accounting for test characteristics (e.g. sensitivity and specificity) as well as the time from infection to seroconversion and seroreversion. Accounting for seroreversion, or the waning of antibodies over time that then produces a false negative test, becomes increasingly important as epidemics progress and/or as daily infections start to contract.&lt;/p>
+&lt;p>The IFR estimates from this model (&lt;a href="https://github.com/mrc-ide/reestimate_covidIFR_analysis">code repo&lt;/a>) were published as Imperial College London COVID-19 Response Team Report 34&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>. The methodological approach for the model was published as a separate manuscript in Communications Medicine &lt;sup id="fnref:2">&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref">2&lt;/a>&lt;/sup>.&lt;/p>
+&lt;div class="footnotes" role="doc-endnotes">
+&lt;hr>
+&lt;ol>
+&lt;li id="fn:1">
+&lt;p>Brazeau NF, Verity R, Jenks S, Fu H, Whittaker C, Winskill P, Dorigatti I, Walker PGT, Riley S, Schnekenberg RP, Hoeltgebaum H, Mellan TA, Mishra S, Unwin HJT, Watson OJ, Cucunubá ZM, Baguelin M, Whittles L, Bhatt S, Ghani AC, Ferguson NM, Okell LC.. Report 34 - COVID-19 Infection Fatality Ratio Estimates from Seroprevalence. October 2020. &lt;a href="https://www.imperial.ac.uk/mrc-global-infectious-disease-analysis/covid-19/report-34-ifr">https://www.imperial.ac.uk/mrc-global-infectious-disease-analysis/covid-19/report-34-ifr&lt;/a>.&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li id="fn:2">
+&lt;p>Brazeau NF, Verity R, Jenks S, Fu H, Whittaker C, Winskill P, Dorigatti I, Walker PGT, Riley S, Schnekenberg RP, Hoeltgebaum H, Mellan TA, Mishra S, Unwin HJT, Watson OJ, Cucunubá ZM, Baguelin M, Whittles L, Bhatt S, Ghani AC, Ferguson NM, Okell LC. Estimating the COVID-19 infection fatality ratio accounting for seroreversion using statistical modelling. Commun Med (Lond). 2022 May 19;2:54. doi: 10.1038/s43856-022-00106-7. PMID: 35603270; PMCID: PMC9120146.&amp;#160;&lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div></description></item><item><title>Response to COVID-19 in South Korea and implications for lifting stringent interventions</title><link>https://nicholasbrazeau.com/publication/dighe-response-2020/</link><pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/dighe-response-2020/</guid><description/></item><item><title>Potential impact of the COVID-19 pandemic on HIV, tuberculosis, and malaria in low-income and middle-income countries: a modelling study</title><link>https://nicholasbrazeau.com/publication/hogan-potential-2020/</link><pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/hogan-potential-2020/</guid><description/></item><item><title>The impact of COVID-19 and strategies for mitigation and suppression in low- and middle-income countries</title><link>https://nicholasbrazeau.com/publication/walker-impact-2020/</link><pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/walker-impact-2020/</guid><description/></item><item><title>Spatial and epidemiological drivers of Plasmodium falciparum malaria among adults in the Democratic Republic of the Congo</title><link>https://nicholasbrazeau.com/publication/deutsch-feldman-spatial-2020/</link><pubDate>Mon, 01 Jun 2020 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/deutsch-feldman-spatial-2020/</guid><description/></item><item><title>Antimalarial Resistance in the DRC</title><link>https://nicholasbrazeau.com/project/veritydrc/</link><pubDate>Thu, 30 Apr 2020 08:00:20 -0700</pubDate><guid>https://nicholasbrazeau.com/project/veritydrc/</guid><description>&lt;p>Using a massively parallel amplicon sequencing barcode approach, we used genomic analyses to demonstrate that the DRC appears to be a &amp;ldquo;mixing pot&amp;rdquo; for &lt;em>P. falciparum&lt;/em> infections across Sub-Saharan Africa. In addition, we identified strong signals of selection to antimalarial drugs in the DRC that likely have driven gene flow patterns across the country. Alongside analytic support, I lead the analyses on detecting selection using adapted extended haplotype heterozygosity approaches. In addition, I led the bioinformatic analysis identifying the variants for the aforementioned barcode used in the study. This barcode has been used extensively by our research group, as well as several domestic and international groups (initial publication: Verity/Aydemir/Brazeau et al. 2020, Nat Comms).&lt;/p></description></item><item><title>polySimIBD</title><link>https://nicholasbrazeau.com/project/polysimibd/</link><pubDate>Thu, 30 Apr 2020 08:00:20 -0700</pubDate><guid>https://nicholasbrazeau.com/project/polysimibd/</guid><description>&lt;p>The goal of polySimIBD is to perform forwards in-time simulation of malaria population genetics. The model uses a discrete-time, discrete-loci structured Wright Fisher approximation to account for (simplified) malaria transmission dynamics and can be parameterized across demes to include a spatial component.&lt;/p>
+&lt;p>The model was originally used in Verity &amp;amp; Aydemir &amp;amp; Brazeau &lt;em>et al.&lt;/em> 2020 in Nature Communications&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup> to assess the bias in our identity by descent calculation.&lt;/p>
+&lt;div class="footnotes" role="doc-endnotes">
+&lt;hr>
+&lt;ol>
+&lt;li id="fn:1">
+&lt;p>Verity R, Aydemir O, Brazeau NF, Watson OJ, Hathaway NJ, Mwandagalirwa MK, Marsh PW, Thwai K, Fulton T, Denton M, Morgan AP, Parr JB, Tumwebaze PK, Conrad M, Rosenthal PJ, Ishengoma DS, Ngondi J, Gutman J, Mulenga M, Norris DE, Moss WJ, Mensah BA, Myers-Hansen JL, Ghansah A, Tshefu AK, Ghani AC, Meshnick SR, Bailey JA, Juliano JJ. The impact of antimalarial resistance on the genetic structure of Plasmodium falciparum in the DRC. Nat Commun. 2020 Apr 30;11(1):2107. doi: 10.1038/s41467-020-15779-8. PMID: 32355199; PMCID: PMC7192906.&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div></description></item><item><title>Tanzania-Zanzibar Transmission</title><link>https://nicholasbrazeau.com/project/tzzb_ibd/</link><pubDate>Thu, 30 Apr 2020 08:00:20 -0700</pubDate><guid>https://nicholasbrazeau.com/project/tzzb_ibd/</guid><description>&lt;p>Significant achievements have been made in Zanzibar in reducing the burden of malaria. However, the region has not been able to achieve malaria elimination. We find that despite existing excellent control efforts, there is ample evidence for gene flow and importation between Zanzibar and mainland Tanzania. This study highlights the challenges for elimination campaigns in addressing sink-source dynamics and the difficulties of blocking genetic corridors, which in theory should lead to a lack of diversity and ecological collapse of the malaria parasite in regions undergoing elimination.&lt;/p>
+&lt;p>This project was published as Morgan &amp;amp; Brazeau &lt;em>et al.&lt;/em> 2020 in the Malaria Journal&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>.&lt;/p>
+&lt;div class="footnotes" role="doc-endnotes">
+&lt;hr>
+&lt;ol>
+&lt;li id="fn:1">
+&lt;p>Morgan AP, Brazeau NF, Ngasala B, Mhamilawa LE, Denton M, Msellem M, Morris U, Filer DL, Aydemir O, Bailey JA, Parr JB, Mårtensson A, Bjorkman A, Juliano JJ. Falciparum malaria from coastal Tanzania and Zanzibar remains highly connected despite effective control efforts on the archipelago. Malar J. 2020 Jan 28;19(1):47. doi: 10.1186/s12936-020-3137-8. PMID: 31992305; PMCID: PMC6988337.&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div></description></item><item><title>The impact of antimalarial resistance on the genetic structure of Plasmodium falciparum in the DRC</title><link>https://nicholasbrazeau.com/publication/verity-impact-2020/</link><pubDate>Wed, 01 Apr 2020 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/verity-impact-2020/</guid><description/></item><item><title>Anonymised and aggregated crowd level mobility data from mobile phones suggests that initial compliance with COVID-19 social distancing interventions was high and geographically consistent across the UK</title><link>https://nicholasbrazeau.com/publication/jeffrey-anonymised-2020/</link><pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/jeffrey-anonymised-2020/</guid><description/></item><item><title>Falciparum malaria from coastal Tanzania and Zanzibar remains highly connected despite effective control efforts on the archipelago</title><link>https://nicholasbrazeau.com/publication/morgan-falciparum-2020/</link><pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/morgan-falciparum-2020/</guid><description/></item><item><title>Loss of daptomycin susceptibility in clinical Staphylococcus epidermidis infection coincided with variants in WalK</title><link>https://nicholasbrazeau.com/publication/brazeau-loss-2020/</link><pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/brazeau-loss-2020/</guid><description/></item><item><title>Pooled Deep Sequencing of Drug Resistance Loci from Plasmodium falciparum Parasites across Ethiopia</title><link>https://nicholasbrazeau.com/publication/brazeau-pooled-2019/</link><pubDate>Fri, 01 Nov 2019 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/brazeau-pooled-2019/</guid><description/></item><item><title>Prevalence of Molecular Markers of Antimalarial Drug Resistance across Altitudinal Transmission Zones in Highland Western Uganda</title><link>https://nicholasbrazeau.com/publication/boyce-prevalence-2019/</link><pubDate>Tue, 01 Oct 2019 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/boyce-prevalence-2019/</guid><description/></item><item><title>The changing landscape of Plasmodium falciparum drug resistance in the Democratic Republic of Congo</title><link>https://nicholasbrazeau.com/publication/deutsch-feldman-changing-2019/</link><pubDate>Tue, 01 Oct 2019 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/deutsch-feldman-changing-2019/</guid><description/></item><item><title>Plasmodium vivax chloroquine resistance links to pvcrt transcription in a genetic cross</title><link>https://nicholasbrazeau.com/publication/sa-plasmodium-2019/</link><pubDate>Sun, 01 Sep 2019 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/sa-plasmodium-2019/</guid><description/></item><item><title>Interacting with The Demographic and Health Surveys (DHS) Program data</title><link>https://nicholasbrazeau.com/2019/01/29/rdhs/</link><pubDate>Tue, 29 Jan 2019 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/2019/01/29/rdhs/</guid><description>
 &lt;p>This is a copy of &lt;a href="https://ropensci.org/blog/2019/01/29/rdhs/">my article for ROpenSci&lt;/a>
 detailing the &lt;code>rdhs&lt;/code> package:&lt;/p>
 &lt;p>There seem to be a lot of ways to write about your R package, and rather than have
@@ -979,4 +539,4 @@ eLife&lt;a href="#fn1" class="footnote-ref" id="fnref1">&lt;sup>1&lt;/sup>&lt;/a
 &lt;ol>
 &lt;li id="fn1">&lt;p>&lt;a href="https://elifesciences.org/articles/25008" class="uri">https://elifesciences.org/articles/25008&lt;/a>&lt;a href="#fnref1" class="footnote-back">↩︎&lt;/a>&lt;/p>&lt;/li>
 &lt;/ol>
-&lt;/div></description></item><item><title>Longitudinal Pooled Deep Sequencing of the Plasmodium vivax K12 Kelch Gene in Cambodia Reveals a Lack of Selection by Artemisinin</title><link>https://nicholasbrazeau.com/publication/brazeau-longitudinal-2016/</link><pubDate>Thu, 01 Dec 2016 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/brazeau-longitudinal-2016/</guid><description/></item><item><title>Distribution of a Chimpanzee Social Custom Is Explained by Matrilineal Relationship Rather Than Conformity</title><link>https://nicholasbrazeau.com/publication/wrangham-distribution-2016/</link><pubDate>Tue, 01 Nov 2016 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/wrangham-distribution-2016/</guid><description/></item><item><title>Exclusive Breastfeeding and Clinical Malaria Risk in 6-Month-Old Infants: A Cross-Sectional Study from Kinshasa, Democratic Republic of the Congo</title><link>https://nicholasbrazeau.com/publication/brazeau-exclusive-2016/</link><pubDate>Sat, 01 Oct 2016 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/brazeau-exclusive-2016/</guid><description/></item><item><title>Pooled Amplicon Deep Sequencing of Candidate Plasmodium falciparum Transmission-Blocking Vaccine Antigens</title><link>https://nicholasbrazeau.com/publication/juliano-pooled-2016/</link><pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/juliano-pooled-2016/</guid><description/></item><item><title>Dental eruption in East African wild chimpanzees</title><link>https://nicholasbrazeau.com/publication/machanda-dental-2015/</link><pubDate>Fri, 01 May 2015 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/machanda-dental-2015/</guid><description/></item><item><title>Critical limb ischemia: an update for interventional radiologists</title><link>https://nicholasbrazeau.com/publication/brazeau-critical-2013/</link><pubDate>Mon, 01 Apr 2013 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/brazeau-critical-2013/</guid><description/></item><item><title>May-Thurner syndrome: diagnosis and management</title><link>https://nicholasbrazeau.com/publication/brazeau-may-thurner-2013/</link><pubDate>Fri, 01 Mar 2013 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/brazeau-may-thurner-2013/</guid><description/></item><item><title>May-Thurner syndrome: can it be diagnosed by a single MR venography study?</title><link>https://nicholasbrazeau.com/publication/mcdermott-may-thurner-2013/</link><pubDate>Fri, 01 Feb 2013 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/mcdermott-may-thurner-2013/</guid><description/></item><item><title>About Me</title><link>https://nicholasbrazeau.com/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/about/</guid><description/></item><item><title>Consulting</title><link>https://nicholasbrazeau.com/consulting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/consulting/</guid><description/></item><item><title>Projects</title><link>https://nicholasbrazeau.com/projects/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/projects/</guid><description/></item><item><title>Training</title><link>https://nicholasbrazeau.com/training/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/training/</guid><description/></item></channel></rss>
+&lt;/div></description></item><item><title>Longitudinal Pooled Deep Sequencing of the Plasmodium vivax K12 Kelch Gene in Cambodia Reveals a Lack of Selection by Artemisinin</title><link>https://nicholasbrazeau.com/publication/brazeau-longitudinal-2016/</link><pubDate>Thu, 01 Dec 2016 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/brazeau-longitudinal-2016/</guid><description/></item><item><title>Distribution of a Chimpanzee Social Custom Is Explained by Matrilineal Relationship Rather Than Conformity</title><link>https://nicholasbrazeau.com/publication/wrangham-distribution-2016/</link><pubDate>Tue, 01 Nov 2016 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/wrangham-distribution-2016/</guid><description/></item><item><title>Exclusive Breastfeeding and Clinical Malaria Risk in 6-Month-Old Infants: A Cross-Sectional Study from Kinshasa, Democratic Republic of the Congo</title><link>https://nicholasbrazeau.com/publication/brazeau-exclusive-2016/</link><pubDate>Sat, 01 Oct 2016 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/brazeau-exclusive-2016/</guid><description/></item><item><title>Pooled Amplicon Deep Sequencing of Candidate Plasmodium falciparum Transmission-Blocking Vaccine Antigens</title><link>https://nicholasbrazeau.com/publication/juliano-pooled-2016/</link><pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/juliano-pooled-2016/</guid><description/></item><item><title>Dental eruption in East African wild chimpanzees</title><link>https://nicholasbrazeau.com/publication/machanda-dental-2015/</link><pubDate>Fri, 01 May 2015 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/machanda-dental-2015/</guid><description/></item><item><title>Critical limb ischemia: an update for interventional radiologists</title><link>https://nicholasbrazeau.com/publication/brazeau-critical-2013/</link><pubDate>Mon, 01 Apr 2013 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/brazeau-critical-2013/</guid><description/></item><item><title>May-Thurner syndrome: diagnosis and management</title><link>https://nicholasbrazeau.com/publication/brazeau-may-thurner-2013/</link><pubDate>Fri, 01 Mar 2013 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/brazeau-may-thurner-2013/</guid><description/></item><item><title>May-Thurner syndrome: can it be diagnosed by a single MR venography study?</title><link>https://nicholasbrazeau.com/publication/mcdermott-may-thurner-2013/</link><pubDate>Fri, 01 Feb 2013 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/mcdermott-may-thurner-2013/</guid><description/></item><item><title>About Me</title><link>https://nicholasbrazeau.com/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/about/</guid><description/></item><item><title>Consulting</title><link>https://nicholasbrazeau.com/consulting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/consulting/</guid><description/></item><item><title>Projects</title><link>https://nicholasbrazeau.com/projects/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/projects/</guid><description/></item></channel></rss>
