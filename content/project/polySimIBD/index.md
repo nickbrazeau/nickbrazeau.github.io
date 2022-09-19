@@ -1,7 +1,7 @@
 ---
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
 
-title: "polySimIBD"
+title: "`polySimIBD`: A Simple Malaria Genetic Model"
 summary: "Spatial Structured Wright Fisher Model for Malaria Population Genetic Simulations"
 authors: []
 tags: [rpackage, malaria, active]

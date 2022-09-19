@@ -1,7 +1,7 @@
 ---
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
 
-title: "Discent"
+title: "`DISCent`: Spatial Inbreeding Estimation"
 summary: "An algorithm for detecting deme inbreeding spatial coefficients from recombining pathogen genetic data"
 authors: []
 tags: [rpackage, malaria, active]

@@ -1,7 +1,7 @@
 ---
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
 
-title: "COVIDCurve"
+title: "`COVIDCurve`: COVID-19 Statistical Modeling"
 summary: "Bayesian statistical model for estimating age-based infection fatality ratios from serologic data"
 authors: []
 tags: [rpackage, covid]

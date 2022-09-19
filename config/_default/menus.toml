@@ -20,7 +20,7 @@
 
 [[main]]
   name = "Products"
-  url = "pubs"
+  url = "publications"
   weight = 4
 
 [[main]]

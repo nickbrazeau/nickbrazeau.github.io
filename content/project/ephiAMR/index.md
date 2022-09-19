@@ -1,7 +1,7 @@
 ---
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
 
-title: "Ethiopia Antimalarial Resistance"
+title: "Antimalarial Resistance in Ethiopia"
 summary: "Estimating the prevalence of antimalarial mutations in Ethiopia across time and space"
 authors: []
 tags: [malaria, AMR]

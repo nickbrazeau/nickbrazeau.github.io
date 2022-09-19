@@ -19,11 +19,11 @@ title = ""
 
   # Background color.
   # color = "navy"
-  
+
   # Background gradient.
   # gradient_start = "DeepSkyBlue"
   # gradient_end = "SkyBlue"
-  
+
   # Background image.
   # image = "headers/flowers.jpg"  # Name of image in `static/img/`.
   image_darken = 0  # Darken the image? Range 0-1 where 0 is transparent and 1 is opaque.
@@ -32,9 +32,9 @@ title = ""
   text_color_light = false
 
 [advanced]
- # Custom CSS. 
- css_style = "background-image:linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),  url('/img/headers/cliff.jpg');"
- 
+ # Custom CSS.
+ css_style = "background-image:linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),  url('/img/headers/chimp_distance.jpeg');"
+
  # CSS class.
  css_class = "aboutme-header"
 +++
