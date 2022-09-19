@@ -1,8 +1,7 @@
 ---
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
 
-title: Partner-Drug Resistance and Population Substructuring of Artemisinin-Resistant
-  Plasmodium falciparum in Cambodia
+title: Partner-Drug Resistance and Population Substructuring of Artemisinin-Resistant Plasmodium falciparum in Cambodia
 subtitle: ''
 summary: ''
 authors:
@@ -51,7 +50,6 @@ tags:
 - Treatment Failure
 categories: []
 date: '2017-06-01'
-lastmod: 2022-07-30T15:35:38-04:00
 featured: false
 draft: false
 
@@ -69,7 +67,7 @@ image:
 #   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
 #   Otherwise, set `projects = []`.
 projects: []
-publishDate: '2022-07-30T19:35:38.086262Z'
+publishDate: '2017-06-01'
 publication_types:
 - '2'
 abstract: Plasmodium falciparum in western Cambodia has developed resistance to artemisinin

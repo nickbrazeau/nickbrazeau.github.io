@@ -19,14 +19,15 @@
   weight = 3
 
 [[main]]
-  name = "Products"
-  url = "publications"
+  name = "Service"
+  url = "service"
   weight = 4
 
 [[main]]
-  name = "Service"
-  url = "service"
+  name = "Pubs & Talks"
+  url = "publications"
   weight = 5
+
 
 # [[main]]
 #   name = "Consulting"
