@@ -1,7 +1,7 @@
 ---
 title: "COVID-19 Infection Fatality Ratio: Where we started, Where we were, Where we are"
 author: Nicholas F. Brazeau
-date: '2020-12-18T08:00:00-08:00'
+date: '2020-12-18T09:00:00'
 slug: ighid-covid-19-talk
 categories:
   - modeling
@@ -20,7 +20,7 @@ summary: ~
 abstract: ~
 date_end: ~
 all_day: no
-publishDate: '2020-12-18T08:00:00-08:00'
+publishDate: '2020-12-18'
 authors: []
 featured: no
 image:
@@ -44,6 +44,6 @@ slides: ''
 projects: []
 ---
 
-Talk at the UNC Institute of Global Health and Infectious Disease monthly conference. The talk was early discussion of statistcal modeling and the the evolution of the COVID-19 IFR during the first wave of the pandemic. Our statistical model is now published at Communications Medicine[^1].
+Talk at the UNC Institute of Global Health and Infectious Disease monthly conference. The talk was early discussion of statistical modeling and the the evolution of the COVID-19 IFR during the first wave of the pandemic. Our statistical model is now published at Communications Medicine[^1].
 
 [^1]: Brazeau NF, Verity R, Jenks S, Fu H, Whittaker C, Winskill P, Dorigatti I, Walker PGT, Riley S, Schnekenberg RP, Hoeltgebaum H, Mellan TA, Mishra S, Unwin HJT, Watson OJ, Cucunubá ZM, Baguelin M, Whittles L, Bhatt S, Ghani AC, Ferguson NM, Okell LC. Estimating the COVID-19 infection fatality ratio accounting for seroreversion using statistical modelling. Commun Med (Lond). 2022 May 19;2:54. doi: 10.1038/s43856-022-00106-7. PMID: 35603270; PMCID: PMC9120146.

@@ -39,7 +39,7 @@ title = ""
 <!-- Research section -->
 <h1 style="text-align: center;">Research & Interests</h1>
 
-_Below I describe what I am doing and what I hope to do..._
+_Below, I briefly summarize my research to date and elaborate on my interests and what I hope to continue to work on in the future. At the end of this page, you will find current and past projects._
 
 &nbsp;
 &nbsp;
@@ -47,48 +47,31 @@ _Below I describe what I am doing and what I hope to do..._
 &nbsp;
 
 
-<img align="left" width=50% height=300px padding="100" style="padding-top:7%; padding-bottom:7%; padding-right: 5%" src="/img/todo.png">
+<img align="left" width=45% height=200px padding="100" style="padding-top:15%; padding-bottom:15%; padding-right: 5%" src="/img/idmodel.png">
 
 ### Infectious Disease Modeling
 
- Words  
-  Words  
-   Words  
-    Words  
+There are many approaches to modeling infectious diseases depending the research question. In one framework, I have considered the "who", "where", "why now" of a pathogen in a region that was previously thought to be resilient to infection. To determine "who" was being infected, I estimated "risk factors" accounting for confounding using inverse probability treatment weights estimated through the supervised SuperLearner (machine learning) algorithm; "where" infections were occurring using Bayesian Gaussian spatial process models; and "why now" using basic genetic analyses. For other research questions estimating the severity of an infectious disease, I have employed Bayesian statistical modeling or helped to implement mathematical models for infection scenario and burden planning. As an infectious disease epidemiologist, I am most interested in the intersection of methods, combining molecular techniques, bioinformatics/genomics, evolutionary biology, statistical modeling, and spatial methods to identify pathways of infection and pathways of antimicrobial resistance evolution. Using an interdisciplinary approach, I hope to identify interventions that block these pathways.  
 
 ***
 
-<img align="right" width=30% height=300px padding="100" style="padding-top:7%; padding-bottom:7%; padding-right: 5%" src="/img/todo.png">
+<img align="right" width = 50% height=300px style="padding-top:20%; padding-bottom:15%; padding-left: 5%" src="/img/phylo.png">
+&nbsp;
 
 ### Bioinformatics, Genomics, Statistical Genetics
 
-Words  
- Words  
-  Words  
-   Words  
+Molecular surveillance and genomics greatly enrich infectious disease epidemiology analyses, models, and intervention planning. To date, a large majority of my bioinformatic and genomic work has focused on antimicrobial resistance, with an emphasis on putative antimalarial resistance. In the past, I have used genome-wide barcodes to infer how antimalarial selectional pressures have shaped Falciparum malaria population structures in the Democratic Republic of the Congo as well as whole genome sequencing to identify novel antimicrobial mutations in _Staphylococcus epidermidis_. Separately, I have been engaged in statistical genetics method development with models focused on estimating local inbreeding (`DISCent`), important for sink-source dynamics and interventional planning, as well as inferring identity by descent in polyclonal malaria infections (`polyIBD`).
 <br>
 
 ***
 
-<img align="left" width=40% height=300px padding="100" style="padding-top:5%; padding-bottom:5%; padding-right: 5%" src="/img/todo.png">
+<img align="left" width=40% height=200px padding="100" style="padding-top:5%; padding-bottom:5%; padding-right: 5%" src="/img/world.png">
+&nbsp;
 
 ### Global Health & Medicine, Translational Research
 
-Words  
- Words  
-  Words  
-   Words  
+Global medicine has become local medicine and vice versa. I am interested in supporting capacity building efforts through research in low- and middle-income countries and historically underserved regions.  
+
 <br>
-
-***
-
-<img align="right" width=30% height=300px padding="100" style="padding-top:7%; padding-bottom:7%; padding-right: 5%" src="/img/todo.png">
-
-### Molecular, Spatial, & Causal Inference Epidemiology
-
- Words  
-  Words  
-   Words  
-    Words  
 
 ***

@@ -2,3 +2,8 @@ https://wowchemy.com/docs/
 
 - CV w/ RMD
 - Add consulting section
+
+
+
+put shiny apps up> ? for blogs
+https://datasciencegenie.com/how-to-embed-a-shiny-app-on-website/

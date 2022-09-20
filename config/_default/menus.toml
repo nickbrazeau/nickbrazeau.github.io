@@ -18,10 +18,10 @@
   url = "projects"
   weight = 3
 
-[[main]]
-  name = "Service"
-  url = "service"
-  weight = 4
+# [[main]]
+#   name = "Service"
+#   url = "service"
+#   weight = 4
 
 [[main]]
   name = "Pubs & Talks"
@@ -40,4 +40,9 @@
 [[main]]
   name = "CV"
   url = "files/cv.pdf"
-  weight = 70
+  weight = 90
+
+[[main]]
+  name = "Contact"
+  url = "contact"
+  weight = 100
