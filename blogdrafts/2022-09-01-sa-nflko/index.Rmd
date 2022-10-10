@@ -1,0 +1,47 @@
+---
+title: "Using Statistical Modeling to win a NFL KO Pool"
+author: "Nicholas F. Brazeau"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+output: 
+  html_document:
+    highlight: textmate
+    theme: lumen
+    toc: yes
+    toc_float: yes
+    toc_depth: 3
+    code_folding: show
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = T, warning = F, message = F, eval = T, results = 'hide',
+                      fig.align = 'center', fig.width = 6, fig.height = 6)
+knitr::opts_knit$set(root.dir = here::here(""))
+```
+
+# Introduction
+Admittedly, I am a terrible sports fan. However, I do enjoy competition and the opportunity to participate in a little "smack talk" with family and friends. Every year, family, friends, and folks from my childhood community come together to play a game of "NFL Pool Knockout". The rules are relatively simple: each participant picks one NFL team each week - if the team wins, you advance. Each team can only be selected once during the season. Ties count as losses. 
+
+
+
+$18! ~\approx 6.4e15$
+
+
+### Dependencies
+```{r, fold=FALSE}
+#remotes::install_github("nickbrazeau/nflKOSA")
+library(nflKOSA)
+library(tidyverse)
+library(nflplotR)
+```
+
+
+
+## Run what you brung
+
+```
+  nflplotR::valid_team_names()
+nflplotR::geom_nfl_logos(aes(team_abbr = team), width = 0.065, alpha = 0.7) +
+
+```
