@@ -1,0 +1,252 @@
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=generator content="Source Themes Academic 4.5.0"><meta name=author content="Nicholas Brazeau"><meta name=description content="Below, you will find code for creating a shiny flex-dashboard for simple SIR open and closed population models.
+--- title: &#34;Simulating SIR Models in a Closed and Open Population&#34; date: &#34;`r format(Sys.time(), '%B %d, %Y')`&#34; editor_options: chunk_output_type: console output: flexdashboard::flex_dashboard runtime: shiny --- ```{r setup, include=FALSE} knitr::opts_chunk$set(echo = F, warning = F, message = F, fig.align = 'center', results = 'hide', fig.keep = 'all') library(tidyverse) library(cowplot) # https://rmarkdown.rstudio.com/flexdashboard/layouts.html#multiple_pages #.............................................................. # Open Model #."><link rel=alternate hreflang=en-us href=https://nicholasbrazeau.com/2020/04/27/simulating-deterministic-sir-models-in-a-closed-and-open-population-playground/><meta name=theme-color content="#2962ff"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin=anonymous><link rel=stylesheet href=https://use.fontawesome.com/releases/v5.6.0/css/all.css integrity=sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h crossorigin=anonymous><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin=anonymous><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/darcula.min.css crossorigin=anonymous title=hl-light><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/darcula.min.css crossorigin=anonymous title=hl-dark disabled><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap"><link rel=stylesheet href=/css/academic.min.0129a70d91b556bfeee60a2761ebcab2.css><link rel=stylesheet href=/css/academic.96c9d57f78edaefbed63fd2534fb6c17.css><link rel=manifest href=/index.webmanifest><link rel=icon type=image/png href=/img/icon-32.png><link rel=apple-touch-icon type=image/png href=/img/icon-192.png><link rel=canonical href=https://nicholasbrazeau.com/2020/04/27/simulating-deterministic-sir-models-in-a-closed-and-open-population-playground/><meta property="twitter:card" content="summary_large_image"><meta property="twitter:site" content="@NFBrazeau"><meta property="twitter:creator" content="@NFBrazeau"><meta property="og:site_name" content="Nick Brazeau"><meta property="og:url" content="https://nicholasbrazeau.com/2020/04/27/simulating-deterministic-sir-models-in-a-closed-and-open-population-playground/"><meta property="og:title" content="Simulating Deterministic SIR Models in a Closed and Open Population Playground | Nick Brazeau"><meta property="og:description" content="Below, you will find code for creating a shiny flex-dashboard for simple SIR open and closed population models.
+--- title: &#34;Simulating SIR Models in a Closed and Open Population&#34; date: &#34;`r format(Sys.time(), '%B %d, %Y')`&#34; editor_options: chunk_output_type: console output: flexdashboard::flex_dashboard runtime: shiny --- ```{r setup, include=FALSE} knitr::opts_chunk$set(echo = F, warning = F, message = F, fig.align = 'center', results = 'hide', fig.keep = 'all') library(tidyverse) library(cowplot) # https://rmarkdown.rstudio.com/flexdashboard/layouts.html#multiple_pages #.............................................................. # Open Model #."><meta property="og:image" content="https://nicholasbrazeau.com/img/headers/tree.jpg"><meta property="twitter:image" content="https://nicholasbrazeau.com/img/headers/tree.jpg"><meta property="og:locale" content="en-us"><meta property="article:published_time" content="2020-04-27T00:00:00+00:00"><meta property="article:modified_time" content="2020-04-27T00:00:00+00:00"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://nicholasbrazeau.com/2020/04/27/simulating-deterministic-sir-models-in-a-closed-and-open-population-playground/"},"headline":"Simulating Deterministic SIR Models in a Closed and Open Population Playground","datePublished":"2020-04-27T00:00:00Z","dateModified":"2020-04-27T00:00:00Z","author":{"@type":"Person","name":"Nicholas Brazeau"},"publisher":{"@type":"Organization","name":"Nick Brazeau","logo":{"@type":"ImageObject","url":"https://nicholasbrazeau.com/img/icon-512.png"}},"description":"Below, you will find code for creating a shiny flex-dashboard for simple SIR open and closed population models.\n--- title: \u0026#34;Simulating SIR Models in a Closed and Open Population\u0026#34; date: \u0026#34;`r format(Sys.time(), \u0026#39;%B %d, %Y\u0026#39;)`\u0026#34; editor_options: chunk_output_type: console output: flexdashboard::flex_dashboard runtime: shiny --- ```{r setup, include=FALSE} knitr::opts_chunk$set(echo = F, warning = F, message = F, fig.align = \u0026#39;center\u0026#39;, results = \u0026#39;hide\u0026#39;, fig.keep = \u0026#39;all\u0026#39;) library(tidyverse) library(cowplot) # https://rmarkdown.rstudio.com/flexdashboard/layouts.html#multiple_pages #.............................................................. # Open Model #."}</script><title>Simulating Deterministic SIR Models in a Closed and Open Population Playground | Nick Brazeau</title></head><body id=top data-spy=scroll data-offset=70 data-target=#TableOfContents><aside class=search-results id=search><div class=container><section class=search-header><div class="row no-gutters justify-content-between mb-3"><div class=col-6><h1>Search</h1></div><div class="col-6 col-search-close"><a class=js-search href=#><i class="fas fa-times-circle text-muted" aria-hidden=true></i></a></div></div><div id=search-box><input name=q id=search-query placeholder=Search... autocapitalize=off autocomplete=off autocorrect=off spellcheck=false type=search></div></section><section class=section-search-results><div id=search-hits></div></section></div></aside><nav class="navbar navbar-light fixed-top navbar-expand-lg py-0 compensate-for-scrollbar" id=navbar-main><div class=container><a class=navbar-brand href=/>Nick Brazeau</a>
+<button type=button class=navbar-toggler data-toggle=collapse data-target=#navbar aria-controls=navbar aria-expanded=false aria-label="Toggle navigation">
+<span><i class="fas fa-bars"></i></span></button><div class="collapse navbar-collapse" id=navbar><ul class="navbar-nav ml-auto"><li class=nav-item><a class=nav-link href=/about><span>About</span></a></li><li class=nav-item><a class=nav-link href=/post><span>Blog</span></a></li><li class=nav-item><a class=nav-link href=/research><span>Research</span></a></li><li class=nav-item><a class=nav-link href=/publications><span>Pubs & Talks</span></a></li><li class=nav-item><a class=nav-link href=/files/cv.pdf><span>CV</span></a></li><li class=nav-item><a class=nav-link href=/contact><span>Contact</span></a></li><li class=nav-item><a class="nav-link js-search" href=#><i class="fas fa-search" aria-hidden=true></i></a></li></ul></div></div></nav><article class=article><div class="article-container pt-3"><h1>Simulating Deterministic SIR Models in a Closed and Open Population Playground</h1><div class=article-metadata><span class=article-date>Apr 27, 2020</span>
+<span class=middot-divider></span>
+<span class=article-reading-time>6 min read</span>
+<span class=middot-divider></span>
+<span class=article-categories><i class="fas fa-folder mr-1"></i><a href=/categories/r/>R</a></span></div></div><div class=article-container><div class=article-style><p>Below, you will find code for creating a shiny flex-dashboard for simple SIR open and closed population models.</p><pre tabindex=0><code>  ---
+  title: &#34;Simulating SIR Models in a Closed and Open Population&#34;
+  date: &#34;`r format(Sys.time(), &#39;%B %d, %Y&#39;)`&#34;
+  editor_options: 
+    chunk_output_type: console
+  output: flexdashboard::flex_dashboard
+  runtime: shiny
+  ---
+  
+  
+  ```{r setup, include=FALSE}
+  knitr::opts_chunk$set(echo = F, warning = F, message = F, fig.align = &#39;center&#39;, results = &#39;hide&#39;, fig.keep = &#39;all&#39;)
+  library(tidyverse)
+  library(cowplot)
+  # https://rmarkdown.rstudio.com/flexdashboard/layouts.html#multiple_pages
+</code></pre><pre tabindex=0><code>#..............................................................
+# Open Model
+#..............................................................
+# stochastic simulator for the unobserved state process --&gt; how cases are generated
+open_sir_step &lt;- function(S, I, R, N, Beta, mu_IR, mu_L, delta.t){
+  SI_events &lt;- rbinom(n = 1, size = S, prob = 1 - exp((-(mu_L+Beta*(I/N)))*delta.t))
+  SI_deaths &lt;- rbinom(n = 1, size = SI_events, prob = mu_L/(mu_L + Beta*(I/N)))
+  infected &lt;- SI_events - SI_deaths
+  IR_events &lt;- rbinom(n = 1, size = I, prob = 1 - exp(-(mu_L+mu_IR)*delta.t))
+  IR_deaths &lt;- rbinom(n = 1, size = IR_events, prob = mu_L/(mu_L + mu_IR))
+  recovered &lt;- IR_events - IR_deaths
+  recovered_deaths &lt;- rbinom(n = 1, size = R, prob = 1 - exp(-mu_L))
+  
+  S &lt;- S - infected + IR_deaths + recovered_deaths 
+  I &lt;- I + infected - recovered - IR_deaths
+  R &lt;- R + recovered - recovered_deaths
+  N &lt;- S + I + R
+  return(c(&#34;N&#34; = N, &#34;S&#34; = S, &#34;I&#34; = I, &#34;R&#34; = R))
+}
+# recursively just step through time now
+open_sir_wrapper &lt;-  function(N, I0, R0, Beta, mu_IR, mu_L, time, ...){
+  # set up
+  S0 &lt;- N - I0  - R0
+  time.steps &lt;- (time - dplyr::lag(time))
+  # init 
+  ret &lt;- matrix(NA, nrow = length(time.steps) , ncol = 4)
+  ret[1,] &lt;- open_sir_step(S = S0, 
+                            I = I0, R = R0, N = N, 
+                            Beta = Beta, 
+                            mu_IR = mu_IR, 
+                            mu_L = mu_L,
+                            delta.t = 0)
+  
+  for (t in 2:length(time.steps)) {
+    ret[t,] &lt;-  open_sir_step(S = ret[t-1, 2], 
+                               I = ret[t-1, 3], 
+                               R = ret[t-1, 4], 
+                               N = ret[t-1, 1], 
+                               Beta = Beta, 
+                               mu_IR = mu_IR, 
+                               mu_L = mu_L,
+                               delta.t = time.steps[t]
+    )
+  }
+  # out
+  ret &lt;- cbind.data.frame(time, ret)
+  colnames(ret) &lt;- c(&#34;time&#34;, &#34;N&#34;, &#34;S&#34;, &#34;I&#34;, &#34;R&#34;)
+  return(ret)
+  
+}
+
+#..............................................................
+# Closed Model
+#..............................................................
+closed_sir_step &lt;- function(S,I, R, N, Beta, mu_IR, delta.t){
+  dN_SI &lt;- rbinom(n = 1, size = S, prob = 1 - exp(-Beta*(I/N)*delta.t))
+  dN_IR &lt;- rbinom(n = 1, size = I, prob = 1 - exp(-mu_IR*delta.t))
+  S &lt;- S - dN_SI
+  I &lt;- I + dN_SI - dN_IR
+  R &lt;- R + dN_IR
+  return(c(&#34;S&#34; = S, &#34;I&#34; = I, &#34;R&#34; = R))
+}
+
+# recursively just step through time now
+closed_sir_wrapper &lt;-  function(N, I0, R0, Beta, mu_IR, time, ...){
+  # set up
+  S0 &lt;- N - I0 - R0
+  time.steps &lt;- (time - dplyr::lag(time))
+  # init 
+  ret &lt;- matrix(NA, nrow = length(time.steps) , ncol = 3)
+  ret[1,] &lt;- closed_sir_step(S = S0, 
+                              I = I0, R = R0, N = N, 
+                              Beta = Beta, 
+                              mu_IR = mu_IR, delta.t = 0)
+  
+  for (t in 2:length(time.steps)) {
+    ret[t,] &lt;-  closed_sir_step(S = ret[t-1, 1], 
+                                 I = ret[t-1, 2], 
+                                 R = ret[t-1, 3], 
+                                 N = N, # closed population
+                                 Beta = Beta, 
+                                 mu_IR = mu_IR, 
+                                 delta.t = time.steps[t]
+    )
+  }
+  # out
+  ret &lt;- cbind.data.frame(time, ret)
+  colnames(ret) &lt;- c(&#34;time&#34;, &#34;S&#34;, &#34;I&#34;, &#34;R&#34;)
+  return(ret)
+  
+}
+</code></pre><h3 class=sidebar id=sidebar>Sidebar</h3><pre tabindex=0><code>#..............................................................
+# Sliding Panel for Different Parameters we are estimating
+#..............................................................
+
+inputPanel(
+  sliderInput(&#34;Time&#34;, label = &#34;Time Observed Since Start of Epidemic&#34;,
+              min = 0, max = 1e3, value = 500, step = 100),
+  
+  sliderInput(&#34;mu_L&#34;, label = &#34;Birth &amp; Death Rate&#34;,
+              min = 0.01, max = 0.1, value = 0.01, step = 0.005),
+  
+  sliderInput(&#34;beta&#34;, label = &#34;Beta (Effective Contact Rate)&#34;,
+              min = 0, max = 1, value = 0.2, step = 0.001),
+  
+  sliderInput(&#34;mu_IR&#34;, label = &#34;Gamma (Rate of Recovery)&#34;,
+              min = 0, max = 0.5, value = 0.1, step = 0.005),
+  
+  actionLink(&#34;button&#34;, &#34;Ruh Roh!&#34;, icon(&#34;bug&#34;), 
+             style=&#34;color: #fff; background-color: #337ab7; border-color: #2e6da4&#34;)
+  
+)
+</code></pre><h3 id=sir-closed-vs-open>SIR Closed vs. Open</h3><pre tabindex=0><code>
+renderPlot({ withProgress(message = &#39;Making plot&#39;, {
+  # re-render button
+  input$button
+  #..............................................................
+  # plot closed
+  #..............................................................
+  closed_truth &lt;- closed_sir_wrapper(N = 1e5,
+                                      I0 = 1,
+                                      R0 = 0,
+                                      Beta = input$beta,
+                                      mu_IR = input$mu_IR,
+                                      time = 1:input$Time)
+  
+  closed_sir_plot &lt;- closed_truth %&gt;% 
+    tidyr::gather(., key = &#34;compartment&#34;, &#34;count&#34;, 2:ncol(.)) %&gt;% 
+    dplyr::mutate(Compartment = factor(compartment, levels = c(&#34;S&#34;, &#34;I&#34;, &#34;R&#34;))) %&gt;% 
+    ggplot() + 
+    geom_line(aes(x=time, y=count, color = Compartment), size = 2, alpha = 0.9) +
+    scale_color_manual(&#34;&#34;, values = c(&#34;#2171b5&#34;, &#34;#e41a1c&#34;, &#34;#6a51a3&#34;)) +
+    xlab(&#34;Time&#34;) + ylab(&#34;N&#34;) + ggtitle(&#34;SIR Closed Population&#34;) +
+    scale_y_continuous(label = scales::unit_format(big.mark = &#34;,&#34;, scale = 1, unit = &#34;&#34;)) +
+    theme_bw() +
+    theme(
+      plot.title = element_text(family = &#34;Helvetica&#34;, face = &#34;bold&#34;, vjust = 0.5,  hjust = 0.5, size = 18),
+      axis.text.x = element_text(family = &#34;Helvetica&#34;, face = &#34;bold&#34;, hjust = 0.5, vjust = 0.5, size = 14),
+      axis.text.y = element_text(family = &#34;Helvetica&#34;, hjust = 0.5, vjust = 0.5, size = 14, angle = 45),
+      legend.title = element_text(family = &#34;Helvetica&#34;, face = &#34;bold&#34;, vjust = 0.5, size = 15),
+      legend.text = element_text(family = &#34;Helvetica&#34;, hjust = 0.5, vjust = 0.5, size = 14),
+      panel.background = element_rect(fill = &#34;transparent&#34;),
+      plot.background = element_rect(fill = &#34;transparent&#34;),
+      legend.background = element_rect(fill = &#34;transparent&#34;)) 
+  
+  
+  
+  #..............................................................
+  # plot OPEN MODEL
+  #..............................................................
+  open_truth &lt;- open_sir_wrapper(N = 1e5,
+                                  I0 = 1,
+                                  R0 = 0,
+                                  Beta = input$beta,
+                                  mu_IR = input$mu_IR,
+                                  mu_L = input$mu_L,
+                                  time = 1:input$Time)
+  
+  
+  
+  open_truthPlot &lt;- open_truth %&gt;% 
+    dplyr::select(-c(&#34;N&#34;)) %&gt;% 
+    tidyr::gather(., key = &#34;compartment&#34;, &#34;count&#34;, 2:ncol(.)) %&gt;% 
+    dplyr::mutate(Compartment = factor(compartment, levels = c(&#34;S&#34;, &#34;I&#34;, &#34;R&#34;))) %&gt;% 
+    ggplot() + 
+    geom_line(aes(x=time, y=count, color = Compartment), size = 2, alpha = 0.9) +
+    scale_color_manual(&#34;&#34;, values = c(&#34;#2171b5&#34;, &#34;#e41a1c&#34;, &#34;#6a51a3&#34;)) +
+    xlab(&#34;Time&#34;) + ylab(&#34;N&#34;) + ggtitle(&#34;SIR Open Population&#34;) +
+    scale_y_continuous(label = scales::unit_format(big.mark = &#34;,&#34;, scale = 1, unit = &#34;&#34;)) +
+    theme_bw() +
+    theme(
+      plot.title = element_text(family = &#34;Helvetica&#34;, face = &#34;bold&#34;, vjust = 0.5,  hjust = 0.5, size = 18),
+      axis.title = element_text(family = &#34;Helvetica&#34;, face = &#34;bold&#34;, vjust = 0.5, size = 15),
+      axis.text.x = element_text(family = &#34;Helvetica&#34;, face = &#34;bold&#34;, hjust = 0.5, vjust = 0.5, size = 14),
+      axis.text.y = element_text(family = &#34;Helvetica&#34;, hjust = 0.5, vjust = 0.5, size = 14, angle = 45),
+      legend.title = element_text(family = &#34;Helvetica&#34;, face = &#34;bold&#34;, vjust = 0.5, size = 15),
+      legend.text = element_text(family = &#34;Helvetica&#34;, hjust = 0.5, vjust = 0.5, size = 14),
+      panel.background = element_rect(fill = &#34;transparent&#34;),
+      plot.background = element_rect(fill = &#34;transparent&#34;),
+      legend.background = element_rect(fill = &#34;transparent&#34;)) 
+  
+}) # end of progress bar
+  
+  #..............................................................
+  # plot out
+  #..............................................................
+  toprow &lt;- cowplot::plot_grid(closed_sir_plot, open_truthPlot, nrow = 1)
+  
+  
+  # R0
+  R0 &lt;- round(input$beta / (input$mu_IR + input$mu_L), 2)
+  bottomrow &lt;- ggplot() + geom_text(aes(0,0,
+                                        label= paste0(&#34;R[0] %~~% rho*c*D %~~% beta / (gamma + mu[L]) %~~%&#34;, R0)), parse=TRUE, size = 10, fontface = &#34;bold&#34;) +
+    theme_minimal() + 
+    theme(
+      panel.grid = element_blank(),
+      axis.text = element_blank(),
+      axis.title = element_blank()
+    ) + xlim(-0.1, 0.1) + ylim(-0.1, 0.1)
+  
+  
+  cowplot::plot_grid(toprow, bottomrow, nrow = 2, rel_heights = c(4, 1))
+})
+</code></pre></div><div class=article-tags><a class="badge badge-light" href=/tags/simulation/>simulation</a></div><div class=share-box aria-hidden=true><ul class=share><li><a href="https://twitter.com/intent/tweet?url=https://nicholasbrazeau.com/2020/04/27/simulating-deterministic-sir-models-in-a-closed-and-open-population-playground/&text=Simulating%20Deterministic%20SIR%20Models%20in%20a%20Closed%20and%20Open%20Population%20Playground" target=_blank rel=noopener class=share-btn-twitter><i class="fab fa-twitter"></i></a></li><li><a href="https://www.facebook.com/sharer.php?u=https://nicholasbrazeau.com/2020/04/27/simulating-deterministic-sir-models-in-a-closed-and-open-population-playground/&t=Simulating%20Deterministic%20SIR%20Models%20in%20a%20Closed%20and%20Open%20Population%20Playground" target=_blank rel=noopener class=share-btn-facebook><i class="fab fa-facebook"></i></a></li><li><a href="mailto:?subject=Simulating%20Deterministic%20SIR%20Models%20in%20a%20Closed%20and%20Open%20Population%20Playground&body=https://nicholasbrazeau.com/2020/04/27/simulating-deterministic-sir-models-in-a-closed-and-open-population-playground/" target=_blank rel=noopener class=share-btn-email><i class="fas fa-envelope"></i></a></li><li><a href="https://www.linkedin.com/shareArticle?url=https://nicholasbrazeau.com/2020/04/27/simulating-deterministic-sir-models-in-a-closed-and-open-population-playground/&title=Simulating%20Deterministic%20SIR%20Models%20in%20a%20Closed%20and%20Open%20Population%20Playground" target=_blank rel=noopener class=share-btn-linkedin><i class="fab fa-linkedin-in"></i></a></li><li><a href="https://web.whatsapp.com/send?text=Simulating%20Deterministic%20SIR%20Models%20in%20a%20Closed%20and%20Open%20Population%20Playground%20https://nicholasbrazeau.com/2020/04/27/simulating-deterministic-sir-models-in-a-closed-and-open-population-playground/" target=_blank rel=noopener class=share-btn-whatsapp><i class="fab fa-whatsapp"></i></a></li><li><a href="https://service.weibo.com/share/share.php?url=https://nicholasbrazeau.com/2020/04/27/simulating-deterministic-sir-models-in-a-closed-and-open-population-playground/&title=Simulating%20Deterministic%20SIR%20Models%20in%20a%20Closed%20and%20Open%20Population%20Playground" target=_blank rel=noopener class=share-btn-weibo><i class="fab fa-weibo"></i></a></li></ul></div><div class="media author-card content-widget-hr"><img class="portrait mr-3" src=/authors/nickbrazeau/avatar_hud0ab611dbab747c9a56009dc05e4fc54_5580441_250x250_fill_q100_lanczos_center.jpg alt=Avatar><div class=media-body><h5 class=card-title><a href=https://nicholasbrazeau.com/>Nicholas Brazeau</a></h5><h6 class=card-subtitle>MD/PhD Candidate</h6><ul class=network-icon aria-hidden=true><li><a href=mailto:nbrazeau@med.unc.edu><i class="fas fa-envelope"></i></a></li><li><a href=https://twitter.com/NFBrazeau target=_blank rel=noopener><i class="fab fa-twitter"></i></a></li><li><a href=https://github.com/nickbrazeau target=_blank rel=noopener><i class="fab fa-github"></i></a></li><li><a href="https://scholar.google.com/citations?user=ZdLn4sUAAAAJ&hl" target=_blank rel=noopener><i class="ai ai-google-scholar"></i></a></li><li><a href=https://www.ncbi.nlm.nih.gov/myncbi/1Z38GNVdoiEkg/bibliography/public/ target=_blank rel=noopener><i class="ai ai-pubmed"></i></a></li><li><a href=https://orcid.org/0000-0003-3976-7965 target=_blank rel=noopener><i class="ai ai-orcid"></i></a></li></ul></div></div><div class="article-widget content-widget-hr"><h3>Related</h3><ul><li><a href=/2020/04/27/stochastic-simulations-for-flattening-the-curve-playground/>Stochastic Simulations for Flattening the Curve Playground</a></li></ul></div></div></article><script src=/js/mathjax-config.js></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin=anonymous></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin=anonymous></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin=anonymous></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin=anonymous></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin=anonymous></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/r.min.js></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin=anonymous async></script>
+<script>hljs.initHighlightingOnLoad()</script><script>const search_config={indexURI:"/index.json",minLength:1,threshold:.3},i18n={no_results:"No results found",placeholder:"Search...",results:"results found"},content_type={post:"Posts",project:"Projects",publication:"Publications",talk:"Talks"}</script><script id=search-hit-fuse-template type=text/x-template>
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script><script src=https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin=anonymous></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin=anonymous></script>
+<script src=/js/academic.min.01f68d44d80310e669a1731b68a35481.js></script><div class=container><footer class=site-footer><p class=powered-by>© 2022 Nicholas Brazeau &#183;
+<a href=https://github.com/nickbrazeau/nickbrazeau.github.io target=_blank rel=noopener><i class="fas fa-code-branch" style=color:#0072b2></i></a> &#183;
+Created by a large hominin in between <i class="fas fa-stethoscope" style=color:#0072b2></i> and <i class="fas fa-laptop" style=color:#0072b2></i>
+<span class=float-right aria-hidden=true><a href=# id=back_to_top><span class=button_icon><i class="fas fa-chevron-up fa-2x"></i></span></a></span></p></footer></div><div id=modal class="modal fade" role=dialog><div class=modal-dialog><div class=modal-content><div class=modal-header><h5 class=modal-title>Cite</h5><button type=button class=close data-dismiss=modal aria-label=Close>
+<span aria-hidden=true>&#215;</span></button></div><div class=modal-body><pre><code class="tex hljs"></code></pre></div><div class=modal-footer><a class="btn btn-outline-primary my-1 js-copy-cite" href=# target=_blank><i class="fas fa-copy"></i> Copy</a>
+<a class="btn btn-outline-primary my-1 js-download-cite" href=# target=_blank><i class="fas fa-download"></i> Download</a><div id=modal-error></div></div></div></div></div></body></html>

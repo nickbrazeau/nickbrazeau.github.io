@@ -82,7 +82,301 @@ The model used in &lt;code>COVIDCurve&lt;/code> can be briefly summarized as hav
 &lt;p>Morgan AP, Brazeau NF, Ngasala B, Mhamilawa LE, Denton M, Msellem M, Morris U, Filer DL, Aydemir O, Bailey JA, Parr JB, Mårtensson A, Bjorkman A, Juliano JJ. Falciparum malaria from coastal Tanzania and Zanzibar remains highly connected despite effective control efforts on the archipelago. Malar J. 2020 Jan 28;19(1):47. doi: 10.1186/s12936-020-3137-8. PMID: 31992305; PMCID: PMC6988337.&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;/div></description></item><item><title>The impact of antimalarial resistance on the genetic structure of Plasmodium falciparum in the DRC</title><link>https://nicholasbrazeau.com/publication/verity-impact-2020/</link><pubDate>Wed, 01 Apr 2020 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/verity-impact-2020/</guid><description/></item><item><title>Anonymised and aggregated crowd level mobility data from mobile phones suggests that initial compliance with COVID-19 social distancing interventions was high and geographically consistent across the UK</title><link>https://nicholasbrazeau.com/publication/jeffrey-anonymised-2020/</link><pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/jeffrey-anonymised-2020/</guid><description/></item><item><title>Falciparum malaria from coastal Tanzania and Zanzibar remains highly connected despite effective control efforts on the archipelago</title><link>https://nicholasbrazeau.com/publication/morgan-falciparum-2020/</link><pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/morgan-falciparum-2020/</guid><description/></item><item><title>Loss of daptomycin susceptibility in clinical Staphylococcus epidermidis infection coincided with variants in WalK</title><link>https://nicholasbrazeau.com/publication/brazeau-loss-2020/</link><pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/brazeau-loss-2020/</guid><description/></item><item><title>The Epidemiology of Asymptomatic P. vivax Among Adults in the Democratic Republic of the Congoo</title><link>https://nicholasbrazeau.com/talk/discent-astmh/</link><pubDate>Fri, 22 Nov 2019 08:00:00 -0800</pubDate><guid>https://nicholasbrazeau.com/talk/discent-astmh/</guid><description>
+&lt;/div></description></item><item><title>Simulating Deterministic SIR Models in a Closed and Open Population Playground</title><link>https://nicholasbrazeau.com/2020/04/27/simulating-deterministic-sir-models-in-a-closed-and-open-population-playground/</link><pubDate>Mon, 27 Apr 2020 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/2020/04/27/simulating-deterministic-sir-models-in-a-closed-and-open-population-playground/</guid><description>&lt;p>Below, you will find code for creating a shiny flex-dashboard for simple SIR open and closed population models.&lt;/p>
+&lt;pre tabindex="0">&lt;code> ---
+title: &amp;#34;Simulating SIR Models in a Closed and Open Population&amp;#34;
+date: &amp;#34;`r format(Sys.time(), &amp;#39;%B %d, %Y&amp;#39;)`&amp;#34;
+editor_options:
+chunk_output_type: console
+output: flexdashboard::flex_dashboard
+runtime: shiny
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = F, warning = F, message = F, fig.align = &amp;#39;center&amp;#39;, results = &amp;#39;hide&amp;#39;, fig.keep = &amp;#39;all&amp;#39;)
+library(tidyverse)
+library(cowplot)
+# https://rmarkdown.rstudio.com/flexdashboard/layouts.html#multiple_pages
+&lt;/code>&lt;/pre>&lt;pre tabindex="0">&lt;code>#..............................................................
+# Open Model
+#..............................................................
+# stochastic simulator for the unobserved state process --&amp;gt; how cases are generated
+open_sir_step &amp;lt;- function(S, I, R, N, Beta, mu_IR, mu_L, delta.t){
+SI_events &amp;lt;- rbinom(n = 1, size = S, prob = 1 - exp((-(mu_L+Beta*(I/N)))*delta.t))
+SI_deaths &amp;lt;- rbinom(n = 1, size = SI_events, prob = mu_L/(mu_L + Beta*(I/N)))
+infected &amp;lt;- SI_events - SI_deaths
+IR_events &amp;lt;- rbinom(n = 1, size = I, prob = 1 - exp(-(mu_L+mu_IR)*delta.t))
+IR_deaths &amp;lt;- rbinom(n = 1, size = IR_events, prob = mu_L/(mu_L + mu_IR))
+recovered &amp;lt;- IR_events - IR_deaths
+recovered_deaths &amp;lt;- rbinom(n = 1, size = R, prob = 1 - exp(-mu_L))
+S &amp;lt;- S - infected + IR_deaths + recovered_deaths
+I &amp;lt;- I + infected - recovered - IR_deaths
+R &amp;lt;- R + recovered - recovered_deaths
+N &amp;lt;- S + I + R
+return(c(&amp;#34;N&amp;#34; = N, &amp;#34;S&amp;#34; = S, &amp;#34;I&amp;#34; = I, &amp;#34;R&amp;#34; = R))
+}
+# recursively just step through time now
+open_sir_wrapper &amp;lt;- function(N, I0, R0, Beta, mu_IR, mu_L, time, ...){
+# set up
+S0 &amp;lt;- N - I0 - R0
+time.steps &amp;lt;- (time - dplyr::lag(time))
+# init
+ret &amp;lt;- matrix(NA, nrow = length(time.steps) , ncol = 4)
+ret[1,] &amp;lt;- open_sir_step(S = S0,
+I = I0, R = R0, N = N,
+Beta = Beta,
+mu_IR = mu_IR,
+mu_L = mu_L,
+delta.t = 0)
+for (t in 2:length(time.steps)) {
+ret[t,] &amp;lt;- open_sir_step(S = ret[t-1, 2],
+I = ret[t-1, 3],
+R = ret[t-1, 4],
+N = ret[t-1, 1],
+Beta = Beta,
+mu_IR = mu_IR,
+mu_L = mu_L,
+delta.t = time.steps[t]
+)
+}
+# out
+ret &amp;lt;- cbind.data.frame(time, ret)
+colnames(ret) &amp;lt;- c(&amp;#34;time&amp;#34;, &amp;#34;N&amp;#34;, &amp;#34;S&amp;#34;, &amp;#34;I&amp;#34;, &amp;#34;R&amp;#34;)
+return(ret)
+}
+#..............................................................
+# Closed Model
+#..............................................................
+closed_sir_step &amp;lt;- function(S,I, R, N, Beta, mu_IR, delta.t){
+dN_SI &amp;lt;- rbinom(n = 1, size = S, prob = 1 - exp(-Beta*(I/N)*delta.t))
+dN_IR &amp;lt;- rbinom(n = 1, size = I, prob = 1 - exp(-mu_IR*delta.t))
+S &amp;lt;- S - dN_SI
+I &amp;lt;- I + dN_SI - dN_IR
+R &amp;lt;- R + dN_IR
+return(c(&amp;#34;S&amp;#34; = S, &amp;#34;I&amp;#34; = I, &amp;#34;R&amp;#34; = R))
+}
+# recursively just step through time now
+closed_sir_wrapper &amp;lt;- function(N, I0, R0, Beta, mu_IR, time, ...){
+# set up
+S0 &amp;lt;- N - I0 - R0
+time.steps &amp;lt;- (time - dplyr::lag(time))
+# init
+ret &amp;lt;- matrix(NA, nrow = length(time.steps) , ncol = 3)
+ret[1,] &amp;lt;- closed_sir_step(S = S0,
+I = I0, R = R0, N = N,
+Beta = Beta,
+mu_IR = mu_IR, delta.t = 0)
+for (t in 2:length(time.steps)) {
+ret[t,] &amp;lt;- closed_sir_step(S = ret[t-1, 1],
+I = ret[t-1, 2],
+R = ret[t-1, 3],
+N = N, # closed population
+Beta = Beta,
+mu_IR = mu_IR,
+delta.t = time.steps[t]
+)
+}
+# out
+ret &amp;lt;- cbind.data.frame(time, ret)
+colnames(ret) &amp;lt;- c(&amp;#34;time&amp;#34;, &amp;#34;S&amp;#34;, &amp;#34;I&amp;#34;, &amp;#34;R&amp;#34;)
+return(ret)
+}
+&lt;/code>&lt;/pre>&lt;h3 class="sidebar" id="sidebar">Sidebar&lt;/h3>
+&lt;pre tabindex="0">&lt;code>#..............................................................
+# Sliding Panel for Different Parameters we are estimating
+#..............................................................
+inputPanel(
+sliderInput(&amp;#34;Time&amp;#34;, label = &amp;#34;Time Observed Since Start of Epidemic&amp;#34;,
+min = 0, max = 1e3, value = 500, step = 100),
+sliderInput(&amp;#34;mu_L&amp;#34;, label = &amp;#34;Birth &amp;amp; Death Rate&amp;#34;,
+min = 0.01, max = 0.1, value = 0.01, step = 0.005),
+sliderInput(&amp;#34;beta&amp;#34;, label = &amp;#34;Beta (Effective Contact Rate)&amp;#34;,
+min = 0, max = 1, value = 0.2, step = 0.001),
+sliderInput(&amp;#34;mu_IR&amp;#34;, label = &amp;#34;Gamma (Rate of Recovery)&amp;#34;,
+min = 0, max = 0.5, value = 0.1, step = 0.005),
+actionLink(&amp;#34;button&amp;#34;, &amp;#34;Ruh Roh!&amp;#34;, icon(&amp;#34;bug&amp;#34;),
+style=&amp;#34;color: #fff; background-color: #337ab7; border-color: #2e6da4&amp;#34;)
+)
+&lt;/code>&lt;/pre>&lt;h3 id="sir-closed-vs-open">SIR Closed vs. Open&lt;/h3>
+&lt;pre tabindex="0">&lt;code>
+renderPlot({ withProgress(message = &amp;#39;Making plot&amp;#39;, {
+# re-render button
+input$button
+#..............................................................
+# plot closed
+#..............................................................
+closed_truth &amp;lt;- closed_sir_wrapper(N = 1e5,
+I0 = 1,
+R0 = 0,
+Beta = input$beta,
+mu_IR = input$mu_IR,
+time = 1:input$Time)
+closed_sir_plot &amp;lt;- closed_truth %&amp;gt;%
+tidyr::gather(., key = &amp;#34;compartment&amp;#34;, &amp;#34;count&amp;#34;, 2:ncol(.)) %&amp;gt;%
+dplyr::mutate(Compartment = factor(compartment, levels = c(&amp;#34;S&amp;#34;, &amp;#34;I&amp;#34;, &amp;#34;R&amp;#34;))) %&amp;gt;%
+ggplot() +
+geom_line(aes(x=time, y=count, color = Compartment), size = 2, alpha = 0.9) +
+scale_color_manual(&amp;#34;&amp;#34;, values = c(&amp;#34;#2171b5&amp;#34;, &amp;#34;#e41a1c&amp;#34;, &amp;#34;#6a51a3&amp;#34;)) +
+xlab(&amp;#34;Time&amp;#34;) + ylab(&amp;#34;N&amp;#34;) + ggtitle(&amp;#34;SIR Closed Population&amp;#34;) +
+scale_y_continuous(label = scales::unit_format(big.mark = &amp;#34;,&amp;#34;, scale = 1, unit = &amp;#34;&amp;#34;)) +
+theme_bw() +
+theme(
+plot.title = element_text(family = &amp;#34;Helvetica&amp;#34;, face = &amp;#34;bold&amp;#34;, vjust = 0.5, hjust = 0.5, size = 18),
+axis.text.x = element_text(family = &amp;#34;Helvetica&amp;#34;, face = &amp;#34;bold&amp;#34;, hjust = 0.5, vjust = 0.5, size = 14),
+axis.text.y = element_text(family = &amp;#34;Helvetica&amp;#34;, hjust = 0.5, vjust = 0.5, size = 14, angle = 45),
+legend.title = element_text(family = &amp;#34;Helvetica&amp;#34;, face = &amp;#34;bold&amp;#34;, vjust = 0.5, size = 15),
+legend.text = element_text(family = &amp;#34;Helvetica&amp;#34;, hjust = 0.5, vjust = 0.5, size = 14),
+panel.background = element_rect(fill = &amp;#34;transparent&amp;#34;),
+plot.background = element_rect(fill = &amp;#34;transparent&amp;#34;),
+legend.background = element_rect(fill = &amp;#34;transparent&amp;#34;))
+#..............................................................
+# plot OPEN MODEL
+#..............................................................
+open_truth &amp;lt;- open_sir_wrapper(N = 1e5,
+I0 = 1,
+R0 = 0,
+Beta = input$beta,
+mu_IR = input$mu_IR,
+mu_L = input$mu_L,
+time = 1:input$Time)
+open_truthPlot &amp;lt;- open_truth %&amp;gt;%
+dplyr::select(-c(&amp;#34;N&amp;#34;)) %&amp;gt;%
+tidyr::gather(., key = &amp;#34;compartment&amp;#34;, &amp;#34;count&amp;#34;, 2:ncol(.)) %&amp;gt;%
+dplyr::mutate(Compartment = factor(compartment, levels = c(&amp;#34;S&amp;#34;, &amp;#34;I&amp;#34;, &amp;#34;R&amp;#34;))) %&amp;gt;%
+ggplot() +
+geom_line(aes(x=time, y=count, color = Compartment), size = 2, alpha = 0.9) +
+scale_color_manual(&amp;#34;&amp;#34;, values = c(&amp;#34;#2171b5&amp;#34;, &amp;#34;#e41a1c&amp;#34;, &amp;#34;#6a51a3&amp;#34;)) +
+xlab(&amp;#34;Time&amp;#34;) + ylab(&amp;#34;N&amp;#34;) + ggtitle(&amp;#34;SIR Open Population&amp;#34;) +
+scale_y_continuous(label = scales::unit_format(big.mark = &amp;#34;,&amp;#34;, scale = 1, unit = &amp;#34;&amp;#34;)) +
+theme_bw() +
+theme(
+plot.title = element_text(family = &amp;#34;Helvetica&amp;#34;, face = &amp;#34;bold&amp;#34;, vjust = 0.5, hjust = 0.5, size = 18),
+axis.title = element_text(family = &amp;#34;Helvetica&amp;#34;, face = &amp;#34;bold&amp;#34;, vjust = 0.5, size = 15),
+axis.text.x = element_text(family = &amp;#34;Helvetica&amp;#34;, face = &amp;#34;bold&amp;#34;, hjust = 0.5, vjust = 0.5, size = 14),
+axis.text.y = element_text(family = &amp;#34;Helvetica&amp;#34;, hjust = 0.5, vjust = 0.5, size = 14, angle = 45),
+legend.title = element_text(family = &amp;#34;Helvetica&amp;#34;, face = &amp;#34;bold&amp;#34;, vjust = 0.5, size = 15),
+legend.text = element_text(family = &amp;#34;Helvetica&amp;#34;, hjust = 0.5, vjust = 0.5, size = 14),
+panel.background = element_rect(fill = &amp;#34;transparent&amp;#34;),
+plot.background = element_rect(fill = &amp;#34;transparent&amp;#34;),
+legend.background = element_rect(fill = &amp;#34;transparent&amp;#34;))
+}) # end of progress bar
+#..............................................................
+# plot out
+#..............................................................
+toprow &amp;lt;- cowplot::plot_grid(closed_sir_plot, open_truthPlot, nrow = 1)
+# R0
+R0 &amp;lt;- round(input$beta / (input$mu_IR + input$mu_L), 2)
+bottomrow &amp;lt;- ggplot() + geom_text(aes(0,0,
+label= paste0(&amp;#34;R[0] %~~% rho*c*D %~~% beta / (gamma + mu[L]) %~~%&amp;#34;, R0)), parse=TRUE, size = 10, fontface = &amp;#34;bold&amp;#34;) +
+theme_minimal() +
+theme(
+panel.grid = element_blank(),
+axis.text = element_blank(),
+axis.title = element_blank()
+) + xlim(-0.1, 0.1) + ylim(-0.1, 0.1)
+cowplot::plot_grid(toprow, bottomrow, nrow = 2, rel_heights = c(4, 1))
+})
+&lt;/code>&lt;/pre></description></item><item><title>Stochastic Simulations for Flattening the Curve Playground</title><link>https://nicholasbrazeau.com/2020/04/27/stochastic-simulations-for-flattening-the-curve-playground/</link><pubDate>Mon, 27 Apr 2020 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/2020/04/27/stochastic-simulations-for-flattening-the-curve-playground/</guid><description>&lt;p>Below, you will find code for creating a shiny flex-dashboard for performing simple stochastic simulations with one time-interruption corresponding to an intervention (unrealistically simulated all at once). Code relies on the excellent &lt;code>EpiModel&lt;/code> R package.&lt;/p>
+&lt;pre tabindex="0">&lt;code> ---
+title: &amp;#34;Stochastic Simulations for Flattening the Curve&amp;#34;
+date: &amp;#34;`r format(Sys.time(), &amp;#39;%B %d, %Y&amp;#39;)`&amp;#34;
+editor_options:
+chunk_output_type: console
+output: flexdashboard::flex_dashboard
+runtime: shiny
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = F, warning = F, message = F, fig.align = &amp;#39;center&amp;#39;, results = &amp;#39;hide&amp;#39;, fig.keep = &amp;#39;all&amp;#39;)
+library(tidyverse)
+library(EpiModel)
+library(furrr)
+# https://rmarkdown.rstudio.com/flexdashboard/layouts.html#multiple_pages
+&lt;/code>&lt;/pre>&lt;h3 class="sidebar" id="sidebar">Sidebar&lt;/h3>
+&lt;pre tabindex="0">&lt;code>#..............................................................
+# Sliding Panel for Different Parameters we are estimating
+#..............................................................
+inputPanel(
+sliderInput(&amp;#34;ntime&amp;#34;, label = &amp;#34;Time of Intervention&amp;#34;,
+min = 0, max = 200, value = 100, step = 10),
+sliderInput(&amp;#34;obstime&amp;#34;, label = &amp;#34;Epidemic Time-Span&amp;#34;,
+min = 0, max = 300, value = 200, step = 50),
+sliderInput(&amp;#34;inf.prob&amp;#34;, label = &amp;#34;Unmitigated Prob. of Infxn&amp;#34;,
+min = 0, max = 1, value = 0.5, step = 0.05),
+sliderInput(&amp;#34;act.rate&amp;#34;, label = &amp;#34;Unmitigated Prob. of Contact&amp;#34;,
+min = 0, max = 1, value = 0.5, step = 0.05),
+sliderInput(&amp;#34;newinf.prob&amp;#34;, label = &amp;#34;Mitigated Prob. of Infxn&amp;#34;,
+min = 0, max = 1, value = 0.25, step = 0.05),
+sliderInput(&amp;#34;newact.rate&amp;#34;, label = &amp;#34;Mitigated Prob. of Contact&amp;#34;,
+min = 0, max = 1, value = 0.25, step = 0.05),
+actionLink(&amp;#34;button&amp;#34;, &amp;#34;Ruh Roh!&amp;#34;, icon(&amp;#34;bug&amp;#34;),
+style=&amp;#34;color: #fff; background-color: #337ab7; border-color: #2e6da4&amp;#34;)
+)
+&lt;/code>&lt;/pre>&lt;h3 id="stochastic-interventions">Stochastic Interventions&lt;/h3>
+&lt;pre tabindex="0">&lt;code>
+renderPlot({ withProgress(message = &amp;#39;Making plot&amp;#39;, {
+# re-render button
+input$button
+# make unmitigated model
+param &amp;lt;- param.icm(inf.prob = input$inf.prob, act.rate = input$act.rate, rec.rate = 0.01)
+init &amp;lt;- init.icm(s.num = 1e3, i.num = 1, r.num = 0)
+control &amp;lt;- control.icm(type = &amp;#34;SIR&amp;#34;, nsims = 20, nsteps = input$ntime)
+mod.unmit &amp;lt;- icm(param, init, control)
+# cheap way to have an intervention
+unmitdat &amp;lt;- as.data.frame(mod.unmit)
+new_init &amp;lt;- unmitdat %&amp;gt;%
+dplyr::filter(time == input$ntime) %&amp;gt;%
+dplyr::select(c(&amp;#34;s.num&amp;#34;, &amp;#34;i.num&amp;#34;, &amp;#34;r.num&amp;#34;)) %&amp;gt;%
+dplyr::mutate(endtime = input$obstime - input$ntime,
+newinf.prob = input$newinf.prob,
+newact.rate = input$newact.rate)
+wrap_icm &amp;lt;- function(newinf.prob, newact.rate, s.num, i.num, r.num, endtime){
+newparam &amp;lt;- param.icm(inf.prob = newinf.prob, act.rate = newact.rate, rec.rate = 0.01)
+newinit &amp;lt;- init.icm(s.num = as.numeric(s.num),
+i.num = as.numeric(i.num),
+r.num = as.numeric(r.num)) # as.numeric for stupid corner case
+newcontrol &amp;lt;- control.icm(type = &amp;#34;SIR&amp;#34;, nsims = 1, nsteps = as.numeric(endtime))
+# out
+mod &amp;lt;- icm(newparam, newinit, newcontrol)
+return(mod)
+}
+# mitigation
+mit.icm &amp;lt;- furrr::future_pmap(new_init, wrap_icm)
+mitdat &amp;lt;- lapply(mit.icm, function(x){ret &amp;lt;- as.data.frame(x); ret[, colnames(ret) != &amp;#34;sim&amp;#34;]} )
+mitdat &amp;lt;- mitdat %&amp;gt;%
+dplyr::bind_rows(., .id = &amp;#34;sim&amp;#34;) %&amp;gt;%
+dplyr::mutate(time = input$ntime + time)
+fulldat &amp;lt;- rbind.data.frame(unmitdat, mitdat)
+df.mean &amp;lt;- fulldat %&amp;gt;%
+dplyr::group_by(time) %&amp;gt;%
+dplyr::summarise(
+s.num = mean(s.num),
+i.num = mean(i.num),
+r.num = mean(r.num),
+)
+# plot
+ggplot() +
+geom_line(data = fulldat, mapping = aes(time, s.num, group = sim), alpha = 0.25,
+lwd = 0.5, color = &amp;#34;#238b45&amp;#34;) +
+geom_line(data = df.mean, mapping = aes(time, s.num), color = &amp;#34;#238b45&amp;#34;, lwd = 1.2) +
+geom_line(data = fulldat, mapping = aes(time, i.num, group = sim), alpha = 0.25,
+lwd = 0.55, color = &amp;#34;#cb181d&amp;#34;) +
+geom_line(data = df.mean, mapping = aes(time, i.num), color = &amp;#34;#cb181d&amp;#34;, lwd = 1.2) +
+geom_line(data = fulldat, mapping = aes(time, r.num, group = sim), alpha = 0.25,
+lwd = 0.55, color = &amp;#34;#54278f&amp;#34;) +
+geom_line(data = df.mean, mapping = aes(time, r.num), color = &amp;#34;#54278f&amp;#34;, lwd = 1.2) +
+geom_vline(data = fulldat, aes(xintercept = input$ntime), color = &amp;#34;#000000&amp;#34;, linetype = &amp;#34;dashed&amp;#34;, size = 1.5, alpha = 0.8) +
+xlab(&amp;#34;Time&amp;#34;) + ylab(&amp;#34;Num.&amp;#34;) + ggtitle(&amp;#34;Stochastic SIR Model Runs with Intervention (Black)&amp;#34;) +
+theme_minimal() +
+theme(
+plot.title = element_text(family = &amp;#34;Helvetica&amp;#34;, face = &amp;#34;bold&amp;#34;, vjust = 0.5, hjust = 0.5, size = 22),
+axis.title = element_text(family = &amp;#34;Helvetica&amp;#34;, face = &amp;#34;bold&amp;#34;, hjust = 0.5, vjust = 0.5, size = 18),
+axis.text = element_text(family = &amp;#34;Helvetica&amp;#34;, hjust = 0.5, vjust = 0.5, size = 17),
+panel.background = element_rect(fill = &amp;#34;transparent&amp;#34;),
+plot.background = element_rect(fill = &amp;#34;transparent&amp;#34;),
+axis.line = element_line(color = &amp;#34;#000000&amp;#34;, size = 1.2),
+legend.position = &amp;#34;none&amp;#34;)
+}) # end of progress bar
+})
+&lt;/code>&lt;/pre></description></item><item><title>The impact of antimalarial resistance on the genetic structure of Plasmodium falciparum in the DRC</title><link>https://nicholasbrazeau.com/publication/verity-impact-2020/</link><pubDate>Wed, 01 Apr 2020 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/verity-impact-2020/</guid><description/></item><item><title>Anonymised and aggregated crowd level mobility data from mobile phones suggests that initial compliance with COVID-19 social distancing interventions was high and geographically consistent across the UK</title><link>https://nicholasbrazeau.com/publication/jeffrey-anonymised-2020/</link><pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/jeffrey-anonymised-2020/</guid><description/></item><item><title>Falciparum malaria from coastal Tanzania and Zanzibar remains highly connected despite effective control efforts on the archipelago</title><link>https://nicholasbrazeau.com/publication/morgan-falciparum-2020/</link><pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/morgan-falciparum-2020/</guid><description/></item><item><title>Loss of daptomycin susceptibility in clinical Staphylococcus epidermidis infection coincided with variants in WalK</title><link>https://nicholasbrazeau.com/publication/brazeau-loss-2020/</link><pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/publication/brazeau-loss-2020/</guid><description/></item><item><title>The Epidemiology of Asymptomatic P. vivax Among Adults in the Democratic Republic of the Congoo</title><link>https://nicholasbrazeau.com/talk/discent-astmh/</link><pubDate>Fri, 22 Nov 2019 08:00:00 -0800</pubDate><guid>https://nicholasbrazeau.com/talk/discent-astmh/</guid><description>
 &lt;p>Presentation of the first aim of my PhD dissertation, which focused on the epidemiology of &lt;em>P. vivax&lt;/em> in the Democratic Republic of the Congo, at the annual American Society of Tropical Medicine and Hygiene conference. This work is now published in Nature Communications&lt;a href="#fn1" class="footnote-ref" id="fnref1">&lt;sup>1&lt;/sup>&lt;/a>.&lt;/p>
 &lt;div class="footnotes footnotes-end-of-document">
 &lt;hr />
