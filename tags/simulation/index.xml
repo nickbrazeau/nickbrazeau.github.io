@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>simulation | Nick Brazeau</title><link>https://nicholasbrazeau.com/tags/simulation/</link><atom:link href="https://nicholasbrazeau.com/tags/simulation/index.xml" rel="self" type="application/rss+xml"/><description>simulation</description><generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2022 Nicholas Brazeau</copyright><lastBuildDate>Mon, 27 Apr 2020 00:00:00 +0000</lastBuildDate><image><url>https://nicholasbrazeau.com/img/headers/tree.jpg</url><title>simulation</title><link>https://nicholasbrazeau.com/tags/simulation/</link></image><item><title>Simulating Deterministic SIR Models in a Closed and Open Population Playground</title><link>https://nicholasbrazeau.com/2020/04/27/simulating-deterministic-sir-models-in-a-closed-and-open-population-playground/</link><pubDate>Mon, 27 Apr 2020 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/2020/04/27/simulating-deterministic-sir-models-in-a-closed-and-open-population-playground/</guid><description>&lt;p>Below, you will find code for creating a shiny flex-dashboard for simple SIR open and closed population models.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>simulation | Nick Brazeau</title><link>https://nicholasbrazeau.com/tags/simulation/</link><atom:link href="https://nicholasbrazeau.com/tags/simulation/index.xml" rel="self" type="application/rss+xml"/><description>simulation</description><generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2023 Nicholas Brazeau</copyright><lastBuildDate>Mon, 27 Apr 2020 00:00:00 +0000</lastBuildDate><image><url>https://nicholasbrazeau.com/img/headers/tree.jpg</url><title>simulation</title><link>https://nicholasbrazeau.com/tags/simulation/</link></image><item><title>Simulating Deterministic SIR Models in a Closed and Open Population Playground</title><link>https://nicholasbrazeau.com/2020/04/27/simulating-deterministic-sir-models-in-a-closed-and-open-population-playground/</link><pubDate>Mon, 27 Apr 2020 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/2020/04/27/simulating-deterministic-sir-models-in-a-closed-and-open-population-playground/</guid><description>&lt;p>Below, you will find code for creating a shiny flex-dashboard for simple SIR open and closed population models.&lt;/p>
 &lt;pre tabindex="0">&lt;code> ---
 title: &amp;#34;Simulating SIR Models in a Closed and Open Population&amp;#34;
 date: &amp;#34;`r format(Sys.time(), &amp;#39;%B %d, %Y&amp;#39;)`&amp;#34;
@@ -7,12 +7,13 @@ chunk_output_type: console
 output: flexdashboard::flex_dashboard
 runtime: shiny
 ---
-```{r setup, include=FALSE}
+{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = F, warning = F, message = F, fig.align = &amp;#39;center&amp;#39;, results = &amp;#39;hide&amp;#39;, fig.keep = &amp;#39;all&amp;#39;)
 library(tidyverse)
 library(cowplot)
 # https://rmarkdown.rstudio.com/flexdashboard/layouts.html#multiple_pages
-&lt;/code>&lt;/pre>&lt;pre tabindex="0">&lt;code>#..............................................................
+{r}
+#..............................................................
 # Open Model
 #..............................................................
 # stochastic simulator for the unobserved state process --&amp;gt; how cases are generated
@@ -96,8 +97,9 @@ ret &amp;lt;- cbind.data.frame(time, ret)
 colnames(ret) &amp;lt;- c(&amp;#34;time&amp;#34;, &amp;#34;S&amp;#34;, &amp;#34;I&amp;#34;, &amp;#34;R&amp;#34;)
 return(ret)
 }
-&lt;/code>&lt;/pre>&lt;h3 class="sidebar" id="sidebar">Sidebar&lt;/h3>
-&lt;pre tabindex="0">&lt;code>#..............................................................
+### Sidebar {.sidebar}
+{r, results=&amp;#39;asis&amp;#39;}
+#..............................................................
 # Sliding Panel for Different Parameters we are estimating
 #..............................................................
 inputPanel(
@@ -112,8 +114,8 @@ min = 0, max = 0.5, value = 0.1, step = 0.005),
 actionLink(&amp;#34;button&amp;#34;, &amp;#34;Ruh Roh!&amp;#34;, icon(&amp;#34;bug&amp;#34;),
 style=&amp;#34;color: #fff; background-color: #337ab7; border-color: #2e6da4&amp;#34;)
 )
-&lt;/code>&lt;/pre>&lt;h3 id="sir-closed-vs-open">SIR Closed vs. Open&lt;/h3>
-&lt;pre tabindex="0">&lt;code>
+### SIR Closed vs. Open
+{r, results=&amp;#39;asis&amp;#39;, fig.align=&amp;#39;center&amp;#39;, fig.height=11, fig.width=8}
 renderPlot({ withProgress(message = &amp;#39;Making plot&amp;#39;, {
 # re-render button
 input$button
@@ -191,7 +193,7 @@ axis.title = element_blank()
 ) + xlim(-0.1, 0.1) + ylim(-0.1, 0.1)
 cowplot::plot_grid(toprow, bottomrow, nrow = 2, rel_heights = c(4, 1))
 })
-&lt;/code>&lt;/pre></description></item><item><title>Stochastic Simulations for Flattening the Curve Playground</title><link>https://nicholasbrazeau.com/2020/04/27/stochastic-simulations-for-flattening-the-curve-playground/</link><pubDate>Mon, 27 Apr 2020 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/2020/04/27/stochastic-simulations-for-flattening-the-curve-playground/</guid><description>&lt;p>Below, you will find code for creating a shiny flex-dashboard for performing simple stochastic simulations with one time-interruption corresponding to an intervention (unrealistically simulated all at once). Code relies on the excellent &lt;code>EpiModel&lt;/code> R package.&lt;/p>
+&lt;/code>&lt;/pre></description></item><item><title>Stochastic Simulations for Flattening the Curve Playground</title><link>https://nicholasbrazeau.com/2020/04/27/stochastic-simulations-for-flattening-the-curve-playground/</link><pubDate>Mon, 27 Apr 2020 00:00:00 +0000</pubDate><guid>https://nicholasbrazeau.com/2020/04/27/stochastic-simulations-for-flattening-the-curve-playground/</guid><description>&lt;p>Below, you will find code for creating a shiny flex-dashboard for performing simple stochastic simulations with one time-interruption corresponding to an intervention (unrealistically simulated all at once). Code relies on the excellent EpiModel R package.&lt;/p>
 &lt;pre tabindex="0">&lt;code> ---
 title: &amp;#34;Stochastic Simulations for Flattening the Curve&amp;#34;
 date: &amp;#34;`r format(Sys.time(), &amp;#39;%B %d, %Y&amp;#39;)`&amp;#34;
@@ -200,14 +202,15 @@ chunk_output_type: console
 output: flexdashboard::flex_dashboard
 runtime: shiny
 ---
-```{r setup, include=FALSE}
+{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = F, warning = F, message = F, fig.align = &amp;#39;center&amp;#39;, results = &amp;#39;hide&amp;#39;, fig.keep = &amp;#39;all&amp;#39;)
 library(tidyverse)
 library(EpiModel)
 library(furrr)
 # https://rmarkdown.rstudio.com/flexdashboard/layouts.html#multiple_pages
-&lt;/code>&lt;/pre>&lt;h3 class="sidebar" id="sidebar">Sidebar&lt;/h3>
-&lt;pre tabindex="0">&lt;code>#..............................................................
+### Sidebar {.sidebar}
+{r, results=&amp;#39;asis&amp;#39;}
+#..............................................................
 # Sliding Panel for Different Parameters we are estimating
 #..............................................................
 inputPanel(
@@ -226,8 +229,8 @@ min = 0, max = 1, value = 0.25, step = 0.05),
 actionLink(&amp;#34;button&amp;#34;, &amp;#34;Ruh Roh!&amp;#34;, icon(&amp;#34;bug&amp;#34;),
 style=&amp;#34;color: #fff; background-color: #337ab7; border-color: #2e6da4&amp;#34;)
 )
-&lt;/code>&lt;/pre>&lt;h3 id="stochastic-interventions">Stochastic Interventions&lt;/h3>
-&lt;pre tabindex="0">&lt;code>
+### Stochastic Interventions
+{r, results=&amp;#39;asis&amp;#39;, fig.align=&amp;#39;center&amp;#39;, fig.height=11, fig.width=8}
 renderPlot({ withProgress(message = &amp;#39;Making plot&amp;#39;, {
 # re-render button
 input$button
