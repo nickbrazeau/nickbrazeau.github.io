@@ -13,7 +13,7 @@ education:
   - course: BA in Human Evolutionary Biology
     institution: Harvard College
     year: 2013
-email: "nbrazeau@med.unc.edu"
+email: "nickbrazeauresearch@gmail.com"
 interests:
 - Medicine
 - Infectious Disease Models
@@ -24,13 +24,13 @@ interests:
 - Hiking
 name: Nicholas Brazeau
 organizations:
-- name: UNC School of Medicine
+- name: Duke Hospitals
   url: ""
-role: MD/PhD Candidate
+role: Resident Physician
 social:
 - icon: envelope
   icon_pack: fas
-  link: 'mailto:nbrazeau@med.unc.edu'
+  link: 'mailto:nickbrazeauresearch@gmail.com'
 - icon: twitter
   icon_pack: fab
   link: 'https://twitter.com/NFBrazeau'
@@ -51,4 +51,4 @@ user_groups:
 - Researchers
 - Visitors
 ---
-I am a [MD/PhD Candidate](https://www.med.unc.edu/mdphd/) and [NIH F30 Fellow](https://reporter.nih.gov/project-details/9679726) at the University of North Carolina. As an aspiring physician-scientist and infectious disease epidemiologist, I seek to intersect molecular epidemiology, genomics, statistical modeling, and spatial statistics to improve health among the historically underserved. I am currently applying to Internal Medicine residency (Match 2023) with the intent of pursuing an ABIM/PSTP track with fellowship training in Infectious Diseases.
+I am a resident physician (start date: July 2023) at Duke Hospitals pursuing an PSTP track with prospective fellowship training in Infectious Diseases. In my career as a physician-scientist and infectious disease epidemiologist, I hope to use the intersection of molecular epidemiology, genomics, statistical modeling, and spatial statistics to improve health among the historically underserved.

@@ -18,6 +18,27 @@ date_format = "Jan 2006"
 #   Leave `date_end` empty if it's your current employer.
 #   Begin/end multi-line descriptions with 3 quotes `"""`.
 
+
+[[experience]]
+  title = "Resident Physician, Internal Medicine"
+  company = "Duke Hospitals"
+  company_url = "https://www.dukehealth.org/"
+  location = "Durham, North Carolina"
+  date_start = "2023-06-28"
+  date_end = "2025-07-01"
+  description = ""
+
+[[experience]]
+  title = "Consultant Researcher"
+  company = "Predictive Intelligence for Pandemic Prevention, TriCEM/Duke University"
+  company_url = ""
+  location = "Durham, North Carolina"
+  date_start = "2022-10-01"
+  date_end = "2023-06-01"
+  description = ""
+
+
+
 [[experience]]
   title = "Research Associate"
   company = "Imperial College London COVID-19 Response Team"
