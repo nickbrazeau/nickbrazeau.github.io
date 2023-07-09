@@ -2,7 +2,7 @@
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
 
 title: ""
-summary: "Work as part of the Predictive Intelligence for Pandemic Prevention grant."
+summary: "Improving Pandemic Prediction"
 authors: []
 tags: [artificial intelligence, pathogens, active]
 categories: [r]

@@ -8,15 +8,11 @@
   url = "about"
   weight = 1
 
-[[main]]
-  name = "Blog"
-  url = "post"
-  weight = 2
 
 [[main]]
   name = "Research"
   url = "research"
-  weight = 3
+  weight = 2
 
 # [[main]]
 #   name = "Service"
@@ -28,6 +24,10 @@
   url = "publications"
   weight = 5
 
+[[main]]
+  name = "Blog"
+  url = "post"
+  weight = 6
 
 # [[main]]
 #   name = "Consulting"

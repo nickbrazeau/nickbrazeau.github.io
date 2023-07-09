@@ -48,7 +48,7 @@ description = "Personal website and portfolio of Dr. Nicholas (Nick) Brazeau."
 
 # Display a logo in navigation bar rather than title (optional).
 #   To enable, place an image in `static/img/` and reference its filename below. To disable, set the value to "".
-favicon = "assets/media/icon.png"
+favicon = "static/img/mountain.png"
 
 ############################
 ## Site Features
