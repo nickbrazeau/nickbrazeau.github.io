@@ -1,8 +1,8 @@
 ---
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
 
-title: ""
-summary: "Improving Pandemic Prediction"
+title: "What Makes Pandemic Prediction Difficult?"
+summary: "Improving Pandemic Prediction using agent-based models and deep-neural networks"
 authors: []
 tags: [artificial intelligence, pathogens, active]
 categories: [r]

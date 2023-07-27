@@ -51,4 +51,4 @@ user_groups:
 - Researchers
 - Visitors
 ---
-I am a resident physician (start date: July 2023) at Duke Hospitals pursuing an PSTP track with prospective fellowship training in Infectious Diseases. In my career as a physician-scientist and infectious disease epidemiologist, I hope to use the intersection of molecular epidemiology, genomics, statistical modeling, and spatial statistics to improve health among the historically underserved.
+I am a resident physician (start date: July 2023) at Duke Hospitals pursuing a PSTP "fast" track with prospective fellowship training in Infectious Diseases. In my career as a physician-scientist and infectious disease epidemiologist, I hope to use the intersection of molecular epidemiology, genomics, statistical modeling, and spatial statistics to improve health among the historically underserved.

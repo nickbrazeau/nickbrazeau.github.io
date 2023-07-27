@@ -1,7 +1,7 @@
 ---
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
 
-title: "IFR Re-estimation"
+title: "COVID19 IFR Re-estimation"
 summary: "Estimating the COVID-19 first wave IFR using serologic data accounting for seroreversion"
 authors: []
 tags: [covid]
