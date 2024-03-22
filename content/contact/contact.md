@@ -16,6 +16,8 @@ autolink = true
 #   1: Netlify (requires that the site is hosted by Netlify)
 #   2: formspree.io
 email_form = 2
+
+# Possibly update or I can keep forwarding you on emails :)
 form_id = "mvoljlqw"
 
 
