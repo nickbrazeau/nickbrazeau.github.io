@@ -6,6 +6,17 @@ NFBhelp/
 zparkinglot/
 todo.md
 
+# Claude
+*.claude/
+*claude*
+
+# Environment variables and secrets (NEVER COMMIT!)
+.env
+.env.local
+.env.*.local
+*.secret
+secrets/
+
 # Mac files
 .DS_Store
 .hugo_build.lock
