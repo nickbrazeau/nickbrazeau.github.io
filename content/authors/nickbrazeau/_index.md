@@ -4,6 +4,9 @@ authors:
 bio: |
 education:
   courses:
+  - course: Internal Medicine Residency
+    institution: Duke University Hospitals
+    year: 2025
   - course: MD
     institution: UNC School of Medicine
     year: 2023
@@ -15,18 +18,18 @@ education:
     year: 2013
 email: "nickbrazeauresearch@gmail.com"
 interests:
-- Medicine
+- Internal Medicine & Infectious Diseases
 - Infectious Disease Models
 - Genomics
 - Spatiotemporal Relationships
 - Evolutionary Biology
-- Global Health Equity
+- Global Health
 - Hiking
 name: Nicholas Brazeau
 organizations:
-- name: Duke Hospitals
+- name: Duke University Hospitals
   url: ""
-role: Resident Physician
+role: Infectious Diseases Fellow
 social:
 - icon: envelope
   icon_pack: fas
@@ -51,4 +54,4 @@ user_groups:
 - Researchers
 - Visitors
 ---
-I am a resident physician (start date: July 2023) at Duke Hospitals pursuing a PSTP "fast" track with prospective fellowship training in Infectious Diseases. In my career as a physician-scientist and infectious disease epidemiologist, I hope to use the intersection of molecular epidemiology, genomics, statistical modeling, and spatial statistics to improve health among the historically underserved.
+I am an infectious diseases fellow at Duke University Hospital pursuing a PSTP fast-track. As a physician-scientist, I integrate molecular epidemiology, genomics, infectious disease dynamics, and ML/AI methods to understand transmission pathways, characterize antimicrobial resistance evolution, and identify points where within-host and between-host propagation can be disrupted.

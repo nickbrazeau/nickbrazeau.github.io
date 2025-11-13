@@ -20,6 +20,16 @@ date_format = "Jan 2006"
 
 
 [[item]]
+  organization = "Duke University Hospital"
+  organization_url = "hhttps://www.dukehealth.org/"
+  title = "Internal Medicine Residency"
+  url = ""
+  certificate_url = ""
+  date_start = "2023-06-01"
+  date_end = "2025-07-01"
+  description = ""
+
+[[item]]
   organization = "UNC School of Medicine"
   organization_url = "https://www.med.unc.edu/"
   title = "Medical Degree: MS3, MS4"

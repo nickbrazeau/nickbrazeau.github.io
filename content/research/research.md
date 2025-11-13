@@ -49,29 +49,37 @@ _Below, I briefly summarize my research to date and elaborate on my interests an
 
 <img align="left" width=45% height=200px padding="100" style="padding-top:15%; padding-bottom:15%; padding-right: 5%" src="/img/idmodel.png">
 
+
 ### Infectious Disease Modeling
 
-There are many approaches to modeling infectious diseases depending on the research question. In one framework, I have considered the "who", "where", "origin" of a pathogen in a region that was previously thought to be resilient to infection. To determine "who" was being infected, I estimated "risk factors" accounting for confounding using inverse probability treatment weights estimated through the supervised SuperLearner (machine learning) algorithm; "where" infections were occurring using Bayesian Gaussian spatial process models; and the "origin" using basic genetic analyses. For other research questions estimating the severity of an infectious disease, I have employed Bayesian statistical modeling or helped to implement mathematical models for infection scenario and burden planning. Most recently, I have been exploring how differing features in contact networks make pandemic prediction difficult. Through these efforts, I have explored using AI/ML agent-based models for better pandemic prediction. 
-_Overall, I am most interested in the intersection of methods, combining molecular techniques, bioinformatics/genomics, evolutionary biology, statistical modeling, machine learning/artificial intelligence and spatial methods to identify pathways of infection and antimicrobial resistance evolution. Using an interdisciplinary approach, I hope to identify interventions that block these pathways._  
+My infectious disease modeling work spans statistical, spatial, evolutionary, and computational approaches. In one framework, I examined **who** became infected, **where** infections occurred, and the **origin** of pathogens in regions previously considered resilient to transmission. To evaluate *who* was at risk, I applied causal inference methods using inverse probability treatment weights generated through the SuperLearner ensemble. To determine *where* infections clustered, I used Bayesian Gaussian spatial process models. To assess *origin*, I generated and analyzed pathogen genetic data.
+
+For research questions involving severity or burden estimation, I have implemented Bayesian statistical models and contributed to mathematical modeling for scenario planning. Most recently, I have explored how structural features of contact networks hinder pandemic prediction and evaluated AI/ML-driven agent-based models for improving forecasting.
+
+Broadly, I am interested in the intersections of statistical modeling, infectious disease dynamics, machine learning/AI, and spatial analysis. I aim to use these tools to understand transmission and characterize antimicrobial resistance evolution and ultimately identify points where within-host and between-host propagation can be disrupted.
 
 ***
 
-<img align="right" width = 50% height=300px style="padding-top:20%; padding-bottom:15%; padding-left: 5%" src="/img/phylo.png">
-&nbsp;
+<img align="right" width="50%" height="300px" style="padding-top:20%; padding-bottom:15%; padding-left:5%" src="/img/phylo.png">
 
 ### Bioinformatics, Genomics, Statistical Genetics
 
-Molecular surveillance and genomics greatly enrich infectious disease epidemiology analyses, models, and intervention planning. To date, a large majority of my bioinformatic and genomic work has focused on antimicrobial resistance, with an emphasis on putative antimalarial resistance. In the past, I have used genome-wide barcodes to infer how antimalarial selectional pressures have shaped Falciparum malaria population structures in the Democratic Republic of the Congo as well as whole genome sequencing to identify novel antimicrobial mutations in _Staphylococcus epidermidis_. Separately, I have been engaged in statistical genetics method development with models focused on estimating local inbreeding (`DISCent`), important for sink-source dynamics and interventional planning, as well as inferring identity by descent in polyclonal malaria infections (`polyIBD`).
+Molecular surveillance and pathogen genomics critically inform infectious disease epidemiology and intervention planning. Much of my work focuses on antimicrobial resistance, especially putative antimalarial resistance. I have used genome-wide barcodes to study how antimalarial selection pressures shape *Plasmodium falciparum* population structure in the Democratic Republic of the Congo and performed whole-genome sequencing analyses to identify novel antimicrobial resistance mutations in *Staphylococcus epidermidis*.
+
+I also develop statistical genetics methods, including:  
+1. **Estimating local inbreeding** with [`DISCent`](https://github.com/nickbrazeau/discent), relevant for sink–source dynamics and public health intervention design.  
+1. **Simulating malaria transmission dynamics** with [`polySimIBD`](https://github.com/nickbrazeau/polySimIBD) using a forwards in-time simulation with a spatial discrete-time, discrete-loci structured Wright Fisher model.
+2. **Inferring identity-by-descent** in polyclonal malaria infections with [`HMMERTIME`](https://github.com/nickbrazeau/HMMERTIME).
+
 <br>
 
 ***
 
-<img align="left" width=40% height=200px padding="100" style="padding-top:5%; padding-bottom:5%; padding-right: 5%" src="/img/world.png">
-&nbsp;
+<img align="left" width="40%" height="200px" style="padding-top:5%; padding-bottom:5%; padding-right:5%" src="/img/world.png">
 
 ### Global Health & Medicine, Translational Research
 
-Global medicine has become local medicine and vice versa. I am interested in supporting capacity building efforts through research in low- and middle-income countries and historically underserved regions.  
+Global medicine has become local medicine— and vice versa. I am committed to supporting capacity building and collaborative research in low- and middle-income countries and historically underserved communities. My work aims to integrate computational, molecular, and clinical perspectives to improve infectious disease prevention, diagnosis, and treatment across diverse settings.
 
 <br>
 
