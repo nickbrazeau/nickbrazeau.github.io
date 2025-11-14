@@ -1,4 +1,5 @@
 ---
+title: Authors
 cms_exclude: true
 
 # View.
@@ -12,3 +13,5 @@ header:
   caption: ""
   image: ""
 ---
+
+Authors and collaborators featured on this site.
