@@ -10,6 +10,7 @@ analytics.md
 # Claude
 *.claude/
 *claude*
+analytics.md
 
 # Environment variables and secrets (NEVER COMMIT!)
 .env
