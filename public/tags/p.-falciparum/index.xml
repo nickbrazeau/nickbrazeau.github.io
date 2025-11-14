@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>P. falciparum | Nick Brazeau</title>
+    <link>https://nicholasbrazeau.com/tags/p.-falciparum/</link>
+      <atom:link href="https://nicholasbrazeau.com/tags/p.-falciparum/index.xml" rel="self" type="application/rss+xml" />
+    <description>P. falciparum</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2025 Nicholas Brazeau</copyright><lastBuildDate>Wed, 01 Dec 2021 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://nicholasbrazeau.com/img/headers/tree.jpg</url>
+      <title>P. falciparum</title>
+      <link>https://nicholasbrazeau.com/tags/p.-falciparum/</link>
+    </image>
+    
+    <item>
+      <title>Household Prevalence of Plasmodium falciparum, Plasmodium vivax, and Plasmodium ovale in the Democratic Republic of the Congo, 2013-2014</title>
+      <link>https://nicholasbrazeau.com/publication/mitchell-household-2021/</link>
+      <pubDate>Wed, 01 Dec 2021 00:00:00 +0000</pubDate>
+      <guid>https://nicholasbrazeau.com/publication/mitchell-household-2021/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

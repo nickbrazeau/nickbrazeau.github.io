@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Andrew B. Bernard | Nick Brazeau</title>
+    <link>https://nicholasbrazeau.com/authors/andrew-b.-bernard/</link>
+      <atom:link href="https://nicholasbrazeau.com/authors/andrew-b.-bernard/index.xml" rel="self" type="application/rss+xml" />
+    <description>Andrew B. Bernard</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2025 Nicholas Brazeau</copyright><lastBuildDate>Tue, 01 Nov 2016 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://nicholasbrazeau.com/img/headers/tree.jpg</url>
+      <title>Andrew B. Bernard</title>
+      <link>https://nicholasbrazeau.com/authors/andrew-b.-bernard/</link>
+    </image>
+    
+    <item>
+      <title>Distribution of a Chimpanzee Social Custom Is Explained by Matrilineal Relationship Rather Than Conformity</title>
+      <link>https://nicholasbrazeau.com/publication/wrangham-distribution-2016/</link>
+      <pubDate>Tue, 01 Nov 2016 00:00:00 +0000</pubDate>
+      <guid>https://nicholasbrazeau.com/publication/wrangham-distribution-2016/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dental eruption in East African wild chimpanzees</title>
+      <link>https://nicholasbrazeau.com/publication/machanda-dental-2015/</link>
+      <pubDate>Fri, 01 May 2015 00:00:00 +0000</pubDate>
+      <guid>https://nicholasbrazeau.com/publication/machanda-dental-2015/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Anders Martensson | Nick Brazeau</title>
+    <link>https://nicholasbrazeau.com/authors/anders-martensson/</link>
+      <atom:link href="https://nicholasbrazeau.com/authors/anders-martensson/index.xml" rel="self" type="application/rss+xml" />
+    <description>Anders Martensson</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2025 Nicholas Brazeau</copyright><lastBuildDate>Wed, 01 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://nicholasbrazeau.com/img/headers/tree.jpg</url>
+      <title>Anders Martensson</title>
+      <link>https://nicholasbrazeau.com/authors/anders-martensson/</link>
+    </image>
+    
+    <item>
+      <title>Demography and population structure of falciparum malaria in Tanzania and Zanzibar underscores the role of importation in elimination</title>
+      <link>https://nicholasbrazeau.com/publication/morgan-tanzania-2020/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>https://nicholasbrazeau.com/publication/morgan-tanzania-2020/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

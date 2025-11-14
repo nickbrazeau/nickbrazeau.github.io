@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>David Jorgensen | Nick Brazeau</title>
+    <link>https://nicholasbrazeau.com/authors/david-jorgensen/</link>
+      <atom:link href="https://nicholasbrazeau.com/authors/david-jorgensen/index.xml" rel="self" type="application/rss+xml" />
+    <description>David Jorgensen</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2025 Nicholas Brazeau</copyright><lastBuildDate>Wed, 01 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://nicholasbrazeau.com/img/headers/tree.jpg</url>
+      <title>David Jorgensen</title>
+      <link>https://nicholasbrazeau.com/authors/david-jorgensen/</link>
+    </image>
+    
+    <item>
+      <title>The impact of COVID-19 and strategies for mitigation and suppression in low- and middle-income countries</title>
+      <link>https://nicholasbrazeau.com/publication/walker-impact-2020/</link>
+      <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>https://nicholasbrazeau.com/publication/walker-impact-2020/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

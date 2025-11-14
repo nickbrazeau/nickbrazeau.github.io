@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nick Brazeau</title>
+    <link>https://nicholasbrazeau.com/authors/nickbrazeau/</link>
+      <atom:link href="https://nicholasbrazeau.com/authors/nickbrazeau/index.xml" rel="self" type="application/rss+xml" />
+    <description>Nick Brazeau</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2025 Nicholas Brazeau</copyright>
+    <image>
+      <url>https://nicholasbrazeau.com/img/headers/tree.jpg</url>
+      <title>Nick Brazeau</title>
+      <link>https://nicholasbrazeau.com/authors/nickbrazeau/</link>
+    </image>
+    
+  </channel>
+</rss>

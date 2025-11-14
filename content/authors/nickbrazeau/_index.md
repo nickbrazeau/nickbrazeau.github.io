@@ -1,6 +1,6 @@
 ---
 authors:
-- admin
+- nickbrazeau
 bio: |
 education:
   courses:

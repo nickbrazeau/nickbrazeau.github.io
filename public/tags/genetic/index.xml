@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Genetic | Nick Brazeau</title>
+    <link>https://nicholasbrazeau.com/tags/genetic/</link>
+      <atom:link href="https://nicholasbrazeau.com/tags/genetic/index.xml" rel="self" type="application/rss+xml" />
+    <description>Genetic</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2025 Nicholas Brazeau</copyright><lastBuildDate>Sun, 01 Sep 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://nicholasbrazeau.com/img/headers/tree.jpg</url>
+      <title>Genetic</title>
+      <link>https://nicholasbrazeau.com/tags/genetic/</link>
+    </image>
+    
+    <item>
+      <title>Plasmodium vivax chloroquine resistance links to pvcrt transcription in a genetic cross</title>
+      <link>https://nicholasbrazeau.com/publication/sa-plasmodium-2019/</link>
+      <pubDate>Sun, 01 Sep 2019 00:00:00 +0000</pubDate>
+      <guid>https://nicholasbrazeau.com/publication/sa-plasmodium-2019/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Longitudinal Pooled Deep Sequencing of the Plasmodium vivax K12 Kelch Gene in Cambodia Reveals a Lack of Selection by Artemisinin</title>
+      <link>https://nicholasbrazeau.com/publication/brazeau-longitudinal-2016/</link>
+      <pubDate>Thu, 01 Dec 2016 00:00:00 +0000</pubDate>
+      <guid>https://nicholasbrazeau.com/publication/brazeau-longitudinal-2016/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

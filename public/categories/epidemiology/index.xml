@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Epidemiology | Nick Brazeau</title>
+    <link>https://nicholasbrazeau.com/categories/epidemiology/</link>
+      <atom:link href="https://nicholasbrazeau.com/categories/epidemiology/index.xml" rel="self" type="application/rss+xml" />
+    <description>Epidemiology</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2025 Nicholas Brazeau</copyright><lastBuildDate>Wed, 13 Nov 2024 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://nicholasbrazeau.com/img/headers/tree.jpg</url>
+      <title>Epidemiology</title>
+      <link>https://nicholasbrazeau.com/categories/epidemiology/</link>
+    </image>
+    
+    <item>
+      <title>The Network Effect: Why Some Disease Outbreaks Are Predictable and Others Are Coin Flips</title>
+      <link>https://nicholasbrazeau.com/2024/11/13/the-network-effect-why-some-disease-outbreaks-are-predictable-and-others-are-coin-flips/</link>
+      <pubDate>Wed, 13 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>https://nicholasbrazeau.com/2024/11/13/the-network-effect-why-some-disease-outbreaks-are-predictable-and-others-are-coin-flips/</guid>
+      <description>&lt;h2 id=&#34;the-forecasting-problem&#34;&gt;The Forecasting Problem&lt;/h2&gt;
+&lt;p&gt;When COVID-19 emerged in early 2020, epidemiologists raced to answer a critical question: How many people will ultimately get infected? Despite sophisticated models and massive computing power, predictions varied wildly. Some forecasts missed by orders of magnitude. A question that arose is &lt;strong&gt;does network structure even matter for prediction? If so, which features matter most?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;After analyzing 1.35 million epidemic simulations across 1,650 unique scenarios, we found surprising relationships.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;the-45-fold-difference&#34;&gt;The 45-Fold Difference&lt;/h2&gt;
+&lt;p&gt;The single most important finding from our research: &lt;strong&gt;Network heterogeneity—the presence of &amp;ldquo;hubs&amp;rdquo; with many contacts—improves epidemic predictability by up to 45-fold compared to networks where everyone has the same number of contacts.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Let me put that in concrete terms:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;In homogeneous networks&lt;/strong&gt; (everyone has ~20 contacts): Our predictions were off by an average of 72 people in a population of 1,000. Prediction error: 7.2%&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;In heterogeneous networks&lt;/strong&gt; (some hubs, some regular people): Our predictions were off by just 3 people. Prediction error: 0.3%&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;That&amp;rsquo;s not a marginal improvement. That&amp;rsquo;s the difference between a confident forecast and an educated guess.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;why-hubs-change-everything&#34;&gt;Why Hubs Change Everything&lt;/h2&gt;
+&lt;p&gt;Degree distribution and heterogeneity are the &amp;ldquo;temperature and pressure&amp;rdquo; of epidemic prediction.&lt;/p&gt;
+&lt;p&gt;Our research quantifies exactly how much each network feature matters:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Network Feature&lt;/th&gt;
+&lt;th&gt;Predictability (CV)&lt;/th&gt;
+&lt;th&gt;Relative Impact&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Degree heterogeneity&lt;/td&gt;
+&lt;td&gt;0.287&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Best&lt;/strong&gt; (3× better than modularity)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Clustering&lt;/td&gt;
+&lt;td&gt;0.577&lt;/td&gt;
+&lt;td&gt;Intermediate&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Temporal dynamics&lt;/td&gt;
+&lt;td&gt;0.806&lt;/td&gt;
+&lt;td&gt;Weak&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Modularity&lt;/td&gt;
+&lt;td&gt;0.822&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Worst&lt;/strong&gt; (3× worse than degree)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;CV (coefficient of variation) measures unpredictability—lower is more predictable. The 3-fold difference between degree heterogeneity and modularity tells us to prioritize measuring the right things.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;when-predictions-work-and-when-they-dont&#34;&gt;When Predictions Work (and When They Don&amp;rsquo;t)&lt;/h2&gt;
+&lt;p&gt;Not all epidemics are equally predictable. We found that &lt;strong&gt;predictability varies 18-fold&lt;/strong&gt; depending on transmission characteristics:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Highly Predictable Scenarios:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;High transmission rates (10% infection risk per contact per day)&lt;/li&gt;
+&lt;li&gt;Long infectious periods (15 days)&lt;/li&gt;
+&lt;li&gt;Heterogeneous networks with clear hubs&lt;/li&gt;
+&lt;li&gt;Result: Prediction error &amp;lt; 1 person (0.1% of population)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Essentially Random Scenarios:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Low transmission rates (0.5% per contact per day)&lt;/li&gt;
+&lt;li&gt;Short infectious periods (3 days)&lt;/li&gt;
+&lt;li&gt;Modular or homogeneous networks&lt;/li&gt;
+&lt;li&gt;Result: Prediction error &amp;gt; 100 people (10% of population)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;the-80-20-rule-of-disease-spread&#34;&gt;The 80-20 Rule of Disease Spread&lt;/h2&gt;
+&lt;p&gt;In heterogeneous networks, we consistently observed:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;20% of individuals&lt;/strong&gt; (hubs) have &lt;strong&gt;80% of contacts&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Those 20% cause &lt;strong&gt;~80% of transmission events&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;This is &lt;strong&gt;structural&lt;/strong&gt; (determined by network position), not random&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This is a game-changer for intervention strategies. Vaccinating people randomly provides linear benefit: vaccinate 20% of people, prevent 20% of infections. But vaccinating the top 20% by degree prevents 60% of infections—three times the impact.&lt;/p&gt;
+&lt;p&gt;The challenge, of course, is identifying hubs. But that&amp;rsquo;s exactly what our research shows we should prioritize measuring.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;one-million-simulations-the-computational-scale&#34;&gt;One Million Simulations: The Computational Scale&lt;/h2&gt;
+&lt;p&gt;This is one of the largest systematic investigations of network effects on epidemics ever conducted:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;1.35 million&lt;/strong&gt; stochastic epidemic simulations&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;1,650&lt;/strong&gt; unique parameter combinations&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;6&lt;/strong&gt; network manipulation types tested&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;25&lt;/strong&gt; transmission scenarios (5 rates × 5 durations)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;100&lt;/strong&gt; replicates per scenario for statistical power&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;93 GB&lt;/strong&gt; of simulation data analyzed&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We started with 10 baseline networks (1,000 people, 20 contacts each), then systematically manipulated:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Degree Distribution&lt;/strong&gt; — Created hubs with 80+ contacts using stick-breaking process&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Modularity&lt;/strong&gt; — Built community structure (separate friend groups)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Clustering&lt;/strong&gt; — Added triangles (&amp;ldquo;friend-of-friend&amp;rdquo; connections)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Unity&lt;/strong&gt; — Broke down community barriers&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Dynamicity&lt;/strong&gt; — Added temporal rewiring (people change contacts over time)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Baseline&lt;/strong&gt; — Control networks with no manipulation&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Each simulation ran a stochastic SIR (Susceptible-Infected-Recovered) model using the Gillespie algorithm for exact event-driven dynamics. We then compared predictions from Newman&amp;rsquo;s analytical framework against actual simulated outcomes.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;when-simple-math-beats-complex-simulations&#34;&gt;When Simple Math Beats Complex Simulations&lt;/h2&gt;
+&lt;p&gt;One of our most validating findings: &lt;strong&gt;Newman&amp;rsquo;s analytical predictions are remarkably accurate for heterogeneous networks.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;When degree variance is present:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Mean Absolute Error &amp;lt; 5 people (0.5% of population)&lt;/li&gt;
+&lt;li&gt;Correlation between theory and simulation: r &amp;gt; 0.95&lt;/li&gt;
+&lt;li&gt;Works best at moderate-to-high transmission rates&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;When degree variance is absent (homogeneous networks):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Mean Absolute Error &amp;gt; 50 people (5% of population)&lt;/li&gt;
+&lt;li&gt;Theory and simulation diverge&lt;/li&gt;
+&lt;li&gt;Even simulations show high variance across runs&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The pattern is striking: &lt;strong&gt;Newman&amp;rsquo;s accuracy inversely correlates with outcome unpredictability&lt;/strong&gt; (r = -0.85, p &amp;lt; 0.01). When epidemics are inherently predictable (heterogeneous networks), simple analytical methods work beautifully. When epidemics are inherently random (homogeneous/modular networks), even complex simulations struggle.&lt;/p&gt;
+&lt;p&gt;This suggests a practical heuristic: If your analytical model is failing, it might not be because the model is wrong—it might be because the epidemic is genuinely unpredictable given available data.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;surprising-finding-network-dynamics-dont-matter-much&#34;&gt;Surprising Finding: Network Dynamics Don&amp;rsquo;t Matter Much&lt;/h2&gt;
+&lt;p&gt;We expected temporal dynamics—people changing who they interact with over time—to strongly affect predictability. We were wrong.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;When node-level degrees stay constant:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Static networks: CV = 0.810&lt;/li&gt;
+&lt;li&gt;Dynamic networks (rewiring edges): CV = 0.806&lt;/li&gt;
+&lt;li&gt;Virtually no difference&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Implication:&lt;/strong&gt; Static network snapshots may be sufficient for most epidemic models, as long as you accurately capture the degree distribution. You don&amp;rsquo;t need expensive longitudinal contact tracing if you can measure degree heterogeneity at a single point in time.&lt;/p&gt;
+&lt;p&gt;This is enormously practical. Longitudinal contact network data is expensive and invasive to collect. Our results suggest that investing in accurate degree measurements at one timepoint may be more valuable than tracking changing contacts over time.&lt;/p&gt;
+&lt;h2 id=&#34;about-the-research&#34;&gt;About the Research&lt;/h2&gt;
+&lt;p&gt;This work was conducted using custom-built simulation infrastructure implementing event-driven stochastic SIR models on structured contact networks. The research combines insights from network science, percolation theory, stochastic processes, and computational epidemiology.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Key Methods:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Gillespie algorithm for exact stochastic simulation&lt;/li&gt;
+&lt;li&gt;Newman&amp;rsquo;s probability generating function framework for analytical predictions&lt;/li&gt;
+&lt;li&gt;Configuration model for network generation with specified degree distributions&lt;/li&gt;
+&lt;li&gt;1.35 million simulations across 1,650 parameter combinations&lt;/li&gt;
+&lt;li&gt;Kullback-Leibler divergence and Mean Absolute Error for accuracy assessment&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;Post drafted with assistance from Claude.AI&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The Epidemiology of Asymptomatic P. vivax Among Adults in the Democratic Republic of the Congoo</title>
+      <link>https://nicholasbrazeau.com/talk/discent-astmh/</link>
+      <pubDate>Fri, 22 Nov 2019 08:00:00 -0800</pubDate>
+      <guid>https://nicholasbrazeau.com/talk/discent-astmh/</guid>
+      <description>
+
+
+&lt;p&gt;Presentation of the first aim of my PhD dissertation, which focused on the epidemiology of &lt;em&gt;P. vivax&lt;/em&gt; in the Democratic Republic of the Congo, at the annual American Society of Tropical Medicine and Hygiene conference. This work is now published in Nature Communications&lt;a href=&#34;#fn1&#34; class=&#34;footnote-ref&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;div class=&#34;footnotes footnotes-end-of-document&#34;&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn1&#34;&gt;&lt;p&gt;Brazeau NF, Mitchell CL, Morgan AP, Deutsch-Feldman M, Watson OJ, Thwai KL, Gelabert P, van Dorp L, Keeler CY, Waltmann A, Emch M, Gartner V, Redelings B, Wray GA, Mwandagalirwa MK, Tshefu AK, Likwela JL, Edwards JK, Verity R, Parr JB, Meshnick SR, Juliano JJ. The epidemiology of Plasmodium vivax among adults in the Democratic Republic of the Congo. Nat Commun. 2021 Jul 7;12(1):4169. doi: 10.1038/s41467-021-24216-3. PMID: 34234124; PMCID: PMC8263614.&lt;a href=&#34;#fnref1&#34; class=&#34;footnote-back&#34;&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

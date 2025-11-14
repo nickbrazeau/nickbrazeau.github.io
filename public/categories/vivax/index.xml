@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>vivax | Nick Brazeau</title>
+    <link>https://nicholasbrazeau.com/categories/vivax/</link>
+      <atom:link href="https://nicholasbrazeau.com/categories/vivax/index.xml" rel="self" type="application/rss+xml" />
+    <description>vivax</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2025 Nicholas Brazeau</copyright><lastBuildDate>Wed, 08 Nov 2017 08:00:00 -0800</lastBuildDate>
+    <image>
+      <url>https://nicholasbrazeau.com/img/headers/tree.jpg</url>
+      <title>vivax</title>
+      <link>https://nicholasbrazeau.com/categories/vivax/</link>
+    </image>
+    
+    <item>
+      <title>Whole Genome Analysis of Polyclonal Plasmodium vivax Relapses in Cambodia</title>
+      <link>https://nicholasbrazeau.com/talk/pvrelapse-astmh/</link>
+      <pubDate>Wed, 08 Nov 2017 08:00:00 -0800</pubDate>
+      <guid>https://nicholasbrazeau.com/talk/pvrelapse-astmh/</guid>
+      <description>
+
+
+&lt;p&gt;Oral presentation at the annual American Society of Tropical Medicine and Hygiene conference analyzing the genomics of &lt;em&gt;P. vivax&lt;/em&gt; relapses from Cambodia.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

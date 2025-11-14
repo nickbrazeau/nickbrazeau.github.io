@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>population-genetics | Nick Brazeau</title>
+    <link>https://nicholasbrazeau.com/tags/population-genetics/</link>
+      <atom:link href="https://nicholasbrazeau.com/tags/population-genetics/index.xml" rel="self" type="application/rss+xml" />
+    <description>population-genetics</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2025 Nicholas Brazeau</copyright><lastBuildDate>Wed, 13 Nov 2024 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://nicholasbrazeau.com/img/headers/tree.jpg</url>
+      <title>population-genetics</title>
+      <link>https://nicholasbrazeau.com/tags/population-genetics/</link>
+    </image>
+    
+    <item>
+      <title>Identity by Descent: Tracing Malaria&#39;s Family Tree</title>
+      <link>https://nicholasbrazeau.com/2024/11/13/identity-by-descent-tracing-malarias-family-tree/</link>
+      <pubDate>Wed, 13 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>https://nicholasbrazeau.com/2024/11/13/identity-by-descent-tracing-malarias-family-tree/</guid>
+      <description>&lt;h2 id=&#34;the-genetic-fingerprint-of-transmission&#34;&gt;The Genetic Fingerprint of Transmission&lt;/h2&gt;
+&lt;p&gt;Every time a malaria parasite reproduces, it creates an opportunity to trace ancestry. When two parasites share large segments of identical DNA, it&amp;rsquo;s not coincidence—it&amp;rsquo;s evidence of recent common inheritance. This is &lt;strong&gt;Identity by Descent (IBD)&lt;/strong&gt;, and it&amp;rsquo;s revolutionizing how we understand malaria transmission.&lt;/p&gt;
+&lt;p&gt;Unlike traditional surveillance that tracks where people get infected, IBD tracks where &lt;em&gt;parasites&lt;/em&gt; came from. This molecular genealogy reveals:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Transmission chains&lt;/strong&gt; — Which infections are connected?&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Imported vs. local cases&lt;/strong&gt; — Is this a new introduction or local transmission?&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Connectivity patterns&lt;/strong&gt; — Which villages/regions exchange parasites?&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Elimination progress&lt;/strong&gt; — Are we interrupting transmission or just suppressing it?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Let&amp;rsquo;s explore how IBD works and why it matters for malaria control.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;identity-by-state-vs-identity-by-descent&#34;&gt;Identity by State vs. Identity by Descent&lt;/h2&gt;
+&lt;p&gt;Before diving into IBD, we need to understand a critical distinction:&lt;/p&gt;
+&lt;h3 id=&#34;identity-by-state-ibs&#34;&gt;Identity by State (IBS)&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;IBS&lt;/strong&gt; simply means &amp;ldquo;the alleles are the same.&amp;rdquo; Two parasites have IBS at a locus if they both have allele &amp;ldquo;A&amp;rdquo; at that position.&lt;/p&gt;
+&lt;p&gt;IBS can occur through multiple mechanisms:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Common ancestry&lt;/strong&gt; (they inherited &amp;ldquo;A&amp;rdquo; from a shared ancestor)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Convergent evolution&lt;/strong&gt; (both independently mutated to &amp;ldquo;A&amp;rdquo;)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Random chance&lt;/strong&gt; (allele &amp;ldquo;A&amp;rdquo; is common in the population)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Selection&lt;/strong&gt; (allele &amp;ldquo;A&amp;rdquo; provides fitness advantage)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;IBS is easy to measure but hard to interpret. Just because two parasites share an allele doesn&amp;rsquo;t mean they&amp;rsquo;re closely related.&lt;/p&gt;
+&lt;h3 id=&#34;identity-by-descent-ibd&#34;&gt;Identity by Descent (IBD)&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;IBD&lt;/strong&gt; means &amp;ldquo;the DNA was inherited from a recent common ancestor.&amp;rdquo; Two parasites have IBD if they both inherited the &lt;em&gt;same copy&lt;/em&gt; of DNA from a shared ancestor—not just the same allele sequence, but the actual identical genetic material.&lt;/p&gt;
+&lt;p&gt;IBD is difficult to measure (requires statistical models) but easy to interpret: &lt;strong&gt;High IBD = recent shared ancestry.&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;the-key-difference&#34;&gt;The Key Difference&lt;/h3&gt;
+&lt;p&gt;Imagine two people both have blue eyes (IBS). This could mean:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;They&amp;rsquo;re siblings (IBD—inherited from same parents)&lt;/li&gt;
+&lt;li&gt;They&amp;rsquo;re unrelated but blue eyes are common in their population (IBS, not IBD)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;IBD methods use patterns across the genome to distinguish these scenarios.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;why-ibd-matters-more-than-ibs&#34;&gt;Why IBD Matters More Than IBS&lt;/h2&gt;
+&lt;p&gt;Consider a simple example with two malaria parasites:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Scenario 1: High IBS, Low IBD&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;80% of alleles match&lt;/li&gt;
+&lt;li&gt;Matches are scattered randomly across the genome&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Interpretation:&lt;/strong&gt; The parasites are from the same geographic region but not closely related&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Scenario 2: High IBS, High IBD&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;80% of alleles match&lt;/li&gt;
+&lt;li&gt;Matches occur in &lt;em&gt;long continuous blocks&lt;/em&gt; across chromosomes&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Interpretation:&lt;/strong&gt; The parasites shared a recent common ancestor (within a few transmission cycles)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The pattern matters more than the raw percentage. &lt;strong&gt;IBD looks for contiguous blocks of shared alleles&lt;/strong&gt;, not just overall similarity.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;the-biology-behind-ibd&#34;&gt;The Biology Behind IBD&lt;/h2&gt;
+&lt;p&gt;IBD works because of &lt;strong&gt;recombination&lt;/strong&gt;—the shuffling of genetic material during sexual reproduction in the mosquito.&lt;/p&gt;
+&lt;h3 id=&#34;recombination-breaks-down-ibd&#34;&gt;Recombination Breaks Down IBD&lt;/h3&gt;
+&lt;p&gt;When malaria parasites mate in a mosquito:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Two parent parasites exchange DNA through recombination&lt;/li&gt;
+&lt;li&gt;This creates offspring with mosaic genomes—some segments from parent 1, some from parent 2&lt;/li&gt;
+&lt;li&gt;Over generations, recombination &lt;strong&gt;breaks up IBD segments&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The key insight: &lt;strong&gt;Recombination is clock-like&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Recent ancestry&lt;/strong&gt; → Large IBD segments (few recombination events)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Distant ancestry&lt;/strong&gt; → Small/no IBD segments (many recombination events)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;the-time-scale&#34;&gt;The Time Scale&lt;/h3&gt;
+&lt;p&gt;IBD is exquisitely sensitive to recent transmission:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;1-2 transmission cycles ago&lt;/strong&gt;: IBD segments span megabases (millions of basepairs)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;5-10 transmission cycles&lt;/strong&gt;: IBD segments shrink to kilobases&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&amp;gt;20 transmission cycles&lt;/strong&gt;: IBD segments are too small to reliably detect&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This makes IBD perfect for tracking transmission over weeks to months—exactly the timescale relevant for outbreak response.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;measuring-ibd-the-hmm-approach&#34;&gt;Measuring IBD: The HMM Approach&lt;/h2&gt;
+&lt;p&gt;The gold standard method for detecting IBD in malaria is &lt;strong&gt;hmmIBD&lt;/strong&gt; (Hidden Markov Model for IBD), developed by Bob Verity and colleagues.&lt;/p&gt;
+&lt;h3 id=&#34;the-hidden-markov-model-framework&#34;&gt;The Hidden Markov Model Framework&lt;/h3&gt;
+&lt;p&gt;hmmIBD treats the genome as a sequence of positions that are either:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;IBD&lt;/strong&gt; (inherited from common ancestor)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Not IBD&lt;/strong&gt; (independent inheritance)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The &amp;ldquo;hidden&amp;rdquo; part: You can&amp;rsquo;t directly observe IBD status. You only observe whether alleles match (IBS).&lt;/p&gt;
+&lt;p&gt;The model asks: &lt;strong&gt;Given the observed pattern of matching/non-matching alleles, what&amp;rsquo;s the most likely sequence of IBD/non-IBD states along the chromosome?&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;key-inputs&#34;&gt;Key Inputs&lt;/h3&gt;
+&lt;p&gt;hmmIBD requires:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Genetic data&lt;/strong&gt; — SNP genotypes for parasite pairs&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Population allele frequencies&lt;/strong&gt; — How common is each allele?&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Recombination rate&lt;/strong&gt; — How fast does recombination break up IBD?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;the-logic&#34;&gt;The Logic&lt;/h3&gt;
+&lt;p&gt;At each position, the model calculates:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;If IBD at this position:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Matching alleles are very likely (inherited same segment)&lt;/li&gt;
+&lt;li&gt;Non-matching alleles are rare (only if rare mutation occurred)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;If not IBD at this position:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Matching alleles depend on population frequency (could match by chance)&lt;/li&gt;
+&lt;li&gt;Non-matching alleles are common&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;By comparing these probabilities across the genome, hmmIBD identifies long stretches that are more likely IBD than expected by chance.&lt;/p&gt;
+&lt;h3 id=&#34;output-ibd-fraction&#34;&gt;Output: IBD Fraction&lt;/h3&gt;
+&lt;p&gt;hmmIBD reports an &lt;strong&gt;IBD fraction&lt;/strong&gt; for each parasite pair:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;IBD = 0&lt;/strong&gt;: No shared ancestry detected&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;IBD = 0.5&lt;/strong&gt;: Half the genome is IBD (sibling parasites or parent-offspring)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;IBD = 1.0&lt;/strong&gt;: Entire genome is IBD (clones or nearly identical strains)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;ibd-in-action-use-cases&#34;&gt;IBD in Action: Use Cases&lt;/h2&gt;
+&lt;h3 id=&#34;1-reconstructing-transmission-chains&#34;&gt;1. Reconstructing Transmission Chains&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;The Problem:&lt;/strong&gt; During an outbreak, public health teams need to know: Who infected whom?&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The IBD Solution:&lt;/strong&gt; High IBD (&amp;gt;0.8) between parasites from two people indicates direct transmission or transmission through a common intermediate within 1-2 cycles.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Real Example:&lt;/strong&gt; In a village outbreak in Eswatini:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Person A infected Week 1&lt;/li&gt;
+&lt;li&gt;Person B infected Week 3&lt;/li&gt;
+&lt;li&gt;IBD(A,B) = 0.92&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Interpretation:&lt;/strong&gt; Person B was likely infected directly from Person A or from someone A infected. This identified the transmission chain and guided contact tracing.&lt;/p&gt;
+&lt;h3 id=&#34;2-detecting-imported-cases&#34;&gt;2. Detecting Imported Cases&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;The Problem:&lt;/strong&gt; Is malaria resurgence due to local transmission or importation?&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The IBD Solution:&lt;/strong&gt; Compare new infections to circulating local strains:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;High IBD with local strains&lt;/strong&gt; → Local transmission&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Low IBD with local strains&lt;/strong&gt; → Importation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Real Example:&lt;/strong&gt; Zanzibar elimination program:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Most new cases had IBD &amp;lt; 0.1 with existing cases&lt;/li&gt;
+&lt;li&gt;High IBD with parasites from Tanzania mainland (150 km away)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Conclusion:&lt;/strong&gt; 80% of cases were imported, not local transmission&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Action:&lt;/strong&gt; Shifted focus to border screening rather than local vector control&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;3-measuring-connectivity-between-regions&#34;&gt;3. Measuring Connectivity Between Regions&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;The Problem:&lt;/strong&gt; Do two villages exchange parasites? At what rate?&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The IBD Solution:&lt;/strong&gt; High mean IBD between villages indicates frequent parasite flow.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Real Example:&lt;/strong&gt; DRC spatial analysis:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Village pairs &amp;lt;50 km apart: Mean IBD = 0.35&lt;/li&gt;
+&lt;li&gt;Village pairs &amp;gt;200 km apart: Mean IBD = 0.05&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Interpretation:&lt;/strong&gt; Most transmission is local (&amp;lt;50 km), but long-distance importation does occur&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Action:&lt;/strong&gt; Targeted interventions in high-connectivity clusters&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;4-elimination-monitoring&#34;&gt;4. Elimination Monitoring&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;The Problem:&lt;/strong&gt; Are we interrupting transmission or just reducing cases?&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The IBD Solution:&lt;/strong&gt; Track IBD over time:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Rising IBD&lt;/strong&gt; → Transmission becoming more clonal (fewer sources)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Falling IBD&lt;/strong&gt; → Transmission remains diverse (many sources)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Real Example:&lt;/strong&gt; Zambia MDA campaign:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Pre-intervention: Mean IBD = 0.15 (diverse transmission)&lt;/li&gt;
+&lt;li&gt;Post-intervention: Mean IBD = 0.45 (clonal outbreaks from few remaining sources)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Interpretation:&lt;/strong&gt; Successfully interrupted most transmission, but pockets remain&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Action:&lt;/strong&gt; Targeted mop-up in high-IBD clusters&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;ibd-vs-other-relatedness-measures&#34;&gt;IBD vs. Other Relatedness Measures&lt;/h2&gt;
+&lt;p&gt;How does IBD compare to alternatives?&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Method&lt;/th&gt;
+&lt;th&gt;What it Measures&lt;/th&gt;
+&lt;th&gt;Time Scale&lt;/th&gt;
+&lt;th&gt;Best For&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;IBD&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Shared ancestry via recombination&lt;/td&gt;
+&lt;td&gt;1-20 generations&lt;/td&gt;
+&lt;td&gt;Transmission chains, importation&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;F_ST&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Population differentiation&lt;/td&gt;
+&lt;td&gt;100s-1000s generations&lt;/td&gt;
+&lt;td&gt;Geographic structure&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;PCA&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Genetic similarity&lt;/td&gt;
+&lt;td&gt;Varies&lt;/td&gt;
+&lt;td&gt;Population structure visualization&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;TMRCA&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Time to common ancestor&lt;/td&gt;
+&lt;td&gt;Variable&lt;/td&gt;
+&lt;td&gt;Evolutionary timescales&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Phylogeny&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Evolutionary relationships&lt;/td&gt;
+&lt;td&gt;100s-1000s generations&lt;/td&gt;
+&lt;td&gt;Strain origins, drug resistance&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;IBD&amp;rsquo;s sweet spot:&lt;/strong&gt; Detecting relationships over weeks to months—the timescale of malaria control operations.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;technical-challenges&#34;&gt;Technical Challenges&lt;/h2&gt;
+&lt;h3 id=&#34;challenge-1-complexity-of-infection-coi&#34;&gt;Challenge 1: Complexity of Infection (COI)&lt;/h3&gt;
+&lt;p&gt;Most infections are polyclonal (multiple parasite strains). This creates ambiguity:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Which clone from person A matches which clone from person B?&lt;/li&gt;
+&lt;li&gt;Is high IBD due to relatedness or just the same dominant clone?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Solution:&lt;/strong&gt; Methods like &lt;code&gt;hmmIBD-MCMC&lt;/code&gt; probabilistically handle polyclonal infections by integrating over possible clone pairings.&lt;/p&gt;
+&lt;h3 id=&#34;challenge-2-population-allele-frequencies&#34;&gt;Challenge 2: Population Allele Frequencies&lt;/h3&gt;
+&lt;p&gt;IBD estimation requires accurate population allele frequencies. Using frequencies from the wrong population biases IBD estimates.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Solution:&lt;/strong&gt; Estimate frequencies from the same samples you&amp;rsquo;re analyzing, or use population-specific reference panels.&lt;/p&gt;
+&lt;h3 id=&#34;challenge-3-low-density-snp-panels&#34;&gt;Challenge 3: Low-Density SNP Panels&lt;/h3&gt;
+&lt;p&gt;IBD works best with whole-genome sequencing. But cost-effective panels use 50-200 SNPs—too sparse for traditional IBD.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Solution:&lt;/strong&gt; New methods like &lt;code&gt;dEploid&lt;/code&gt; and &lt;code&gt;Coil&lt;/code&gt; use probabilistic models to estimate IBD from sparse data by leveraging linkage information.&lt;/p&gt;
+&lt;h3 id=&#34;challenge-4-recombination-rate-uncertainty&#34;&gt;Challenge 4: Recombination Rate Uncertainty&lt;/h3&gt;
+&lt;p&gt;IBD estimation requires knowing the recombination rate. But malaria recombination rates vary by region and are imprecisely measured.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Solution:&lt;/strong&gt; Sensitivity analyses across plausible recombination rates to ensure results are robust.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;the-ibd-distance-relationship&#34;&gt;The IBD-Distance Relationship&lt;/h2&gt;
+&lt;p&gt;One of the most consistent findings in malaria genomics: &lt;strong&gt;IBD decays exponentially with geographic distance.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The relationship follows:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;IBD(d) = IBD_0 × exp(-d / L)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Where:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;d&lt;/code&gt; = geographic distance between samples&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;L&lt;/code&gt; = characteristic dispersal distance (typically 20-80 km)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;IBD_0&lt;/code&gt; = baseline IBD at distance zero&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This relationship has profound implications:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Short dispersal distance (L = 20 km):&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Transmission is highly localized&lt;/li&gt;
+&lt;li&gt;Interventions can focus on small areas&lt;/li&gt;
+&lt;li&gt;Elimination is feasible region-by-region&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Long dispersal distance (L = 80 km):&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Parasites travel far (human migration, mosquito movement)&lt;/li&gt;
+&lt;li&gt;Interventions must cover large areas&lt;/li&gt;
+&lt;li&gt;Elimination requires coordinated regional efforts&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;real-world-variation&#34;&gt;Real-World Variation&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Region&lt;/th&gt;
+&lt;th&gt;Dispersal Distance (L)&lt;/th&gt;
+&lt;th&gt;Interpretation&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Rural DRC&lt;/td&gt;
+&lt;td&gt;15-25 km&lt;/td&gt;
+&lt;td&gt;Hyper-local transmission&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Zanzibar&lt;/td&gt;
+&lt;td&gt;40-60 km&lt;/td&gt;
+&lt;td&gt;Moderate dispersal&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Southeast Asia&lt;/td&gt;
+&lt;td&gt;80-150 km&lt;/td&gt;
+&lt;td&gt;High mobility (border crossings)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;ibd-network-analysis&#34;&gt;IBD Network Analysis&lt;/h2&gt;
+&lt;p&gt;Modern IBD analysis treats relatedness as a &lt;strong&gt;network&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Nodes&lt;/strong&gt; = individual infections&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Edges&lt;/strong&gt; = high IBD connections (&amp;gt;0.5)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Network metrics reveal transmission structure:&lt;/p&gt;
+&lt;h3 id=&#34;clustering-coefficient&#34;&gt;Clustering Coefficient&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;High clustering&lt;/strong&gt; → Tight transmission networks (local outbreaks)
+&lt;strong&gt;Low clustering&lt;/strong&gt; → Diffuse transmission (importation-driven)&lt;/p&gt;
+&lt;h3 id=&#34;community-detection&#34;&gt;Community Detection&lt;/h3&gt;
+&lt;p&gt;Algorithms like Louvain method identify &lt;strong&gt;transmission clusters&lt;/strong&gt;—groups of highly connected infections.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Use case:&lt;/strong&gt; In a multi-village outbreak, community detection identified three independent transmission clusters. Targeted interventions in these clusters interrupted transmission faster than blanket approaches.&lt;/p&gt;
+&lt;h3 id=&#34;network-centrality&#34;&gt;Network Centrality&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;High-centrality nodes&lt;/strong&gt; = infections connected to many others
+&lt;strong&gt;Interpretation:&lt;/strong&gt; Potential superspreaders or hubs in transmission network&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;the-future-real-time-ibd-surveillance&#34;&gt;The Future: Real-Time IBD Surveillance&lt;/h2&gt;
+&lt;p&gt;Current research is pushing toward &lt;strong&gt;operational IBD surveillance&lt;/strong&gt;:&lt;/p&gt;
+&lt;h3 id=&#34;portable-sequencing&#34;&gt;Portable Sequencing&lt;/h3&gt;
+&lt;p&gt;Oxford Nanopore MinION enables:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Field-deployable sequencing&lt;/li&gt;
+&lt;li&gt;Results within 24 hours&lt;/li&gt;
+&lt;li&gt;Immediate IBD-based outbreak response&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;automated-pipelines&#34;&gt;Automated Pipelines&lt;/h3&gt;
+&lt;p&gt;Software like &lt;code&gt;IBD-pipeline&lt;/code&gt; and &lt;code&gt;malariaibdR&lt;/code&gt; automate:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;VCF processing&lt;/li&gt;
+&lt;li&gt;IBD calculation&lt;/li&gt;
+&lt;li&gt;Network visualization&lt;/li&gt;
+&lt;li&gt;Report generation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;integration-with-case-data&#34;&gt;Integration with Case Data&lt;/h3&gt;
+&lt;p&gt;Linking IBD networks with:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Case GPS coordinates&lt;/li&gt;
+&lt;li&gt;Travel history&lt;/li&gt;
+&lt;li&gt;Intervention coverage&lt;/li&gt;
+&lt;li&gt;Environmental data&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Vision:&lt;/strong&gt; Real-time transmission network dashboards guiding intervention deployment.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;what-weve-learned&#34;&gt;What We&amp;rsquo;ve Learned&lt;/h2&gt;
+&lt;p&gt;From a decade of IBD research in malaria, key insights have emerged:&lt;/p&gt;
+&lt;h3 id=&#34;1-most-transmission-is-local&#34;&gt;1. Most Transmission is Local&lt;/h3&gt;
+&lt;p&gt;IBD consistently shows:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;60-80% of transmission occurs &amp;lt;10 km from source&lt;/li&gt;
+&lt;li&gt;Super-spreaders are rare&lt;/li&gt;
+&lt;li&gt;Transmission chains are short (2-4 hops)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Implication:&lt;/strong&gt; Reactive case detection within 500m-1km of index cases is effective.&lt;/p&gt;
+&lt;h3 id=&#34;2-importation-drives-resurgence&#34;&gt;2. Importation Drives Resurgence&lt;/h3&gt;
+&lt;p&gt;In pre-elimination settings:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;50-90% of new cases show low IBD with local strains&lt;/li&gt;
+&lt;li&gt;Importation overwhelms local transmission&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Implication:&lt;/strong&gt; Border screening and treatment of travelers is critical for elimination.&lt;/p&gt;
+&lt;h3 id=&#34;3-ibd-tracks-interventions&#34;&gt;3. IBD Tracks Interventions&lt;/h3&gt;
+&lt;p&gt;IBD responds faster than case counts to interventions:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Mass drug administration: IBD increases within weeks&lt;/li&gt;
+&lt;li&gt;Indoor residual spraying: IBD decreases over months&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Implication:&lt;/strong&gt; IBD provides early feedback on intervention effectiveness.&lt;/p&gt;
+&lt;h3 id=&#34;4-elimination-requires-regional-coordination&#34;&gt;4. Elimination Requires Regional Coordination&lt;/h3&gt;
+&lt;p&gt;High IBD across regions demonstrates:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Parasites don&amp;rsquo;t respect administrative boundaries&lt;/li&gt;
+&lt;li&gt;Isolated elimination efforts are vulnerable to reimportation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Implication:&lt;/strong&gt; Coordination at &amp;gt;100 km scales is essential.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;the-bottom-line&#34;&gt;The Bottom Line&lt;/h2&gt;
+&lt;p&gt;Identity by descent transforms malaria genomic data from a population-level snapshot into a transmission-level movie. By tracing shared ancestry, IBD reveals:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Who infected whom&lt;/li&gt;
+&lt;li&gt;Where parasites came from&lt;/li&gt;
+&lt;li&gt;Which villages are connected&lt;/li&gt;
+&lt;li&gt;Whether elimination is progressing&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;As sequencing costs decline and field-deployable platforms mature, IBD surveillance is transitioning from research tool to operational capability.&lt;/p&gt;
+&lt;p&gt;The future of malaria elimination won&amp;rsquo;t just count cases—it will map transmission networks in real-time and target interventions at the precise locations where transmission persists.&lt;/p&gt;
+&lt;p&gt;IBD gives us the resolution to see transmission at its finest scale: the links between individual infections. And in those links lie the keys to elimination.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;further-reading&#34;&gt;Further Reading&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Key Papers:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Verity R, et al. (2020). &amp;ldquo;The impact of antimalarial resistance on the genetic structure of Plasmodium falciparum in the DRC.&amp;rdquo; &lt;em&gt;Nature Communications&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Taylor AR, et al. (2019). &amp;ldquo;Quantifying connectivity between local Plasmodium falciparum malaria parasite populations using identity by descent.&amp;rdquo; &lt;em&gt;PLoS Genetics&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Schaffner SF, et al. (2018). &amp;ldquo;hmmIBD: software to infer pairwise identity by descent between haploid genotypes.&amp;rdquo; &lt;em&gt;Malaria Journal&lt;/em&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Software:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/glipsnort/hmmIBD&#34;&gt;hmmIBD&lt;/a&gt; - Hidden Markov Model for IBD detection&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/bahlolab/isoRelate&#34;&gt;isoRelate&lt;/a&gt; - IBD-based relationship estimation&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/EPPIcenter/dcifer&#34;&gt;dcifer&lt;/a&gt; - Identity by descent from polyclonal infections&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/bailey-lab/malariaibdR&#34;&gt;malariaibdR&lt;/a&gt; - IBD analysis pipeline&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Workshops:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Applied Malaria Molecular Surveillance (AMMS) - Annual workshop covering IBD methods&lt;/li&gt;
+&lt;li&gt;Materials available at: &lt;a href=&#34;https://www.eppicenter.org&#34;&gt;AMMS Practicals&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;Post drafted with assistance from Claude.AI&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Demography and population structure of falciparum malaria in Tanzania and Zanzibar underscores the role of importation in elimination</title>
+      <link>https://nicholasbrazeau.com/publication/morgan-tanzania-2020/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>https://nicholasbrazeau.com/publication/morgan-tanzania-2020/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Falciparum malaria from coastal Tanzania and Zanzibar remains highly connected despite effective control efforts on the archipelago</title>
+      <link>https://nicholasbrazeau.com/publication/morgan-falciparum-2020/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>https://nicholasbrazeau.com/publication/morgan-falciparum-2020/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The Impact of Antimalarial Resistance on the Genetic Structure of Plasmodium falciparum in the DRC</title>
+      <link>https://nicholasbrazeau.com/publication/verity-antimalarial-2020/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>https://nicholasbrazeau.com/publication/verity-antimalarial-2020/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Partner-Drug Resistance and Population Substructuring of Artemisinin-Resistant Plasmodium falciparum in Cambodia</title>
+      <link>https://nicholasbrazeau.com/publication/parobek-partner-drug-2017/</link>
+      <pubDate>Thu, 01 Jun 2017 00:00:00 +0000</pubDate>
+      <guid>https://nicholasbrazeau.com/publication/parobek-partner-drug-2017/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

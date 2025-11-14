@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>R-packages | Nick Brazeau</title>
+    <link>https://nicholasbrazeau.com/categories/r-packages/</link>
+      <atom:link href="https://nicholasbrazeau.com/categories/r-packages/index.xml" rel="self" type="application/rss+xml" />
+    <description>R-packages</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2025 Nicholas Brazeau</copyright><lastBuildDate>Fri, 20 May 2022 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://nicholasbrazeau.com/img/headers/tree.jpg</url>
+      <title>R-packages</title>
+      <link>https://nicholasbrazeau.com/categories/r-packages/</link>
+    </image>
+    
+    <item>
+      <title>COVID-19 Statistical Modeling with Serologic Data</title>
+      <link>https://nicholasbrazeau.com/2022/05/20/covid-19-statistical-modeling-with-serologic-data/</link>
+      <pubDate>Fri, 20 May 2022 00:00:00 +0000</pubDate>
+      <guid>https://nicholasbrazeau.com/2022/05/20/covid-19-statistical-modeling-with-serologic-data/</guid>
+      <description>&lt;p&gt;The purpose of the &lt;code&gt;COVIDCurve&lt;/code&gt; project and R-software package was to provide a framework to fit age-specific infection fatality ratios (IFRs) in an epidemic that is using serologic data to estimate prevalence. The model was originally designed in response to the COVID-19 pandemic (hence the name) but is broadly applicable.&lt;/p&gt;
+&lt;p&gt;Accurate inference of the IFR based on serological data is challenging due to a number of factors that can bias estimates away from the true value, including: (1) the delay between infection and death, (2) the dynamical process of seroconversion and seroreversion, (3) potential differences in age-specific attack rates, and (4) serological test characteristics. These delay-distributions and serologic test characteristics are expected to cause both shifts in when deaths are observed as well as when and how many true infections are observed, which will then affect the IFR.&lt;/p&gt;
+&lt;p&gt;The model used in &lt;code&gt;COVIDCurve&lt;/code&gt; can be briefly summarized as having two pieces: (1) an infection curve shape that is informed by the shape the of the observed death curve but &amp;ldquo;thrown&amp;rdquo;&amp;quot; backwards in time; (2) a pin or a point on the y-axis that the shape must go through (i.e. a pin to inform the area under the curve, or cumulative infections). This pin is informed by the observed serologic data, accounting for test characteristics (e.g. sensitivity and specificity) as well as the time from infection to seroconversion and seroreversion. Accounting for seroreversion, or the waning of antibodies over time that then produces a false negative test, becomes increasingly important as epidemics progress and/or as daily infections start to contract.&lt;/p&gt;
+&lt;p&gt;This work is further described as &lt;a href=&#34;https://go.nature.com/3KByzI4&#34;&gt;Nature Communities blog post&lt;/a&gt; and is published in &lt;a href=&#34;https://www.nature.com/articles/s43856-022-00106-7&#34;&gt;Communications Medicine&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

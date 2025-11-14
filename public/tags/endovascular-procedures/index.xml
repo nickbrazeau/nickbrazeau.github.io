@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Endovascular Procedures | Nick Brazeau</title>
+    <link>https://nicholasbrazeau.com/tags/endovascular-procedures/</link>
+      <atom:link href="https://nicholasbrazeau.com/tags/endovascular-procedures/index.xml" rel="self" type="application/rss+xml" />
+    <description>Endovascular Procedures</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2025 Nicholas Brazeau</copyright><lastBuildDate>Mon, 01 Apr 2013 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://nicholasbrazeau.com/img/headers/tree.jpg</url>
+      <title>Endovascular Procedures</title>
+      <link>https://nicholasbrazeau.com/tags/endovascular-procedures/</link>
+    </image>
+    
+    <item>
+      <title>Critical limb ischemia: an update for interventional radiologists</title>
+      <link>https://nicholasbrazeau.com/publication/brazeau-critical-2013/</link>
+      <pubDate>Mon, 01 Apr 2013 00:00:00 +0000</pubDate>
+      <guid>https://nicholasbrazeau.com/publication/brazeau-critical-2013/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>May-Thurner syndrome: diagnosis and management</title>
+      <link>https://nicholasbrazeau.com/publication/brazeau-may-thurner-2013/</link>
+      <pubDate>Fri, 01 Mar 2013 00:00:00 +0000</pubDate>
+      <guid>https://nicholasbrazeau.com/publication/brazeau-may-thurner-2013/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

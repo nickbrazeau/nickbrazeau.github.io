@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Travel Medicine | Nick Brazeau</title>
+    <link>https://nicholasbrazeau.com/tags/travel-medicine/</link>
+      <atom:link href="https://nicholasbrazeau.com/tags/travel-medicine/index.xml" rel="self" type="application/rss+xml" />
+    <description>Travel Medicine</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2025 Nicholas Brazeau</copyright><lastBuildDate>Tue, 01 Dec 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://nicholasbrazeau.com/img/headers/tree.jpg</url>
+      <title>Travel Medicine</title>
+      <link>https://nicholasbrazeau.com/tags/travel-medicine/</link>
+    </image>
+    
+    <item>
+      <title>SARS-CoV-2 infection prevalence on repatriation flights from Wuhan City, China</title>
+      <link>https://nicholasbrazeau.com/publication/thompson-sars-cov-2-2020/</link>
+      <pubDate>Tue, 01 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>https://nicholasbrazeau.com/publication/thompson-sars-cov-2-2020/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

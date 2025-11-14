@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Stephan Wicky | Nick Brazeau</title>
+    <link>https://nicholasbrazeau.com/authors/stephan-wicky/</link>
+      <atom:link href="https://nicholasbrazeau.com/authors/stephan-wicky/index.xml" rel="self" type="application/rss+xml" />
+    <description>Stephan Wicky</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2025 Nicholas Brazeau</copyright><lastBuildDate>Mon, 01 Apr 2013 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://nicholasbrazeau.com/img/headers/tree.jpg</url>
+      <title>Stephan Wicky</title>
+      <link>https://nicholasbrazeau.com/authors/stephan-wicky/</link>
+    </image>
+    
+    <item>
+      <title>Critical limb ischemia: an update for interventional radiologists</title>
+      <link>https://nicholasbrazeau.com/publication/brazeau-critical-2013/</link>
+      <pubDate>Mon, 01 Apr 2013 00:00:00 +0000</pubDate>
+      <guid>https://nicholasbrazeau.com/publication/brazeau-critical-2013/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>May-Thurner syndrome: can it be diagnosed by a single MR venography study?</title>
+      <link>https://nicholasbrazeau.com/publication/mcdermott-may-thurner-2013/</link>
+      <pubDate>Fri, 01 Feb 2013 00:00:00 +0000</pubDate>
+      <guid>https://nicholasbrazeau.com/publication/mcdermott-may-thurner-2013/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

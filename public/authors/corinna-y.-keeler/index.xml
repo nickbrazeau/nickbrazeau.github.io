@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Corinna Y. Keeler | Nick Brazeau</title>
+    <link>https://nicholasbrazeau.com/authors/corinna-y.-keeler/</link>
+      <atom:link href="https://nicholasbrazeau.com/authors/corinna-y.-keeler/index.xml" rel="self" type="application/rss+xml" />
+    <description>Corinna Y. Keeler</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2025 Nicholas Brazeau</copyright><lastBuildDate>Thu, 01 Jul 2021 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://nicholasbrazeau.com/img/headers/tree.jpg</url>
+      <title>Corinna Y. Keeler</title>
+      <link>https://nicholasbrazeau.com/authors/corinna-y.-keeler/</link>
+    </image>
+    
+    <item>
+      <title>The epidemiology of Plasmodium vivax among adults in the Democratic Republic of the Congo</title>
+      <link>https://nicholasbrazeau.com/publication/brazeau-epidemiology-2021/</link>
+      <pubDate>Thu, 01 Jul 2021 00:00:00 +0000</pubDate>
+      <guid>https://nicholasbrazeau.com/publication/brazeau-epidemiology-2021/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

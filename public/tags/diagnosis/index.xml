@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Diagnosis | Nick Brazeau</title>
+    <link>https://nicholasbrazeau.com/tags/diagnosis/</link>
+      <atom:link href="https://nicholasbrazeau.com/tags/diagnosis/index.xml" rel="self" type="application/rss+xml" />
+    <description>Diagnosis</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2025 Nicholas Brazeau</copyright><lastBuildDate>Fri, 01 Feb 2013 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://nicholasbrazeau.com/img/headers/tree.jpg</url>
+      <title>Diagnosis</title>
+      <link>https://nicholasbrazeau.com/tags/diagnosis/</link>
+    </image>
+    
+    <item>
+      <title>May-Thurner syndrome: can it be diagnosed by a single MR venography study?</title>
+      <link>https://nicholasbrazeau.com/publication/mcdermott-may-thurner-2013/</link>
+      <pubDate>Fri, 01 Feb 2013 00:00:00 +0000</pubDate>
+      <guid>https://nicholasbrazeau.com/publication/mcdermott-may-thurner-2013/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

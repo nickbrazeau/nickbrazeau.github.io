@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>other | Nick Brazeau</title>
+    <link>https://nicholasbrazeau.com/tags/other/</link>
+      <atom:link href="https://nicholasbrazeau.com/tags/other/index.xml" rel="self" type="application/rss+xml" />
+    <description>other</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2025 Nicholas Brazeau</copyright><lastBuildDate>Thu, 19 May 2022 08:00:20 -0700</lastBuildDate>
+    <image>
+      <url>https://nicholasbrazeau.com/img/headers/tree.jpg</url>
+      <title>other</title>
+      <link>https://nicholasbrazeau.com/tags/other/</link>
+    </image>
+    
+    <item>
+      <title>AMR in the Hospital</title>
+      <link>https://nicholasbrazeau.com/project/sepidapto/</link>
+      <pubDate>Thu, 19 May 2022 08:00:20 -0700</pubDate>
+      <guid>https://nicholasbrazeau.com/project/sepidapto/</guid>
+      <description>&lt;p&gt;In this case study of a patient with &lt;em&gt;Staphylococcus epidermidis&lt;/em&gt; bacteremia receiving prolonged antibiotics that developed Daptomycin resistance, we used whole genome sequencing and bioinformatic analyses to identify a novel mutation. This project demonstrated the utility in using genomic analysis for the identification and survelliance of putative antimicrobial resistant mutations. This project was published as Brazeau &amp;amp; Levinson &lt;em&gt;et al.&lt;/em&gt; 2020 in Evolution, Medicine, and Public Health&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;Brazeau NF, Levinson KJ, Schranz A, Moser KA, Hollis I, Iyer P, Chien C, Bowen A, van Duin D, Lachiewicz A, Andermann T, Jones M, Miller M, Juliano JJ, Bartelt LA. Loss of daptomycin susceptibility in clinical Staphylococcus epidermidis infection coincided with variants in WalK. Evol Med Public Health. 2020 Sep 7;2020(1):219-224. doi: 10.1093/emph/eoaa031. PMID: 33214904; PMCID: PMC7658547.&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
