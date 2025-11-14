@@ -54,4 +54,4 @@ user_groups:
 - Researchers
 - Visitors
 ---
-I am an infectious diseases fellow at Duke University Hospital pursuing a PSTP fast-track. As a physician-scientist, I integrate molecular epidemiology, genomics, infectious disease dynamics, and ML/AI methods to understand transmission pathways, characterize antimicrobial resistance evolution, and identify points where within-host and between-host propagation can be disrupted.
+I am an infectious diseases fellow at Duke University Hospital pursuing a PSTP fast-track. As an ID physician (trainee), I am interested in why some individuals experience more severe illness and how these differences shape transmission dynamics. I want to integrate these two fields to identify and disrupt the pathways that allow infections to spread within- and between-hosts.
