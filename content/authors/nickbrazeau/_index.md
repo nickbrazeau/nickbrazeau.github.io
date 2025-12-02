@@ -54,4 +54,4 @@ user_groups:
 - Researchers
 - Visitors
 ---
-I am an infectious diseases fellow at Duke University Hospital pursuing a PSTP fast-track. As an ID physician (trainee), I am interested in why some individuals experience more severe illness and how these differences shape transmission dynamics. I want to integrate these two domains to identify and disrupt the pathways that allow infections to spread within- and between-hosts.
+I am an Infectious Diseases fellow at Duke University Hospital pursuing a PSTP fast-track. As an infectious disease epidemiologist, I study how pathogens move through time and space. As a clinician, I am interested in why infection severity differs among individuals and how these differences influence transmission dynamics. My goal is to integrate these perspectives to identify—and ultimately disrupt—the pathways that allow infections to spread within- and between-hosts.
