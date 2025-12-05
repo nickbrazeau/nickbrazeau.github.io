@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write  # Allow pushing commits for CV compilation
   pages: write
   id-token: write
 
@@ -53,6 +53,31 @@ jobs:
           hugo \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
+
+      - name: Compile CV if source files changed
+        run: |
+          if git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep -qE "(static/files/cv\.tex|static/files/.*\.bib)"; then
+            echo "CV source files changed, compiling..."
+            sudo apt-get update
+            sudo apt-get install -y texlive-latex-base texlive-fonts-recommended texlive-latex-extra texlive-bibtex-extra
+            cd static/files
+            pdflatex cv.tex
+            bibtex cv || true
+            pdflatex cv.tex
+            pdflatex cv.tex
+            cd ../..
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add static/files/cv.pdf
+            if git diff --staged --quiet; then
+              echo "No changes to PDF"
+            else
+              git commit -m "Auto-compile CV PDF [skip ci]"
+              git push
+            fi
+          else
+            echo "No CV source changes detected, skipping compilation"
+          fi
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
